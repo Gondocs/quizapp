@@ -1,8 +1,8 @@
 [
   {
     "id": "flashcard-10",
-    "title": "Szabályozástechnika",
-    "description": "Szókitöltős fogalmak – 10. kérdés",
+    "title": "Formális nyelvek és automaták - 10. kérdés",
+    "description": "Szókitöltős fogalmak",
     "cards": [
       {
         "id": "card-1",
