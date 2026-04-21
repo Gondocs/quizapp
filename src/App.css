@@ -12,6 +12,14 @@
   display: none;
 }
 
+.layout-shell.fullscreen-active {
+  grid-template-columns: 1fr;
+}
+
+.layout-shell.fullscreen-active .sidebar {
+  display: none;
+}
+
 .sidebar {
   border-right: 1px solid var(--outline-variant);
   background: color-mix(in srgb, var(--surface) 90%, transparent);
@@ -53,6 +61,8 @@
 
 .sidebar-bottom {
   margin-top: auto;
+  display: grid;
+  gap: 0.75rem;
 }
 
 .main-content {
@@ -233,6 +243,26 @@
   border-color: var(--on-surface-variant);
 }
 
+.icon-square-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--outline-variant);
+  background: var(--surface);
+  color: var(--on-surface);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.icon-square-btn.active {
+  background: var(--surface-container-high);
+  border-color: var(--on-surface-variant);
+}
+
 .progress-panel {
   margin-bottom: 1rem;
 }
@@ -409,6 +439,7 @@
 
 .test-card h2 {
   margin: 0.4rem 0 0;
+  color: var(--on-surface);
 }
 
 .test-actions {
@@ -422,11 +453,18 @@
   border: 1px solid var(--outline-variant);
   background: var(--surface-container-low);
   color: var(--on-surface);
+  font-weight: 600;
+}
+
+.test-option:disabled {
+  opacity: 1;
+  color: var(--on-surface);
 }
 
 .test-option.correct {
   border-color: #3f8f77;
   background: #c9f0e4;
+  color: #0d3f33;
 }
 
 .test-feedback {
@@ -480,6 +518,15 @@
 
 .session-card {
   margin-top: 1rem;
+}
+
+.layout-shell.fullscreen-active .study-shell {
+  width: min(1100px, 100% - 1.2rem);
+  padding-top: 0.4rem;
+}
+
+.layout-shell.fullscreen-active .session-card {
+  display: none;
 }
 
 .session-header {
@@ -640,6 +687,10 @@ button:not(:disabled):active,
 
   .top-bar > div:last-child button {
     flex: 1;
+  }
+
+  .top-bar > div:last-child .icon-square-btn {
+    flex: 0 0 44px;
   }
 
   .module-actions {

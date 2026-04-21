@@ -13,6 +13,7 @@ const sampleModules = Object.entries(quizFiles)
   })
 
 const SESSION_COOKIE = 'quiz_session_store'
+const SESSION_STORAGE_KEY = 'quiz-session-store'
 const STOP_WORDS = new Set([
   'a', 'az', 'egy', 'es', 'és', 'hogy', 'vagy', 'nem', 'ha', 'akkor', 'ami', 'mint',
   'soran', 'során', 'eseten', 'esetén', 'valamint', 'segitsegevel', 'segítségével',
@@ -22,6 +23,11 @@ const STOP_WORDS = new Set([
 function setCookie(name, value, days = 7) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString()
   document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`
+}
+
+// Süti törlése azonnal.
+function clearCookie(name) {
+  document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`
 }
 
 // Süti olvasása.
@@ -43,6 +49,22 @@ function parseSessionCookie() {
   } catch {
     return {}
   }
+}
+
+// Munkamenet olvasása localStorage-ból, fallbackként sütiből.
+function parseSessionStore() {
+  try {
+    const rawStorage = localStorage.getItem(SESSION_STORAGE_KEY)
+    if (rawStorage) {
+      const parsed = JSON.parse(rawStorage)
+      if (parsed && typeof parsed === 'object') {
+        return parsed
+      }
+    }
+  } catch {
+    // Fallback az alábbi cookie olvasásra.
+  }
+  return parseSessionCookie()
 }
 
 // Sütiből betöltött minősítésekből cardId -> known/unknown map.
@@ -188,7 +210,7 @@ function App() {
   const [moduleShuffleConfig, setModuleShuffleConfig] = useState({})
 
   // Perzisztens adatok.
-  const [sessionStore, setSessionStore] = useState(() => parseSessionCookie())
+  const [sessionStore, setSessionStore] = useState(() => parseSessionStore())
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('study-theme')
     if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -227,8 +249,9 @@ function App() {
     localStorage.setItem('quiz-settings', JSON.stringify(settings))
   }, [settings])
 
-  // Session mentés sütibe.
+  // Session mentés localStorage-be és sütibe.
   useEffect(() => {
+    localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionStore))
     setCookie(SESSION_COOKIE, JSON.stringify(sessionStore), 14)
   }, [sessionStore])
 
@@ -392,6 +415,11 @@ function App() {
     resetTestState()
   }
 
+  // Aktív modul keverésének állapota.
+  const activeModuleShuffleEnabled = activeModule
+    ? Boolean(moduleShuffleConfig[activeModule.id]?.enabled)
+    : false
+
   // Modulonkénti keverés kapcsoló.
   const toggleModuleShuffle = useCallback((moduleId) => {
     setModuleShuffleConfig((prev) => {
@@ -466,6 +494,8 @@ function App() {
   // Session törlés.
   const clearSessionData = useCallback(() => {
     setSessionStore({})
+    localStorage.removeItem(SESSION_STORAGE_KEY)
+    clearCookie(SESSION_COOKIE)
     setMarkMap({})
     setPhase('main')
     setIndex(0)
@@ -480,6 +510,7 @@ function App() {
   const toggleFullscreen = useCallback(async () => {
     try {
       if (!document.fullscreenElement) {
+        setIsSidebarHidden(true)
         await document.documentElement.requestFullscreen()
       } else {
         await document.exitFullscreen()
@@ -693,19 +724,9 @@ function App() {
 
             <div className="module-footer">
               <span>{moduleItem.cards.length} kártya</span>
-              <div className="module-actions">
-                <button
-                  type="button"
-                  className={moduleShuffleConfig[moduleItem.id]?.enabled ? 'shuffle-btn active' : 'shuffle-btn'}
-                  onClick={() => toggleModuleShuffle(moduleItem.id)}
-                  title="Keverés kapcsoló"
-                >
-                  ⤮
-                </button>
-                <button type="button" className="primary-btn" onClick={() => openModule(moduleItem)}>
-                  Tanulás indítása
-                </button>
-              </div>
+              <button type="button" className="primary-btn" onClick={() => openModule(moduleItem)}>
+                Tanulás indítása
+              </button>
             </div>
           </article>
         ))}
@@ -778,14 +799,41 @@ function App() {
             <h1>{activeModule.title}</h1>
           </div>
           <div>
-            <button type="button" className="ghost-btn" onClick={() => setStudyMode((prev) => (prev === 'kartyas' ? 'teszt' : 'kartyas'))}>
-              {studyMode === 'kartyas' ? 'Teszt mód' : 'Kártyás mód'}
+            <button
+              type="button"
+              className={`icon-square-btn ${studyMode === 'teszt' ? 'active' : ''}`}
+              onClick={() => setStudyMode((prev) => (prev === 'kartyas' ? 'teszt' : 'kartyas'))}
+              title={studyMode === 'kartyas' ? 'Teszt mód' : 'Kártyás mód'}
+              aria-label={studyMode === 'kartyas' ? 'Teszt mód' : 'Kártyás mód'}
+            >
+              {studyMode === 'kartyas' ? '≟' : '▣'}
             </button>
-            <button type="button" className="ghost-btn" onClick={toggleFullscreen}>
-              {isFullscreen ? 'Kilépés teljes képernyőről' : 'Teljes képernyő'}
+            <button
+              type="button"
+              className={`icon-square-btn ${activeModuleShuffleEnabled ? 'active' : ''}`}
+              onClick={() => toggleModuleShuffle(activeModule.id)}
+              title="Keverés"
+              aria-label="Keverés"
+            >
+              ⤮
             </button>
-            <button type="button" className="ghost-btn" onClick={() => setView('valaszto')}>
-              Modulok
+            <button
+              type="button"
+              className={`icon-square-btn ${isFullscreen ? 'active' : ''}`}
+              onClick={toggleFullscreen}
+              title={isFullscreen ? 'Kilépés teljes képernyőről' : 'Teljes képernyő'}
+              aria-label={isFullscreen ? 'Kilépés teljes képernyőről' : 'Teljes képernyő'}
+            >
+              {isFullscreen ? '⤡' : '⤢'}
+            </button>
+            <button
+              type="button"
+              className="icon-square-btn"
+              onClick={() => setView('valaszto')}
+              title="Modulok"
+              aria-label="Modulok"
+            >
+              ☰
             </button>
           </div>
         </header>
@@ -833,10 +881,10 @@ function App() {
                 </section>
 
                 <section className="controls">
-                  <button type="button" className="ghost-btn" onClick={movePrev} disabled={index === 0}>Vissza</button>
+                  <button type="button" className="ghost-btn" onClick={movePrev} disabled={index === 0} title="Vissza" aria-label="Vissza">←</button>
                   <button type="button" className="danger-btn" onClick={() => markCard('unknown')}>Nem tudom (Q)</button>
                   <button type="button" className="success-btn" onClick={() => markCard('known')}>Tudom (E)</button>
-                  <button type="button" className="ghost-btn" onClick={moveNext}>Tovább</button>
+                  <button type="button" className="ghost-btn" onClick={moveNext} title="Tovább" aria-label="Tovább">→</button>
                 </section>
               </>
             )}
@@ -932,8 +980,14 @@ function App() {
         <section className="session-card">
           <header className="session-header">
             <h2>Munkamenet listák</h2>
-            <button type="button" className="ghost-btn" onClick={() => setIsSessionPanelOpen((prev) => !prev)}>
-              {isSessionPanelOpen ? 'Listák összecsukása' : 'Listák lenyitása'}
+            <button
+              type="button"
+              className="ghost-btn"
+              onClick={() => setIsSessionPanelOpen((prev) => !prev)}
+              title={isSessionPanelOpen ? 'Listák összecsukása' : 'Listák lenyitása'}
+              aria-label={isSessionPanelOpen ? 'Listák összecsukása' : 'Listák lenyitása'}
+            >
+              {isSessionPanelOpen ? '▴' : '▾'}
             </button>
           </header>
 
@@ -967,7 +1021,7 @@ function App() {
   }
 
   return (
-    <div className={`layout-shell ${isSidebarHidden ? 'sidebar-hidden' : ''}`}>
+    <div className={`layout-shell ${isSidebarHidden ? 'sidebar-hidden' : ''} ${isFullscreen ? 'fullscreen-active' : ''}`}>
       <aside className="sidebar">
         <div>
           <p className="brand-title">GR Kvíz</p>
