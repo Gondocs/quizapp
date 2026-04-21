@@ -1,0 +1,614 @@
+[
+  {
+    "id": "flashcard-1",
+    "title": "Szabályozástechnika",
+    "description": "Igaz/Hamis állítások",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Egy rendszer leírására több állapottér-modell is alkalmas.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-2",
+        "front": "Egy rendszer leírására csak egy konkrét állapottér-modell írható fel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-3",
+        "front": "Egy rendszer leírására több átviteli függvény is alkalmas.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-4",
+        "front": "Egy rendszer leírására csak egy konkrét átviteli függvény írható fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-5",
+        "front": "Egy rendszer leírására több impulzusválasz is alkalmas.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-6",
+        "front": "Egy rendszer leírására csak egy konkrét impulzusválasz írható fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-7",
+        "front": "Az állapottranszformáció a rendszer bemenet-kimenet kapcsolatát nem változtatja meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-8",
+        "front": "Az állapottranszformáció a rendszer bemenet-kimenet kapcsolatát megváltoztatja.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-9",
+        "front": "Az impulzusválasz invariáns az állapottranszformációra.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-10",
+        "front": "Az átviteli függvény invariáns az állapottranszformációra.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-11",
+        "front": "Az impulzusválasz invariáns az állapottranszformációra, de az átviteli függvény nem.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-12",
+        "front": "Az átviteli függvény invariáns az állapottranszformációra, de az impulzusválasz nem.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-13",
+        "front": "SISO-rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy skalár.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-14",
+        "front": "MIMO-rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy skalár.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-15",
+        "front": "SISO-rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy vektor.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-16",
+        "front": "MIMO-rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy vektor.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-17",
+        "front": "SISO-rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy mátrix.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-18",
+        "front": "MIMO-rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy mátrix.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-19",
+        "front": "Egy bemenetű és egy kimenetű rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel egy skalár.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-20",
+        "front": "Egy bemenetű és egy kimenetű rendszer esetén az állapot-visszacsatolás eredményeképp létrejövő irányítójel vektor.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-21",
+        "front": "Pólusáthelyezéssel sokkal egyszerűbb a nem stabil rendszer stabilizálása, mint a PID-szabályozókkal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-22",
+        "front": "Pólusáthelyezéssel a rendszer felgyorsítása egyszerűbben elvégezhető, mint a PID-szabályozókkal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-23",
+        "front": "Állapot-visszacsatolással közvetlenül a zárt rendszer dinamikáját tudjuk meghatározni.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-24",
+        "front": "Állapot-visszacsatolással a rendszer dinamikájára nincs hatásunk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-25",
+        "front": "Ha egy rendszer irányítható, akkor a pólusáthelyezés alkalmazható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-26",
+        "front": "A pólusáthelyezés alkalmazhatóságának feltétele, hogy a rendszer irányítható legyen.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-27",
+        "front": "Ha egy rendszer megfigyelhető, akkor a pólusáthelyezés alkalmazható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-28",
+        "front": "A pólusáthelyezés alkalmazhatóságának feltétele, hogy a rendszer megfigyelhető legyen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-29",
+        "front": "A pólusáthelyezés alkalmazhatóságának feltétele, hogy a rendszer stabil legyen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-30",
+        "front": "A pólusáthelyezés könnyen megoldható, ha a rendszer irányíthatósági alakja rendelkezésre áll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-31",
+        "front": "Az irányíthatósági alak közvetlenül felírható az átviteli függvényből.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-32",
+        "front": "Az irányíthatósági alak közvetlenül felírható az állapotváltozós leírásból.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-33",
+        "front": "A megfigyelhetőségi alak közvetlenül felírható az átviteli függvényből.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-34",
+        "front": "A megfigyelhetőségi alak közvetlenül felírható az állapotváltozós leírásból.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-35",
+        "front": "A Bass-Gura-módszer használja az irányíthatósági mátrix inverzét.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-36",
+        "front": "Az Ackermann-képlet használja az irányíthatósági mátrix inverzét.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-37",
+        "front": "A Bass-Gura-módszer nem használja az irányíthatósági mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-38",
+        "front": "Az Ackermann-képlet nem használja az irányíthatósági mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-39",
+        "front": "A Bass-Gura-algoritmust célszerű alkalmazni a pólusáthelyezésben, mert az nem használja fel az irányíthatósági mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-40",
+        "front": "Az Ackermann-képletet célszerű alkalmazni a pólusáthelyezésben, mert az nem használja fel az irányíthatósági mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-41",
+        "front": "A pólusáthelyezés helyben hagyja a zérusokat.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-42",
+        "front": "A pólusáthelyezés nem csak a pólusokat változtatja meg, hanem a zérusokat is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-43",
+        "front": "A pólusáthelyezés helyben hagyja a pólusokat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-44",
+        "front": "A pólusáthelyezés célja a sajátértékek megfelelő helyre való átmozdítása.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-45",
+        "front": "Az állapot-visszacsatolás célja a pólusok megfelelő helyre való átmozdítása.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-46",
+        "front": "A pólusáthelyezés módosítja a sajátértékeket, de a zérusokat nem.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-47",
+        "front": "A pólusáthelyezés módosítja a sajátértékeket és a zérusokat is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-48",
+        "front": "A fizikailag is létező állapot szenzorral mérhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-49",
+        "front": "A fizikailag nem létező állapot szenzorral mérhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-50",
+        "front": "Állapotmegfigyelő segítségével az állapotváltozó becsülhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-51",
+        "front": "Állapotmegfigyelő segítségével az állapotváltozó módosítható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-52",
+        "front": "Az állapotmegfigyelő tartalmazza a rendszer modelljét.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-53",
+        "front": "Az állapotmegfigyelő a rendszer modelljét nem tartalmazza.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-54",
+        "front": "Az állapotmegfigyelő hasonló módszerekkel tervezhető, mint a pólusáthelyezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-55",
+        "front": "Az állapotmegfigyelő tervezésére más módszereket dolgoztak ki, mint a pólusáthelyezés megvalósítására.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-56",
+        "front": "Az állapotmegfigyelő hasonló módszerekkel tervezhető, mint a PID-szabályozók.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-57",
+        "front": "Ha egy rendszer irányítható, akkor állapotmegfigyelő is beiktatható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-58",
+        "front": "Megfigyelő alkalmazhatóságának feltétele, hogy a rendszer megfigyelhető legyen.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-59",
+        "front": "Megfigyelő alkalmazhatóságának feltétele, hogy a rendszer stabil legyen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-60",
+        "front": "A megfigyelő tervezése könnyen megoldható, ha a rendszer megfigyelhetőségi alakja rendelkezésre áll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-61",
+        "front": "Megfigyelőtervezéskor a Bass-Gura-módszer használja a megfigyelhetőségi mátrix inverzét.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-62",
+        "front": "Megfigyelőtervezéskor az Ackermann-képlet használja a megfigyelhetőségi mátrix inverzét.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-63",
+        "front": "Megfigyelőtervezéskor a Bass-Gura-módszer nem használja a megfigyelhetőségi mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-64",
+        "front": "Megfigyelőtervezéskor az Ackermann-képlet nem használja a megfigyelhetőségi mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-65",
+        "front": "A Bass-Gura-algoritmust célszerű alkalmazni a megfigyelőtervezésben, mert az nem használja fel a megfigyelhetőségi mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-66",
+        "front": "Az Ackermann-képletet célszerű alkalmazni a megfigyelőtervezésben, mert az nem használja fel a megfigyelhetőségi mátrix inverzét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-67",
+        "front": "A szeparációs elv értelmében a pólusáthelyezés és a megfigyelő tervezése függetlenül elvégezhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-68",
+        "front": "A pólusáthelyezés és a megfigyelő tervezése egymástól függetlenül nem végezhető el.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-69",
+        "front": "Állapotvisszacsatolást alkalmazó szabályozási körben az alapjel előrecsatolással vehető figyelembe.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-70",
+        "front": "MIMO rendszerek állapotvisszacsatoláson alapuló irányítása az Ackermann-képlettel tervezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-71",
+        "front": "MIMO rendszerek állapotvisszacsatoláson alapuló irányítása a Bass-Gura-képlettel tervezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-72",
+        "front": "SISO rendszerek állapotvisszacsatoláson alapuló irányítása az Ackermann-képlettel tervezhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-73",
+        "front": "SISO rendszerek állapotvisszacsatoláson alapuló irányítása a Bass-Gura-képlettel tervezhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-74",
+        "front": "MIMO rendszernek több bemenete és több kimenete van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-75",
+        "front": "MIMO rendszernek több bemenete és egy kimenete van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-76",
+        "front": "MIMO rendszernek egy bemenete és több kimenete van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-77",
+        "front": "MIMO rendszernek egy bemenete és egy kimenete van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-78",
+        "front": "SISO rendszernek több bemenete és több kimenete van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-79",
+        "front": "SISO rendszernek több bemenete és egy kimenete van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-80",
+        "front": "SISO rendszernek egy bemenete és több kimenete van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-81",
+        "front": "SISO rendszernek egy bemenete és egy kimenete van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-82",
+        "front": "SISO rendszer állapotvisszacsatolásában egy kT sorvektor szerepel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-83",
+        "front": "MIMO rendszer állapotvisszacsatolásában egy kT sorvektor szerepel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-84",
+        "front": "SISO rendszer állapotvisszacsatolásában egy K mátrix szerepel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-85",
+        "front": "MIMO rendszer állapotvisszacsatolásában egy K mátrix szerepel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-86",
+        "front": "SISO rendszer állapotvisszacsatoláson alapuló irányítása során az irányítójel skalár.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-87",
+        "front": "MIMO rendszer állapotvisszacsatoláson alapuló irányítása során az irányítójel skalár.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-88",
+        "front": "SISO rendszer állapotvisszacsatoláson alapuló irányítása során az irányítójel vektor.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-89",
+        "front": "MIMO rendszer állapotvisszacsatoláson alapuló irányítása során az irányítójel vektor.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-90",
+        "front": "SISO rendszer állapotvisszacsatoláson alapuló irányítása során az irányítójel u=-kTx.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-91",
+        "front": "MIMO rendszer állapotvisszacsatoláson alapuló irányítása során az irányítójel u=-Kx.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-92",
+        "front": "MIMO rendszer állapotvisszacsatoláson alapuló irányítása során az Ackermann-féle normálalakot használjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-93",
+        "front": "MIMO rendszer állapotvisszacsatoláson alapuló irányítása során az Luenberger-féle normálalakot használjuk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-94",
+        "front": "Az irányíthatóság megállapításához az irányíthatósági mátrix rangját használjuk fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-95",
+        "front": "A rendszer irányítható, ha az irányíthatósági mátrix rangja megegyezik az állapotváltozók számával.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-96",
+        "front": "A rendszer irányítható, ha az irányíthatósági mátrix rangja kisebb az állapotváltozók számánál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-97",
+        "front": "A rendszer irányítható, ha az irányíthatósági mátrix rangja nagyobb az állapotváltozók számánál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-98",
+        "front": "A rendszer irányítható, ha az irányíthatósági mátrix rangja megegyezik a bemenetek számával.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-99",
+        "front": "A rendszer irányítható, ha az irányíthatósági mátrix rangja nagyobb a bemenetek számánál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-100",
+        "front": "A rendszer irányítható, ha az irányíthatósági mátrix rangja kisebb a bemenetek számával.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-101",
+        "front": "A rendszer irányítható, ha a rendszer bemeneteinek és kimeneteinek a száma megegyezik.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-102",
+        "front": "A rendszer irányítható, ha a rendszer bemeneteinek a száma és az állapotváltozók száma megegyezik.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-103",
+        "front": "A rendszer irányítható, ha a rendszer kimeneteinek a száma és az állapotváltozók száma megegyezik.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-104",
+        "front": "A megfigyelhetőség megállapításához a megfigyelhetőségi mátrix rangját használjuk fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-105",
+        "front": "A rendszer megfigyelhető, ha a megfigyelhetőségi mátrix rangja megegyezik az állapotváltozók számával.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-106",
+        "front": "A rendszer megfigyelhető, ha a megfigyelhetőségi mátrix rangja kisebb az állapotváltozók számánál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-107",
+        "front": "A rendszer megfigyelhető, ha a megfigyelhetőségi mátrix rangja nagyobb az állapotváltozók számánál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-108",
+        "front": "A rendszer megfigyelhető, ha a megfigyelhetőségi mátrix rangja megegyezik a bemenetek számával.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-109",
+        "front": "A rendszer megfigyelhető, ha a megfigyelhetőségi mátrix rangja nagyobb a bemenetek számánál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-110",
+        "front": "A rendszer megfigyelhető, ha a megfigyelhetőségi mátrix rangja kisebb a bemenetek számával.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-111",
+        "front": "A rendszer megfigyelhető, ha a rendszer bemeneteinek és kimeneteinek a száma megegyezik.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-112",
+        "front": "A rendszer megfigyelhető, ha a rendszer bemeneteinek a száma és az állapotváltozók száma megegyezik.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-113",
+        "front": "A rendszer megfigyelhető, ha a rendszer kimeneteinek a száma és az állapotváltozók száma megegyezik.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-114",
+        "front": "MIMO pólusáthelyezésnél a zárt rendszer kívánt pólusait írjuk elő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-115",
+        "front": "MIMO pólusáthelyezésnél a zárt rendszer kívánt sajátértékeit írjuk elő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-116",
+        "front": "Pólusáthelyezésnél, folytonos idejű rendszer esetén, célszerű a sajátértékeket a komplex számsík bal oldalára tervezni.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-117",
+        "front": "Pólusáthelyezésnél, folytonos idejű rendszer esetén, célszerű a sajátértékeket a komplex számsík jobb oldalára tervezni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-118",
+        "front": "SISO rendszer állapotvisszacsatolással történő szabályozásának tervezésekor a visszacsatoló vektor meghatározása egyértelmű.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-119",
+        "front": "MIMO rendszer állapotvisszacsatolással történő szabályozásának tervezésekor a visszacsatoló mátrix meghatározása egyértelmű.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-120",
+        "front": "SISO rendszer állapotvisszacsatolással történő szabályozásának tervezésekor a visszacsatoló vektor meghatározása nem egyértelmű.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-121",
+        "front": "MIMO rendszer állapotvisszacsatolással történő szabályozásának tervezésekor a visszacsatoló mátrix meghatározása nem egyértelmű.",
+        "back": "Igaz"
+      }
+    ]
+  }
+]

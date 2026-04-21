@@ -1,0 +1,414 @@
+[
+  {
+    "id": "flashcard-1",
+    "title": "Szabályozástechnika",
+    "description": "Igaz/hamis állítások",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "A rendszer identifikációja alatt a rendszer modelljének meghatározását értjük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-2",
+        "front": "A rendszer identifikációja során a rendszermodell paramétereit határozzuk meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-3",
+        "front": "A folyamatidentifikáció során a rendszermodell paramétereit határozzuk meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-4",
+        "front": "A folyamatidentifikáció során a bemenő- és a hozzátartozó kimenő jeleket használjuk fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-5",
+        "front": "A rendszeranalízis alatt a rendszer modelljének meghatározását értjük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-6",
+        "front": "A rendszer szintézise során a rendszermodell paramétereit határozzuk meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-7",
+        "front": "A folyamatidentifikáció során a rendszer válaszjelét számítjuk ki a bemenet ismeretében.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-8",
+        "front": "A rendszeridentifikáció során a valóságos folyamat egy modelljét azonosítjuk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-9",
+        "front": "A rendszer identifikációja során a rendszeren végzett méréseket használjuk fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-10",
+        "front": "A rendszer szintézise során a rendszeren végzett bemeneti-kimeneti méréseket használjuk fel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-11",
+        "front": "A rendszer analízise során a rendszeren végzett bemeneti-kimeneti méréseket használjuk fel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-12",
+        "front": "Folyamatidentifikáció során az  hibajelet minimalizáljuk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-13",
+        "front": "Folyamatszintézis során az  hibajelet minimalizáljuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-14",
+        "front": "Folyamatanalízis során az  hibajelet minimalizáljuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-15",
+        "front": "A legkisebb négyzetek módszere a mérési hibák legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-16",
+        "front": "A legkisebb négyzetek módszere a mérési hibák négyzetének a legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-17",
+        "front": "A legkisebb négyzetek módszere a mérési hibák abszolút értékének a legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-18",
+        "front": "A legkisebb négyzetek módszere az identifikáció hibájának legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-19",
+        "front": "A legkisebb négyzetek módszere a négyzetes hibát minimalizálja.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-20",
+        "front": "A legkisebb négyzetek módszerével a négyzetes hibát minimalizáljuk és így határozzuk meg a modell paramétereit.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-21",
+        "front": "A legkisebb négyzetek módszerével a négyzetes hibát minimalizáljuk és így határozzuk meg a rendszer kimenőjelét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-22",
+        "front": "Az LS-becslés a mérési hibák legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-23",
+        "front": "Az LS-becslés a mérési hibák négyzetének a legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-24",
+        "front": "Az LS-becslés az identifikáció hibájának legkisebb értékét határozza meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-25",
+        "front": "Az LS-becslés a négyzetes hibát minimalizálja.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-26",
+        "front": "Az LS-becslés a négyzetes hibát minimalizáljuk és így határozzuk meg a modell paramétereit.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-27",
+        "front": "Az LS-becsléssel a négyzetes hibát minimalizáljuk és így határozzuk meg a rendszer kimenőjelét.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-28",
+        "front": "Az off-line paraméterbecslést másnéven batch módszernek is hívja a szakirodalom.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-29",
+        "front": "Az online paraméterbecslést másnéven batch módszernek is hívja a szakirodalom.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-30",
+        "front": "Az online paraméterbecslést másnéven rekurzív módszernek is hívja a szakirodalom.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-31",
+        "front": "Az off-line paraméterbecsléshez a mérési adatokat előre be kell gyűjteni.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-32",
+        "front": "Az online paraméterbecsléshez a mérési adatokat előre be kell gyűjteni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-33",
+        "front": "Az off-line paraméterbecsléshez a mérési adatok valós időben érkeznek.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-34",
+        "front": "Az online paraméterbecsléshez a mérési adatok valós időben érkeznek.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-35",
+        "front": "A paraméterbecslés normálegyenletének levezetése során a négyzetes hibát a paraméterek szerint deriváljuk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-36",
+        "front": "A paraméterbecslés normálegyenletének levezetése során a négyzetes hibát egyszerűen egyenlővé tesszük nullával.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-37",
+        "front": "A paraméterbecslés normálegyenletének levezetése során a négyzetes hiba minimumát keressük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-38",
+        "front": "A paraméterbecslés normálegyenletének levezetése során a négyzetes hiba maximumát keressük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-39",
+        "front": "A kvadratikus hibának egy minimumhelye van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-40",
+        "front": "A kvadratikus hibának sajnos több lokális minimumhelye is van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-41",
+        "front": "A batch identifikációs módszer nagy előnye, hogy rekurzíve futtatható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-42",
+        "front": "Az online paraméterbecslés módszerének nagy előnye, hogy rekurzíve futtatható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-43",
+        "front": "A determinisztikus jel sok esetben megadható képlet formájában.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-44",
+        "front": "A sztochasztikus jel sok esetben megadható képlet formájában.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-45",
+        "front": "Az egységugrásjel abszolút integrálható függvény.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-46",
+        "front": "A Dirac-impulzus abszolút integrálható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-47",
+        "front": "Az egységugrásjel a t=0 időpillanatban szakadással rendelkezik.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-48",
+        "front": "Az egységugrásjel általánosított deriváltja a Dirac-féle deltafüggvény.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-49",
+        "front": "A Dirac-impulzus általánosított deriváltja az egységugrásjel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-50",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-51",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-52",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-53",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-54",
+        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-55",
+        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-56",
+        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-57",
+        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-58",
+        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-59",
+        "front": "Kauzális rendszer impulzusválasza és ugrásválasza belépő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-60",
+        "front": "Fizikailag létező rendszer impulzusválasza és ugrásválasza belépő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-61",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválasza abszolút integrálható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-62",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválasza stacionárius állapotban a nullához tart.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-63",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválasza stacionárius állapotban nullától különböző konstans értékhez tart.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-64",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték valós része negatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-65",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték képzetes része negatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-66",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték valós része pozitív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-67",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték valós része 1-nél kisebb.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-68",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték abszolút értéke 1-nél kisebb.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-69",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték a komplex számsík bal oldali félsíkján helyezkedik el.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-70",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték a komplex számsík jobb oldali félsíkján helyezkedik el.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-71",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő  sajátértékek között van olyan, amelyik a komplex számsík bal oldali félsíkján helyezkedik el, és van olyan, amelyik a komplex számsík jobb oldali félsíkján.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-72",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha állapotvektora az origóba tart.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-73",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértékének a valós része negatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-74",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértékének a képzetes része negatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-75",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértékének a valós része pozitív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-76",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértékének a valós része 1-nél kisebb.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-77",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértékének az abszolút értéke 1-nél kisebb.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-78",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértéke a komplex számsík bal oldali félsíkján helyezkedik el.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-79",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer aszimptotikusan stabil, ha a rendszermátrix valamennyi sajátértéke a komplex számsík jobb oldali félsíkján helyezkedik el.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-80",
+        "front": "Ha egy lineáris rendszer bemenetére  körfrekvenciájú szinuszos jelet kapcsolunk, akkor a válaszjel is szinuszos, melynek körfrekvenciája szintén .",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-81",
+        "front": "Ha egy nemlineáris rendszer bemenetére  körfrekvenciájú szinuszos jelet kapcsolunk, akkor a válaszjel is szinuszos, melynek körfrekvenciája szintén .",
+        "back": "Hamis"
+      }
+    ]
+  }
+]

@@ -1,0 +1,414 @@
+[
+  {
+    "id": "flashcard-10",
+    "title": "Szabályozástechnika",
+    "description": "Szókitöltős fogalmak – 10. kérdés",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Valamely folyamatról méréssel szerzett információ a(z) ……………..",
+        "back": "JEL"
+      },
+      {
+        "id": "card-2",
+        "front": "Az  jelet ……………….. idejű jelnek nevezzük, ahol .",
+        "back": "FOLYTONOS"
+      },
+      {
+        "id": "card-3",
+        "front": "Az  jelet ……………….. idejű jelnek nevezzük, ahol .",
+        "back": "DISZKRÉT"
+      },
+      {
+        "id": "card-4",
+        "front": "A folytonos idejű jelet más néven ……………….. jelnek nevezzük.",
+        "back": "ANALÓG"
+      },
+      {
+        "id": "card-5",
+        "front": "Folytonos idejű jelből diszkrét idejű jelet …………………. segítségével nyerhetünk.",
+        "back": "MINTAVÉTEL, MINTAVÉTELEZÉS"
+      },
+      {
+        "id": "card-6",
+        "front": "……………………………. jel esetében a jel mérésére tett minden kísérlet ugyanarra az eredményre vezet.",
+        "back": "DETERMINISZTIKUS"
+      },
+      {
+        "id": "card-7",
+        "front": "……………………………. jel esetében a jel mérésére tett minden kísérlet más és más eredményre vezet.",
+        "back": "SZTOCHASZTIKUS"
+      },
+      {
+        "id": "card-8",
+        "front": "……………………………. jel sok esetben megadható képlet formájában.",
+        "back": "DETERMINISZTIKUS"
+      },
+      {
+        "id": "card-9",
+        "front": "A következő összefüggéssel definiált jel a(z) ……………………. jel:",
+        "back": "EGYSÉGUGRÁS"
+      },
+      {
+        "id": "card-10",
+        "front": "A Heaviside-függvényt más néven ………….. jelnek nevezzük.",
+        "back": "EGYSÉGUGRÁS"
+      },
+      {
+        "id": "card-11",
+        "front": "Az egységugrásjel  helyen felvett értéke (számjeggyel írva): ………",
+        "back": "0"
+      },
+      {
+        "id": "card-12",
+        "front": "Az egységugrásjel  helyen felvett értéke (számjeggyel írva): ………",
+        "back": "1"
+      },
+      {
+        "id": "card-13",
+        "front": "Az egységnyi intenzitású impulzus határesete (amikor annak szélessége nullához tart) a(z) ……………. deltafüggvény.",
+        "back": "DIRAC"
+      },
+      {
+        "id": "card-14",
+        "front": "Az  alakú függvényt ………… jelnek nevezzük, ahol  tetszőleges időfüggvényt jelent.",
+        "back": "BELÉPŐ"
+      },
+      {
+        "id": "card-15",
+        "front": "Periodikus jelek esetében igaz, hogy , ahol T az ún. ……………….idő.",
+        "back": "PERIÓDUS"
+      },
+      {
+        "id": "card-16",
+        "front": "A tranziens összetevő  összefüggésében szereplő  változó neve: ……………..",
+        "back": "SAJÁTÉRTÉK"
+      },
+      {
+        "id": "card-17",
+        "front": "A tranziens összetevő  összefüggésében szereplő  változó neve: ……………..",
+        "back": "IDŐÁLLANDÓ"
+      },
+      {
+        "id": "card-18",
+        "front": "A sajátérték negatív reciproka a(z) ……………",
+        "back": "IDŐÁLLANDÓ"
+      },
+      {
+        "id": "card-19",
+        "front": "Az időállandó negatív reciproka a(z) ……………",
+        "back": "SAJÁTÉRTÉK"
+      },
+      {
+        "id": "card-20",
+        "front": "A(z) ………… egy valóságos objektum egy egyszerűsített leírása, modellje.",
+        "back": "RENDSZER"
+      },
+      {
+        "id": "card-21",
+        "front": "A(z) …………. egy transzformáció, ami a gerjesztéshez választ rendel.",
+        "back": "RENDSZER"
+      },
+      {
+        "id": "card-22",
+        "front": "A(z) …………. egy transzformáció, ami a bemenethez kimenetet rendel.",
+        "back": "RENDSZER"
+      },
+      {
+        "id": "card-23",
+        "front": "A rendszer …………… során a gerjesztés és a rendszer valamely leírása ismeretében határozzuk meg a választ.",
+        "back": "ANALÍZIS"
+      },
+      {
+        "id": "card-24",
+        "front": "A rendszeren végzett mérések alapján a rendszer modelljét a rendszer ……………. segítségével lehet meghatározni.",
+        "back": "IDENTIFIKÁCIÓ"
+      },
+      {
+        "id": "card-25",
+        "front": "A rendszer ……………. során ismert a rendszer leírása és a rendszer kimenete, s ezek birtokában határozzuk meg a rendszer bemenetét.",
+        "back": "SZINTÉZIS"
+      },
+      {
+        "id": "card-26",
+        "front": "Lineáris rendszer esetén érvényes a(z) ………………………. elve.",
+        "back": "SZUPERPOZÍCIÓ"
+      },
+      {
+        "id": "card-27",
+        "front": "……………. rendszer esetén igaz, hogy, amennyiben a rendszer az  gerjesztésre  válasszal felel, illetve az  gerjesztésre  válasszal, akkor a  gerjesztésre a válasz .",
+        "back": "LINEÁRIS"
+      },
+      {
+        "id": "card-28",
+        "front": "A(z) ……………. elve szerint, ha egy lineáris rendszer az  gerjesztésre  válasszal felel, illetve az  gerjesztésre  válasszal, akkor a  gerjesztésre a válasz .",
+        "back": "SZUPERPOZÍCIÓ"
+      },
+      {
+        "id": "card-29",
+        "front": "……………….. rendszer esetén a gerjesztés időbeli eltolása a válaszban ugyanekkora eltolást eredményez.",
+        "back": "INVARIÁNS"
+      },
+      {
+        "id": "card-30",
+        "front": "Fizikai, megvalósítható rendszer mindig ………………..",
+        "back": "KAUZÁLIS"
+      },
+      {
+        "id": "card-31",
+        "front": "Ha a rendszer korlátos gerjesztésre korlátos válasszal felel, akkor a rendszer …………….",
+        "back": "STABIL"
+      },
+      {
+        "id": "card-32",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer ………………… stabil, ha állapotvektora az origóba tart.",
+        "back": "ASZIMPTOTIKUS"
+      },
+      {
+        "id": "card-33",
+        "front": "A lineáris, invariáns és kauzális rendszer egységugrásjelre adott válasza az ún. ………………….válasz.",
+        "back": "UGRÁS"
+      },
+      {
+        "id": "card-34",
+        "front": "A lineáris, invariáns és kauzális rendszer Dirac-delta jelre adott válasza az ún. ………………….válasz.",
+        "back": "IMPULZUS"
+      },
+      {
+        "id": "card-35",
+        "front": "A lineáris, invariáns és kauzális rendszer tetszőleges bemenőjelre adott válasza az impulzusválasz ismeretében a(z) ………………….. segítségével számítható.",
+        "back": "KONVOLÚCIÓ, vagy SÚLYFÜGGVÉNY-TÉTEL, vagy SÚLYFÜGGVÉNY TÉTEL"
+      },
+      {
+        "id": "card-36",
+        "front": "Az  kifejezés neve: ……………………..",
+        "back": "KONVOLÚCIÓ, vagy SÚLYFÜGGVÉNY-TÉTEL, vagy SÚLYFÜGGVÉNY TÉTEL"
+      },
+      {
+        "id": "card-37",
+        "front": "A(z) ………….. n számú elsőrendű differenciálegyenletből áll.",
+        "back": "ÁLLAPOTVÁLTOZÓS LEÍRÁS vagy ÁLLAPOTEGYENLET"
+      },
+      {
+        "id": "card-38",
+        "front": "A nemlineáris rendszermodell bizonyos feltételek mellett az ún. ………………….. módszerével lineáris modellé alakítható.",
+        "back": "MUNKAPONTI LINEARIZÁLÁS"
+      },
+      {
+        "id": "card-39",
+        "front": "A(z) …………………… a szinuszos jel csúcsértékét és kezdőfázisát tartalmazza Euler-alakban.",
+        "back": "KOMPLEX CSÚCS"
+      },
+      {
+        "id": "card-40",
+        "front": "Szinuszos jelek kényelmes leírására alkalmas a(z) ………………….",
+        "back": "KOMPLEX CSÚCS"
+      },
+      {
+        "id": "card-41",
+        "front": "Szinuszos gerjesztő jel esetén a lineáris rendszer szinuszos kimenőjelének amplitúdója és fázisa eltérhet a bemenőjel amplitúdójától és fázisától. Ezt a kapcsolatot írja a(z) ……………………",
+        "back": "ÁTVITELI KARAKTERISZTIKA"
+      },
+      {
+        "id": "card-42",
+        "front": "A(z) ……………….. olyan rendszerjellemző függvény, amely szinuszos gerjesztést feltételezve jellemzi a lineáris rendszert.",
+        "back": "ÁTVITELI KARAKTERISZTIKA"
+      },
+      {
+        "id": "card-43",
+        "front": "A(z) ………………… minden körfrekvencián megadja a szinuszos kimenőjel és a szinuszos gerjesztő jel közötti kapcsolatot.",
+        "back": "ÁTVITELI KARAKTERISZTIKA"
+      },
+      {
+        "id": "card-44",
+        "front": "A(z) ………………… a szinuszos válaszjel komplex csúcsértékének és a szinuszos gerjesztő jel komplex csúcsértékének a hányadosa.",
+        "back": "ÁTVITELI KARAKTERISZTIKA"
+      },
+      {
+        "id": "card-45",
+        "front": "Az átviteli karakterisztika abszolút értéke a(z) …………….",
+        "back": "AMPLITÚDÓKARAKTERISZTIKA"
+      },
+      {
+        "id": "card-46",
+        "front": "Az átviteli karakterisztika fázisa a(z) …………….",
+        "back": "FÁZISKARAKTERISZTIKA"
+      },
+      {
+        "id": "card-47",
+        "front": "A(z) ……………………. azt adja meg, hogy szinuszos bemeneti jel esetén a rendszer milyen mértékben változtatja meg a bemenőjel amplitúdóját.",
+        "back": "AMPLITÚDÓKARAKTERISZTIKA"
+      },
+      {
+        "id": "card-48",
+        "front": "A(z) ……………………. azt adja meg, hogy szinuszos bemeneti jel esetén a rendszer milyen mértékben változtatja meg a bemenőjel csúcsértékét.",
+        "back": "AMPLITÚDÓKARAKTERISZTIKA"
+      },
+      {
+        "id": "card-49",
+        "front": "A(z) ……………………. azt adja meg, hogy szinuszos bemeneti jel esetén a rendszer milyen mértékben változtatja meg a bemenőjel kezdőfázisát.",
+        "back": "FÁZISKARAKTERISZTIKA"
+      },
+      {
+        "id": "card-50",
+        "front": "Szinuszos jelek esetén célszerű a komplex csúcsértékek (effektív értékek) alkalmazása. Az  összefüggésben szereplő  az ún. ……………………..",
+        "back": "ÁTVITELI KARAKTERISZTIKA"
+      },
+      {
+        "id": "card-51",
+        "front": "A(z) ……………-diagram az átviteli karakterisztikát a komplex számsíkon ábrázolja.",
+        "back": "NYQUIST"
+      },
+      {
+        "id": "card-52",
+        "front": "A(z) ……………-diagram az átviteli karakterisztikát, mint a  komplex vektor végpontját, körfrekvenciáról körfrekvenciára haladva ábrázolja a komplex számsíkon.",
+        "back": "NYQUIST"
+      },
+      {
+        "id": "card-53",
+        "front": "A(z) ……………-diagram az átviteli karakterisztikát két diagramon ábrázolja: külön az amplitúdókarakterisztikát és külön a fáziskarakterisztikát.",
+        "back": "BODE"
+      },
+      {
+        "id": "card-54",
+        "front": "A Nyquist-görbe a ……………. tengelyre szimmetrikus.",
+        "back": "VÍZSZINTES vagy REÁLIS vagy VALÓS"
+      },
+      {
+        "id": "card-55",
+        "front": "A Laplace-transzformáció  változója a(z) …………………. frekvencia.",
+        "back": "KOMPLEX"
+      },
+      {
+        "id": "card-56",
+        "front": "Az  összefüggésben szereplő  a(z) ……………………..",
+        "back": "ÁTVITELI FÜGGVÉNY"
+      },
+      {
+        "id": "card-57",
+        "front": "A(z) ……………… a kimenőjel Laplace-transzformáltjának és a bemenőjel Laplace-transzformáltjának a hányadosa.",
+        "back": "ÁTVITELI FÜGGVÉNY"
+      },
+      {
+        "id": "card-58",
+        "front": "Az átviteli függvény számlálója polinomjának gyökei a(z) …………….",
+        "back": "ZÉRUS"
+      },
+      {
+        "id": "card-59",
+        "front": "Az átviteli függvény nevezője polinomjának gyökei a(z) …………….",
+        "back": "PÓLUS"
+      },
+      {
+        "id": "card-60",
+        "front": "A(z) ………………. egy folyamatba való beavatkozás valamely cél elérése érdekében.",
+        "back": "IRÁNYÍTÁS"
+      },
+      {
+        "id": "card-61",
+        "front": "A(z) ……………….. nyílt láncú irányítás.",
+        "back": "VEZÉRLÉS"
+      },
+      {
+        "id": "card-62",
+        "front": "A vezérlés …………………. láncú irányítás.",
+        "back": "NYÍLT"
+      },
+      {
+        "id": "card-63",
+        "front": "A(z) ……………….. zárt láncú irányítás.",
+        "back": "SZABÁLYOZÁS"
+      },
+      {
+        "id": "card-64",
+        "front": "A szabályozás …………………. láncú irányítás.",
+        "back": "ZÁRT"
+      },
+      {
+        "id": "card-65",
+        "front": "A szabályozás ……………… visszacsatolást tartalmaz.",
+        "back": "NEGATÍV"
+      },
+      {
+        "id": "card-66",
+        "front": "A szabályozott folyamat kimenőjele a(z) ………….. jellemző.",
+        "back": "SZABÁLYOZOTT"
+      },
+      {
+        "id": "card-67",
+        "front": "Szabályozás esetén a folyamat kimenőjelét, más néven a(z) ………….. jellemzőt csatoljuk vissza.",
+        "back": "SZABÁLYOZOTT"
+      },
+      {
+        "id": "card-68",
+        "front": "A szabályozás célját a(z) …………………. jel fogalmazza meg.",
+        "back": "ALAP, vagy REFERENCIA"
+      },
+      {
+        "id": "card-69",
+        "front": "A szabályozott jellemzőt a(z) ………………… méri.",
+        "back": "SZENZOR, vagy ÉRZÉKELŐ"
+      },
+      {
+        "id": "card-70",
+        "front": "A szabályozott folyamat bemenetén általában egy teljesítményelektronikai berendezés, az ún. …………….. található.",
+        "back": "BEAVATKOZÓ, AKTUÁTOR"
+      },
+      {
+        "id": "card-71",
+        "front": "A beavatkozó szerv másik neve: …………………….. .",
+        "back": "AKTUÁTOR"
+      },
+      {
+        "id": "card-72",
+        "front": "Az alapjel és az ellenőrző jel különbsége a(z) ………………… .",
+        "back": "HIBAJEL"
+      },
+      {
+        "id": "card-73",
+        "front": "A szabályozó bemenőjele a(z) ………………… .",
+        "back": "HIBAJEL"
+      },
+      {
+        "id": "card-74",
+        "front": "A szabályozó kimenőjele a(z) ………………… .",
+        "back": "BEAVATKOZÓ JEL"
+      },
+      {
+        "id": "card-75",
+        "front": "A folyamat bemenőjele a(z) ………………… .",
+        "back": "BEAVATKOZÓ JEL"
+      },
+      {
+        "id": "card-76",
+        "front": "A folyamat kimenőjele a(z) ………………… .",
+        "back": "SZABÁLYOZOTT JELLEMZŐ"
+      },
+      {
+        "id": "card-77",
+        "front": "Az állapotváltozós leírásban szereplő  mátrix mérete , az ilyen mátrixot négyzetes, vagy ………………….. mátrixnak nevezzük.",
+        "back": "KVADRATIKUS"
+      },
+      {
+        "id": "card-78",
+        "front": "Az állapotváltozós leírásban szereplő  mátrixból számíthatók a(z) ………………….., amelyek felelősek a rendszer tranzienseiért.",
+        "back": "SAJÁTÉRTÉK"
+      },
+      {
+        "id": "card-79",
+        "front": "Az állapotváltozós leírásban szereplő  mátrixhoz rendelhetjük a , ún. ………………….. polinomot.",
+        "back": "KARAKTERISZTIKUS"
+      },
+      {
+        "id": "card-80",
+        "front": "A  egyenlet az ún. ………………………… egyenlet.",
+        "back": "KARAKTERISZTIKUS"
+      },
+      {
+        "id": "card-81",
+        "front": "A  egyenlet megoldásaként megkapjuk a rendszer  ………………………….",
+        "back": "SAJÁTÉRTÉK"
+      }
+    ]
+  }
+]

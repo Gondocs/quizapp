@@ -1,0 +1,299 @@
+[
+  {
+    "id": "flashcard-9",
+    "title": "Szabályozástechnika",
+    "description": "Szókitöltős fogalmak – 9. kérdés",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "A(z) ……………………… irányítás során egy költségfüggvényt minimalizálunk.",
+        "back": "OPTIMÁLIS"
+      },
+      {
+        "id": "card-2",
+        "front": "Optimális irányítás során valamilyen …………………függvényt minimalizálunk.",
+        "back": "KÖLTSÉG"
+      },
+      {
+        "id": "card-3",
+        "front": "Minimális ……………… irányítás során a rendszer irányítására minimális időt kívánunk szánni.",
+        "back": "IDEJŰ"
+      },
+      {
+        "id": "card-4",
+        "front": "Minimális ……………… irányítás során a rendszer irányítására minimális energiát kívánunk szánni.",
+        "back": "ENERGIÁJÚ"
+      },
+      {
+        "id": "card-5",
+        "front": "Fizikai, technológiai stb. megfontolások miatt ……………… feltételeket kell bevezetni.",
+        "back": "KORLÁTOZÓ"
+      },
+      {
+        "id": "card-6",
+        "front": "A költségfüggvény matematikai neve: ………………….",
+        "back": "FUNKCIONÁL"
+      },
+      {
+        "id": "card-7",
+        "front": "Az f(t) …………… t minden értékéhez egy értéket rendel.",
+        "back": "FÜGGVÉNY"
+      },
+      {
+        "id": "card-8",
+        "front": "A J(x(t)) …………… minden x(t) függvényhez egy értéket rendel.",
+        "back": "FUNKCIONÁL"
+      },
+      {
+        "id": "card-9",
+        "front": "Egy x(t) függvény J(x(t)) függvénye az ún. …………………….",
+        "back": "FUNKCIONÁL"
+      },
+      {
+        "id": "card-10",
+        "front": "A J funkcionál …………helyén a funkcionál növekménye pozitív vagy nulla.",
+        "back": "MINIMUM"
+      },
+      {
+        "id": "card-11",
+        "front": "A J funkcionál …………helyén a funkcionál növekménye negatív vagy nulla.",
+        "back": "MAXIMUM"
+      },
+      {
+        "id": "card-12",
+        "front": "A J funkcionál optimumhelyén az első ………… nulla.",
+        "back": "VARIÁCIÓ"
+      },
+      {
+        "id": "card-13",
+        "front": "A J funkcionál optimumhelyén a(z) ………… variáció nulla.",
+        "back": "ELSŐ"
+      },
+      {
+        "id": "card-14",
+        "front": "A J funkcionál optimumhelyén az első variáció értéke ………….",
+        "back": "NULLA"
+      },
+      {
+        "id": "card-15",
+        "front": "Az optimum szükséges feltétele, hogy az x*(t) függvény kielégítse a(z) …………-…………-egyenletet.",
+        "back": "EULER LAGRANGE vagy EULER-LAGRANGE"
+      },
+      {
+        "id": "card-16",
+        "front": "Korlátozást is tartalmazó optimális irányítási feladat a(z) ……………-elv segítségével oldható meg.",
+        "back": "PONTRJAGIN"
+      },
+      {
+        "id": "card-17",
+        "front": "Zajjal terhelt rendszer állapotbecslésére az ún. …………-szűrőt alkalmazzuk.",
+        "back": "KÁLMÁN vagy KALMAN"
+      },
+      {
+        "id": "card-18",
+        "front": "Az művelet az állapotváltozó ……………………..",
+        "back": "TRANSZFORMÁCIÓ"
+      },
+      {
+        "id": "card-19",
+        "front": "Az állapottranszformációban szereplő mátrix ………………. kell legyen.",
+        "back": "INVERTÁLHATÓ"
+      },
+      {
+        "id": "card-20",
+        "front": "A(z) …………….-alakban a rendszermátrix főátlójában a sajátértékek sorakoznak.",
+        "back": "DIAGONÁL"
+      },
+      {
+        "id": "card-21",
+        "front": "A diagonál-alakban a rendszermátrix ……………. sorakoznak.",
+        "back": "SAJÁTÉRTÉK"
+      },
+      {
+        "id": "card-22",
+        "front": "A(z) ……………….-alakban a oszlopvektor első (vagy utolsó) eleme 1, a többi eleme nulla.",
+        "back": "IRÁNYÍTHATÓ"
+      },
+      {
+        "id": "card-23",
+        "front": "A(z) ……………….-alakban a sorvektor első (vagy utolsó) eleme 1, a többi eleme nulla.",
+        "back": "MEGFIGYELHETŐ"
+      },
+      {
+        "id": "card-24",
+        "front": "A(z) …………………… vizsgálatának kérdése, hogy a rendszer bemenőjelével vajon valamennyi állapotváltozó befolyásolható vagy sem.",
+        "back": "IRÁNYÍTHATÓSÁG"
+      },
+      {
+        "id": "card-25",
+        "front": "A(z) …………………… vizsgálatának kérdése, hogy a rendszer bemenő- és kimenő jeleinek mérése által a rendszer állapota meghatározható vagy sem.",
+        "back": "MEGFIGYELHETŐSÉG"
+      },
+      {
+        "id": "card-26",
+        "front": "A , , stb. oszlopvektorokból összeállított mátrix a(z) …………………. mátrix.",
+        "back": "IRÁNYÍTHATÓSÁGI"
+      },
+      {
+        "id": "card-27",
+        "front": "A , , stb. sorvektorokból összeállított mátrix a(z) …………………… mátrix.",
+        "back": "MEGFIGYELHETŐSÉGI"
+      },
+      {
+        "id": "card-28",
+        "front": "Egy rendszer akkor irányítható, ha irányíthatósági mátrixának létezik ……………….",
+        "back": "INVERZ"
+      },
+      {
+        "id": "card-29",
+        "front": "Egy rendszer akkor megfigyelhető, ha megfigyelhetőségi mátrixának létezik ……………….",
+        "back": "INVERZ"
+      },
+      {
+        "id": "card-30",
+        "front": "Egy rendszer akkor irányítható, ha irányíthatósági mátrixának a …………… maximális.",
+        "back": "RANG"
+      },
+      {
+        "id": "card-31",
+        "front": "Egy rendszer akkor megfigyelhető, ha megfigyelhetőségi mátrixának a ………………. maximális.",
+        "back": "RANG"
+      },
+      {
+        "id": "card-32",
+        "front": "Egy rendszer akkor irányítható, ha irányíthatósági mátrixának a …………… nem nulla.",
+        "back": "DETERMINÁNS"
+      },
+      {
+        "id": "card-33",
+        "front": "Egy rendszer akkor megfigyelhető, ha megfigyelhetőségi mátrixának a ………………. nem nulla.",
+        "back": "DETERMINÁNS"
+      },
+      {
+        "id": "card-34",
+        "front": "Egy mátrix rangja maximális, ha sorai (oszlopai) ……………… függetlenek.",
+        "back": "LINEÁRISAN"
+      },
+      {
+        "id": "card-35",
+        "front": "Állapot-visszacsatolással a rendszer ………………… tudjuk megváltoztatni.",
+        "back": "SAJÁTÉRTÉK, PÓLUS"
+      },
+      {
+        "id": "card-36",
+        "front": "Állapot-visszacsatolásnál a rendszer ………………… csatoljuk vissza.",
+        "back": "ÁLLAPOT vagy ÁLLAPOVÁLTOZÓ vagy ÁLLAPOTVEKTOR"
+      },
+      {
+        "id": "card-37",
+        "front": "Állapot-visszacsatolás esetén az irányítójel az állapotváltozók ……………. kombinációjaként áll elő.",
+        "back": "LINEÁRIS"
+      },
+      {
+        "id": "card-38",
+        "front": "Állapot-visszacsatolás esetén az ……………. az állapotváltozók lineáris kombinációjaként áll elő.",
+        "back": "IRÁNYÍTÓJEL"
+      },
+      {
+        "id": "card-39",
+        "front": "Az állapot-visszacsatolás a rendszermátrixot egy ………….. módosítja.",
+        "back": "DIÁD"
+      },
+      {
+        "id": "card-40",
+        "front": "Állapot-visszacsatolásnál a zárt kör ………………………… polinomját adjuk meg kiindulásként.",
+        "back": "KARAKTERISZTIKUS"
+      },
+      {
+        "id": "card-41",
+        "front": "A(z) …………….. egyértelműen megadja, hogy a rendszer állapot-visszacsatolással szabályozható vagy sem.",
+        "back": "IRÁNYÍTHATÓSÁG"
+      },
+      {
+        "id": "card-42",
+        "front": "A pólusáthelyezés például az ún. ……………………-algoritmussal valósítható meg.",
+        "back": "BASS-GURA"
+      },
+      {
+        "id": "card-43",
+        "front": "A pólusáthelyezés például az ún. ……………………-képlettel valósítható meg.",
+        "back": "ACKERMANN"
+      },
+      {
+        "id": "card-44",
+        "front": "A pólusáthelyezés helyben hagyja a(z) ………….-okat.",
+        "back": "ZÉRUS"
+      },
+      {
+        "id": "card-45",
+        "front": "A(z) ……………… értelmében a pólusáthelyezés és a megfigyelő tervezése függetlenül elvégezhető.",
+        "back": "SZEPARÁCIÓS ELV"
+      },
+      {
+        "id": "card-46",
+        "front": "A lineáris kvadratikus irányítás röviden ………….",
+        "back": "LQ, L-Q"
+      },
+      {
+        "id": "card-47",
+        "front": "A lineáris kvadratikus irányítás ………….., mert egy kvadratikus alakot minimalizál.",
+        "back": "OPTIMÁLIS"
+      },
+      {
+        "id": "card-48",
+        "front": "Az LQ-irányítás ……………………….. eredményez.",
+        "back": "ÁLLAPOTVISSZACSATOLÁS"
+      },
+      {
+        "id": "card-49",
+        "front": "A lineáris kvadratikus irányítás ……………………….. eredményez.",
+        "back": "ÁLLAPOTVISSZACSATOLÁS"
+      },
+      {
+        "id": "card-50",
+        "front": "A CARE a Control Algebraic …………… Equation rövidítése.",
+        "back": "RICCATI"
+      },
+      {
+        "id": "card-51",
+        "front": "A CARE a(z) ………. Algebraic Riccati Equation rövidítése.",
+        "back": "CONTROL"
+      },
+      {
+        "id": "card-52",
+        "front": "A CARE a Control …………… Riccati Equation rövidítése.",
+        "back": "ALGEBRAIC"
+      },
+      {
+        "id": "card-53",
+        "front": "A CARE a Control Algebraic Riccati ……………. rövidítése.",
+        "back": "EQUATION"
+      },
+      {
+        "id": "card-54",
+        "front": "A mátrixegyenlet neve ……………-egyenlet.",
+        "back": "RICCATI vagy CARE"
+      },
+      {
+        "id": "card-55",
+        "front": "A FARE a Filter Algebraic …………… Equation rövidítése.",
+        "back": "RICCATI"
+      },
+      {
+        "id": "card-56",
+        "front": "A FARE a(z) ………. Algebraic Riccati Equation rövidítése.",
+        "back": "FILTER"
+      },
+      {
+        "id": "card-57",
+        "front": "A FARE a Filter …………… Riccati Equation rövidítése.",
+        "back": "ALGEBRAIC"
+      },
+      {
+        "id": "card-58",
+        "front": "A FARE a Filter Algebraic Riccati ……………. rövidítése.",
+        "back": "EQUATION"
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+  --surface: #ffffff;
+  --surface-container-low: #eff4ff;
+  --surface-container: #e5eeff;
+  --surface-container-high: #dce9ff;
+  --surface-container-highest: #d3e4fe;
+  --on-surface: #0b1c30;
+  --on-surface-variant: #4e5a69;
+  --outline-variant: #c6d3e9;
+  --primary: #182442;
+  --on-primary: #ffffff;
+  --secondary: #006b56;
+  --secondary-container: #92f5d6;
+  --bg-start: #f8f9ff;
+  --bg-end: #eef3ff;
+}
+
+:root[data-theme='dark'] {
+  --surface: #16233d;
+  --surface-container-low: #1a2a47;
+  --surface-container: #223354;
+  --surface-container-high: #2a3b5d;
+  --surface-container-highest: #304367;
+  --on-surface: #e8efff;
+  --on-surface-variant: #a8b5d0;
+  --outline-variant: #3f5276;
+  --primary: #dce6ff;
+  --on-primary: #0f1a34;
+  --secondary: #7fdcc0;
+  --secondary-container: #224d43;
+  --bg-start: #0f172a;
+  --bg-end: #15233c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  color: var(--on-surface);
+  background: radial-gradient(circle at 12% 10%, var(--surface-container), transparent 35%),
+    linear-gradient(150deg, var(--bg-start), var(--bg-end));
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}

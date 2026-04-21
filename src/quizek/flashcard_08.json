@@ -1,0 +1,414 @@
+[
+  {
+    "id": "flashcard-8",
+    "title": "8. kérdés",
+    "description": "Igaz-hamis állítások",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Az optimális szabályozás egy állapotvisszacsatoláson alapuló módszer.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-2",
+        "front": "Az optimális szabályozás nem használ állapotvisszacsatolást.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-3",
+        "front": "Az optimális vezérlés nem használ állapotvisszacsatolást.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-4",
+        "front": "Az optimális vezérlés nem használ visszacsatolást.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-5",
+        "front": "Az optimális vezérlés visszacsatolást alkalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-6",
+        "front": "Az optimális szabályozás visszacsatolást alkalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-7",
+        "front": "Egy irányítás attól optimális, hogy közben valamilyen költséget minimalizálunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-8",
+        "front": "Egy vezérlés attól optimális, hogy közben valamilyen költséget minimalizálunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-9",
+        "front": "Egy szabályozás attól optimális, hogy közben valamilyen költséget minimalizálunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-10",
+        "front": "Egy irányítás attól optimális, hogy közben a beavatkozójelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-11",
+        "front": "Egy irányítás attól optimális, hogy közben a kimenőjelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-12",
+        "front": "Egy irányítás attól optimális, hogy közben a referenciajelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-13",
+        "front": "Egy irányítás attól optimális, hogy közben a referenciajelet előre megszabjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-14",
+        "front": "A szabályozás akkor optimális, hogy közben a beavatkozójelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-15",
+        "front": "A szabályozás akkor optimális, hogy közben a kimenőjelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-16",
+        "front": "A szabályozás akkor optimális, hogy közben a referenciajelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-17",
+        "front": "A szabályozás akkor optimális, hogy közben a referenciajelet előre megszabjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-18",
+        "front": "A vezérlés akkor optimális, hogy közben a beavatkozójelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-19",
+        "front": "A vezérlés akkor optimális, hogy közben a kimenőjelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-20",
+        "front": "A vezérlés akkor optimális, hogy közben a referenciajelet adott érték alatt tartjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-21",
+        "front": "A vezérlés akkor optimális, hogy közben a referenciajelet előre megszabjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-22",
+        "front": "Optimális irányítás során a minimalizálandó költségfüggvény kvadratikus alakú.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-23",
+        "front": "Optimális irányítás során a J költségfüggvény kvadratikus alakú.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-24",
+        "front": "Korlátozó feltétel lehet pl. egy jármű maximális vagy a minimális sebessége.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-25",
+        "front": "Korlátozó feltétel lehet pl. valamely állapotváltozó maximális vagy a minimális értéke.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-26",
+        "front": "Korlátozó feltétel lehet a beavatkozójel maximális vagy a minimális értéke.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-27",
+        "front": "Optimális irányítás esetében nem szabhatunk korlátozó feltételt a beavatkozójelre.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-28",
+        "front": "Optimális irányítás esetében nem szabhatunk korlátozó feltételt a kimenőjelre.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-29",
+        "front": "Optimális irányítás esetében nem szabhatunk korlátozó feltételt az állapotváltozók értékére.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-30",
+        "front": "Az optimális irányítás J költségfüggvénye nem függhet az állapotváltozótól.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-31",
+        "front": "Az optimális irányítás J költségfüggvénye nem függhet az irányítójeltől.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-32",
+        "front": "Az optimális irányítás J költségfüggvénye nem függhet az időtől.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-33",
+        "front": "Az optimális irányítás költségfüggvényét a matematika nyelvén funkcionálnak nevezzük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-34",
+        "front": "Az optimális irányítás költségfüggvényét a matematika nyelvén variációnak nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-35",
+        "front": "Optimális irányítás során egy funkcionált minimalizálunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-36",
+        "front": "Optimális vezérlés során egy funkcionált minimalizálunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-37",
+        "front": "Optimális szabályozás során egy funkcionált minimalizálunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-38",
+        "front": "Optimális irányítás során a variációt minimalizáljuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-39",
+        "front": "Optimális vezérlés során a variációt minimalizáljuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-40",
+        "front": "Optimális szabályozás során a variációt minimalizáljuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-41",
+        "front": "Az optimum minimum, ha a második variáció pozitív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-42",
+        "front": "Az optimum maximum, ha a második variáció pozitív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-43",
+        "front": "Az optimum minimum, ha a második variáció negatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-44",
+        "front": "Az optimum maximum, ha a második variáció negatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-45",
+        "front": "Optimum helyén az első variáció nulla.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-46",
+        "front": "Optimum helyén az első variáció pozitív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-47",
+        "front": "Optimum helyén az első variáció negatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-48",
+        "front": "Optimum helyén az első variáció pozitív vagy negatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-49",
+        "front": "A Kálmán-szűrő egy megfigyelő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-50",
+        "front": "A Kálmán-szűrő egy observer.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-51",
+        "front": "A Kálmán-szűrő egy szabályozótervezési eljárás.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-52",
+        "front": "A Kálmán-szűrő egy megfigyelőtervezési eljárás.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-53",
+        "front": "A Kálmán-szűrő állapottér alapú technika.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-54",
+        "front": "A Kálmán-szűrővel a zajos jeleket tudjuk szűrni, és így a felharmonikustartalom kisebb lesz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-55",
+        "front": "A Kálmán-szűrő egy iteratív eljárás.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-56",
+        "front": "A Kálmán-szűrő egy rekurzív technika.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-57",
+        "front": "A Kálmán-szűrő nem veszi figyelembe a zajt.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-58",
+        "front": "A Kálmán-szűrő figyelembe veszi a zajt.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-59",
+        "front": "A fehérzaj várható értéke nulla.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-60",
+        "front": "A fehérzaj várható értéke egységnyi.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-61",
+        "front": "A fehérzaj várható értéke nullánál mindig nagyobb.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-62",
+        "front": "A fehérzaj várható értéke nullánál mindig kisebb.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-63",
+        "front": "Kálmán-szűrővel csak a fehérzajt tudjuk modellezni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-64",
+        "front": "A Kálmán-szűrőnek van olyan változata, amely a színes zajt is tudja modellezni.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-65",
+        "front": "A Kálmán-szűrőnek számos változata ismert az irodalomban.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-66",
+        "front": "A Kálmán-szűrő csak lineáris rendszer esetén alkalmazható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-67",
+        "front": "A Kálmán-szűrő csak nemlineáris rendszer esetén alkalmazható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-68",
+        "front": "A Kálmán-szűrőt kiterjesztették nemlineáris rendszer esetére is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-69",
+        "front": "A Kálmán-szűrő csak diszkrét idejű rendszermodell esetén alkalmazható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-70",
+        "front": "A Kálmán-szűrő csak folytonos idejű rendszermodell esetén alkalmazható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-71",
+        "front": "A Kálmán-szűrő tervezésére az állapottér alapú szabályozótervezésből ismert Ackermann-formulát használjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-72",
+        "front": "A Kálmán-szűrő tervezésére az állapottér alapú szabályozótervezésből ismert Bass-Gura-formulát használjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-73",
+        "front": "A Kálmán-szűrő tervezésére az állapottér alapú szabályozótervezésből ismert Luenberger-módszert használjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-74",
+        "front": "Diszkrét idejű Kálmán-szűrő tervezésére lineáris és időinvariáns esetben az ún. DI-FARE egyenletet használjuk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-75",
+        "front": "A DI-FARE egyenlet egy Riccati-egyenlet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-76",
+        "front": "A FARE egyenlet a Filter Algebraic Riccati Equation rövidítése.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-77",
+        "front": "A DI-FARE egyenlet a Kálmán-szűrő tervezésére alkalmas.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-78",
+        "front": "A DI-FARE egyenlet megoldása analitikusan nehéz feladat.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-79",
+        "front": "A DI-FARE egyenlet a Luenberger-féle megfigyelő tervezésére alkalmas.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-80",
+        "front": "A DI-FARE egyenlet az Ackermann-képlettel könnyedén megoldható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-81",
+        "front": "A DI-FARE egyenlet megoldására dolgozták ki a Bass-Gura-módszert.",
+        "back": "Hamis"
+      }
+    ]
+  }
+]
