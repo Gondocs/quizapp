@@ -206,6 +206,7 @@ function App() {
   const [panelTab, setPanelTab] = useState('unknown')
   const [isSessionPanelOpen, setIsSessionPanelOpen] = useState(false)
   const [isSidebarHidden, setIsSidebarHidden] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(Boolean(document.fullscreenElement))
   const [moduleShuffleConfig, setModuleShuffleConfig] = useState({})
 
@@ -260,6 +261,18 @@ function App() {
     const onFullscreenChange = () => setIsFullscreen(Boolean(document.fullscreenElement))
     document.addEventListener('fullscreenchange', onFullscreenChange)
     return () => document.removeEventListener('fullscreenchange', onFullscreenChange)
+  }, [])
+
+  // Desktop nézetbe visszatéréskor a mobil menü bezárása.
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 761px)')
+    const onChange = (event) => {
+      if (event.matches) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    mediaQuery.addEventListener('change', onChange)
+    return () => mediaQuery.removeEventListener('change', onChange)
   }, [])
 
   // Unmount takarítás.
@@ -410,6 +423,7 @@ function App() {
     setIsCompleted(false)
     setPanelTab('unknown')
     setIsSessionPanelOpen(false)
+    setIsMobileMenuOpen(false)
     setMarkMap(createMarkMapFromSession(moduleItem.id, sessionStore))
     setStudyMode('kartyas')
     resetTestState()
@@ -440,32 +454,54 @@ function App() {
   }, [activeModule, resetTestState])
 
   // Következő / előző.
+  const queueAfterFlipReset = useCallback((callback) => {
+    setIsFlipped(false)
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        callback()
+      })
+    })
+  }, [])
+
   const moveNext = useCallback(() => {
     if (!activeCards.length) {
       return
     }
-    if (index < activeCards.length - 1) {
-      setIndex((prev) => prev + 1)
-      setIsFlipped(false)
+
+    const goNext = () => {
+      if (index < activeCards.length - 1) {
+        setIndex((prev) => prev + 1)
+        return
+      }
+      if (phase === 'main' && reviewCards.length > 0) {
+        setPhase('review')
+        setIndex(0)
+        return
+      }
+      setIsCompleted(true)
+    }
+
+    if (isFlipped) {
+      queueAfterFlipReset(goNext)
       return
     }
-    if (phase === 'main' && reviewCards.length > 0) {
-      setPhase('review')
-      setIndex(0)
-      setIsFlipped(false)
-      return
-    }
-    setIsCompleted(true)
-  }, [activeCards.length, index, phase, reviewCards.length])
+
+    goNext()
+  }, [activeCards.length, index, isFlipped, phase, queueAfterFlipReset, reviewCards.length])
 
   const movePrev = useCallback(() => {
     if (index <= 0) {
       return
     }
+
+    if (isFlipped) {
+      queueAfterFlipReset(() => setIndex((prev) => prev - 1))
+      return
+    }
+
     setIndex((prev) => prev - 1)
-    setIsFlipped(false)
     setIsCompleted(false)
-  }, [index])
+  }, [index, isFlipped, queueAfterFlipReset])
 
   // Tudom/Nem tudom minősítés mikroanimációval.
   const markCard = useCallback((value) => {
@@ -511,6 +547,7 @@ function App() {
     try {
       if (!document.fullscreenElement) {
         setIsSidebarHidden(true)
+        setIsMobileMenuOpen(false)
         await document.documentElement.requestFullscreen()
       } else {
         await document.exitFullscreen()
@@ -1021,27 +1058,60 @@ function App() {
   }
 
   return (
-    <div className={`layout-shell ${isSidebarHidden ? 'sidebar-hidden' : ''} ${isFullscreen ? 'fullscreen-active' : ''}`}>
+    <div className={`layout-shell ${isSidebarHidden ? 'sidebar-hidden' : ''} ${isFullscreen ? 'fullscreen-active' : ''} ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+      <button
+        type="button"
+        className={`mobile-menu-btn icon-square-btn ${isMobileMenuOpen ? 'active' : ''}`}
+        onClick={() => {
+          setIsSidebarHidden(false)
+          setIsMobileMenuOpen((prev) => !prev)
+        }}
+        aria-label={isMobileMenuOpen ? 'Menü bezárása' : 'Menü megnyitása'}
+        title={isMobileMenuOpen ? 'Menü bezárása' : 'Menü megnyitása'}
+      >
+        {isMobileMenuOpen ? '✕' : '☰'}
+      </button>
+
+      {isMobileMenuOpen && <button type="button" className="mobile-backdrop" onClick={() => setIsMobileMenuOpen(false)} aria-label="Menü bezárása" />}
+
       <aside className="sidebar">
         <div>
           <p className="brand-title">GR Kvíz</p>
         </div>
 
         <nav className="sidebar-nav">
-          <button type="button" className={view === 'valaszto' ? 'nav-btn active' : 'nav-btn'} onClick={() => setView('valaszto')}>
+          <button type="button" className={view === 'valaszto' ? 'nav-btn active' : 'nav-btn'} onClick={() => {
+            setView('valaszto')
+            setIsMobileMenuOpen(false)
+          }}>
             Kvízválasztó
           </button>
-          <button type="button" className={view === 'tanulas' ? 'nav-btn active' : 'nav-btn'} onClick={() => setView('tanulas')}>
+          <button type="button" className={view === 'tanulas' ? 'nav-btn active' : 'nav-btn'} onClick={() => {
+            setView('tanulas')
+            setIsMobileMenuOpen(false)
+          }}>
             Tanulási mód
           </button>
-          <button type="button" className={view === 'beallitasok' ? 'nav-btn active' : 'nav-btn'} onClick={() => setView('beallitasok')}>
+          <button type="button" className={view === 'beallitasok' ? 'nav-btn active' : 'nav-btn'} onClick={() => {
+            setView('beallitasok')
+            setIsMobileMenuOpen(false)
+          }}>
             Beállítások
           </button>
         </nav>
 
         <div className="sidebar-bottom">
-          <button type="button" className="ghost-btn" onClick={() => setIsSidebarHidden(true)}>
-            Oldalsáv elrejtése
+          <button
+            type="button"
+            className="icon-square-btn"
+            onClick={() => {
+              setIsSidebarHidden(true)
+              setIsMobileMenuOpen(false)
+            }}
+            aria-label="Oldalsáv elrejtése"
+            title="Oldalsáv elrejtése"
+          >
+            ◀
           </button>
           <button type="button" className="ghost-btn" onClick={() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))}>
             {theme === 'dark' ? 'Világos mód' : 'Sötét mód'}
@@ -1052,8 +1122,14 @@ function App() {
       <main className="main-content">
         <div className="app-shell study-shell">
           {isSidebarHidden && (
-            <button type="button" className="show-sidebar-btn" onClick={() => setIsSidebarHidden(false)}>
-              Oldalsáv megjelenítése
+            <button
+              type="button"
+              className="show-sidebar-btn icon-square-btn"
+              onClick={() => setIsSidebarHidden(false)}
+              aria-label="Oldalsáv megjelenítése"
+              title="Oldalsáv megjelenítése"
+            >
+              ▶
             </button>
           )}
           {view === 'valaszto' && renderSelectorView()}
