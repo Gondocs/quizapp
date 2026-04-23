@@ -302,11 +302,20 @@ function normalizeSource(payload, sourceName, sourceId) {
       ? [payload]
       : []
   const baseSourceId = slugifyIdentifier(sourceId || sourceName, 'modul')
+  const usedModuleIds = new Set()
 
   return decks
     .map((deck, deckIndex) => {
       const deckSuffix = slugifyIdentifier(deck.id || `modul_${deckIndex + 1}`, `modul_${deckIndex + 1}`)
-      const moduleId = decks.length === 1 ? baseSourceId : `${baseSourceId}_${deckSuffix}`
+      const titleSlug = slugifyIdentifier(deck.title || deck.name || '', '')
+      const preferredId = titleSlug || (decks.length === 1 ? baseSourceId : `${baseSourceId}_${deckSuffix}`)
+      let moduleId = preferredId
+      let duplicateCounter = 2
+      while (usedModuleIds.has(moduleId)) {
+        moduleId = `${preferredId}_${duplicateCounter}`
+        duplicateCounter += 1
+      }
+      usedModuleIds.add(moduleId)
       const cards = Array.isArray(deck.cards)
         ? deck.cards
         : Array.isArray(deck.questions)
