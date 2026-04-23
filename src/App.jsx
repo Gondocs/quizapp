@@ -993,9 +993,8 @@ function App() {
   const renderSelectorView = () => (
     <>
       <header className="top-bar">
-        <div>
-          <p className="eyebrow">GR Kvíz</p>
-          <h1>Kvízkártyás tanulás</h1>
+        <div >        
+            <img src="/favicon.svg" alt="GR Kvíz logo" style={{ height: "100px" }} />
         </div>
       </header>
 
