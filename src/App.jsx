@@ -9,32 +9,19 @@ const sampleModules = Object.entries(quizFiles)
     const fileName = path.split('/').pop()?.replace('.json', '') || `minta_${index + 1}`
     return {
       payload: moduleData.default || moduleData,
+      sourceId: fileName,
       sourceName: `Mappa: ${fileName}`,
     }
   })
 
 const SESSION_COOKIE = 'quiz_session_store'
 const SESSION_STORAGE_KEY = 'quiz-session-store'
-const STUDY_PROGRESS_STORAGE_KEY = 'quiz-study-progress-v1'
 const STOP_WORDS = new Set([
   'a', 'az', 'egy', 'es', 'és', 'hogy', 'vagy', 'nem', 'ha', 'akkor', 'ami', 'mint',
   'soran', 'során', 'eseten', 'esetén', 'valamint', 'segitsegevel', 'segítségével',
 ])
 const IMAGE_URL_PATTERN = /\.(png|jpe?g|gif|webp|svg|bmp|avif)(\?.*)?(#.*)?$/i
 const IMAGE_MARKER_PATTERN = /(\[img\]([\s\S]*?)\[\/img\]|\[\[img:(.*?)\]\]|!\[[^\]]*\]\((.*?)\))/gi
-
-function parseStudyProgress() {
-  try {
-    const raw = localStorage.getItem(STUDY_PROGRESS_STORAGE_KEY)
-    if (!raw) {
-      return {}
-    }
-    const parsed = JSON.parse(raw)
-    return parsed && typeof parsed === 'object' ? parsed : {}
-  } catch {
-    return {}
-  }
-}
 
 function clampCardIndex(nextIndex, cardsLength) {
   if (!cardsLength) {
@@ -53,6 +40,23 @@ function normalizeRouteModuleId(routeValue) {
   } catch {
     return raw
   }
+}
+
+function slugifyIdentifier(value, fallback = 'modul') {
+  const normalized = String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, '_')
+    .replace(/[^a-z0-9_-]/g, '')
+    .replace(/_+/g, '_')
+    .replace(/-+/g, '-')
+    .replace(/^[_-]+|[_-]+$/g, '')
+
+  if (normalized) {
+    return normalized
+  }
+  return fallback
 }
 
 function isHttpUrl(value) {
@@ -98,6 +102,7 @@ function parseCardContentParts(value) {
     return []
   }
 
+  IMAGE_MARKER_PATTERN.lastIndex = 0
   const parts = []
   let lastIndex = 0
   let match
@@ -131,6 +136,19 @@ function parseCardContentParts(value) {
     return [{ type: 'image', value: text.trim() }]
   }
   return [{ type: 'text', value: text.trim() }]
+}
+
+function extractImageUrlsFromText(value) {
+  return parseCardContentParts(value)
+    .filter((part) => part.type === 'image')
+    .map((part) => part.value)
+}
+
+function extractImageUrlsFromCard(card) {
+  if (!card) {
+    return []
+  }
+  return [...extractImageUrlsFromText(card.front), ...extractImageUrlsFromText(card.back)]
 }
 
 function CardContent({
@@ -277,15 +295,18 @@ function inferTopicFromCard(card, moduleTitle) {
 }
 
 // JSON normalizálás egységes modulstruktúrára.
-function normalizeSource(payload, sourceName) {
+function normalizeSource(payload, sourceName, sourceId) {
   const decks = Array.isArray(payload)
     ? payload
     : payload && typeof payload === 'object'
       ? [payload]
       : []
+  const baseSourceId = slugifyIdentifier(sourceId || sourceName, 'modul')
 
   return decks
     .map((deck, deckIndex) => {
+      const deckSuffix = slugifyIdentifier(deck.id || `modul_${deckIndex + 1}`, `modul_${deckIndex + 1}`)
+      const moduleId = decks.length === 1 ? baseSourceId : `${baseSourceId}_${deckSuffix}`
       const cards = Array.isArray(deck.cards)
         ? deck.cards
         : Array.isArray(deck.questions)
@@ -294,7 +315,7 @@ function normalizeSource(payload, sourceName) {
 
       const normalizedCards = cards
         .map((card, cardIndex) => ({
-          id: `${sourceName}-${deck.id || deckIndex}-${card.id || cardIndex}`,
+          id: `${moduleId}-${card.id || cardIndex}`,
           front: String(card.front || card.question || card.prompt || '').trim(),
           back: String(card.back || card.answer || card.solution || '').trim(),
           topic: String(card.topic || card.category || '').trim(),
@@ -302,7 +323,7 @@ function normalizeSource(payload, sourceName) {
         .filter((card) => card.front && card.back)
 
       return {
-        id: `${sourceName}-${deck.id || deckIndex}`,
+        id: moduleId,
         title: deck.title || deck.name || `Modul ${deckIndex + 1}`,
         description: deck.description || 'Saját feltöltött modul',
         sourceName,
@@ -328,7 +349,7 @@ function App() {
   const location = useLocation()
 
   // Fő adatok.
-  const [modules, setModules] = useState(() => sampleModules.flatMap((source) => normalizeSource(source.payload, source.sourceName)))
+  const [modules, setModules] = useState(() => sampleModules.flatMap((source) => normalizeSource(source.payload, source.sourceName, source.sourceId)))
   const [view, setView] = useState('valaszto')
   const [activeModule, setActiveModule] = useState(null)
   const [deckCards, setDeckCards] = useState([])
@@ -356,7 +377,6 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(Boolean(document.fullscreenElement))
   const [moduleShuffleConfig, setModuleShuffleConfig] = useState({})
-  const [studyProgress, setStudyProgress] = useState(() => parseStudyProgress())
 
   // Perzisztens adatok.
   const [sessionStore, setSessionStore] = useState(() => parseSessionStore())
@@ -386,6 +406,7 @@ function App() {
   // Refs.
   const feedbackTimerRef = useRef(null)
   const touchStartXRef = useRef(null)
+  const preloadedImagesRef = useRef(new Set())
 
   // Téma szinkron.
   useEffect(() => {
@@ -403,11 +424,6 @@ function App() {
     localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionStore))
     setCookie(SESSION_COOKIE, JSON.stringify(sessionStore), 14)
   }, [sessionStore])
-
-  // Tanulási állapot mentése localStorage-be.
-  useEffect(() => {
-    localStorage.setItem(STUDY_PROGRESS_STORAGE_KEY, JSON.stringify(studyProgress))
-  }, [studyProgress])
 
   // Útvonal alapján nézet kiválasztása.
   useEffect(() => {
@@ -528,6 +544,27 @@ function App() {
     return { correct, wrong, total: values.length }
   }, [testResultMap])
 
+  // Következő 15 kártya képeinek előtöltése.
+  useEffect(() => {
+    if (view !== 'tanulas' || !activeCards.length) {
+      return
+    }
+
+    const maxAhead = 15
+    const upcomingCards = activeCards.slice(index + 1, index + 1 + maxAhead)
+    const imageUrls = upcomingCards.flatMap((card) => extractImageUrlsFromCard(card))
+
+    imageUrls.forEach((url) => {
+      if (preloadedImagesRef.current.has(url)) {
+        return
+      }
+      preloadedImagesRef.current.add(url)
+      const image = new Image()
+      image.src = url
+      image.decoding = 'async'
+    })
+  }, [activeCards, index, view])
+
   // Session frissítés minősítés után.
   const updateSessionStore = useCallback((card, value) => {
     if (!activeModule || !card) {
@@ -598,15 +635,13 @@ function App() {
     setStudyMode('kartyas')
     resetTestState()
 
-    const urlCard = String(startIndex + 1)
     const currentRouteModule = normalizeRouteModuleId(routeModuleId)
-    const currentCardParam = new URLSearchParams(location.search).get('card')
-    if (currentRouteModule !== moduleItem.id || currentCardParam !== urlCard) {
-      navigate({ pathname: targetPath, search: `?card=${urlCard}` }, { replace: Boolean(options.replaceRoute) })
+    if (currentRouteModule !== moduleItem.id) {
+      navigate(targetPath, { replace: Boolean(options.replaceRoute) })
     }
-  }, [location.search, moduleShuffleConfig, navigate, resetTestState, routeModuleId, sessionStore, settings.shuffleOnStart])
+  }, [moduleShuffleConfig, navigate, resetTestState, routeModuleId, sessionStore, settings.shuffleOnStart])
 
-  // Útvonal alapján modul megnyitás és állapot visszaállítás.
+  // Útvonal alapján modul megnyitás.
   useEffect(() => {
     if (!routeModuleId) {
       return
@@ -620,56 +655,10 @@ function App() {
       return
     }
 
-    const routeCardParam = Number(new URLSearchParams(location.search).get('card'))
-    const persistedIndex = Number(studyProgress[normalizedId]?.index)
-    const requestedIndex = Number.isFinite(routeCardParam) && routeCardParam > 0
-      ? routeCardParam - 1
-      : Number.isFinite(persistedIndex)
-        ? persistedIndex
-        : 0
-
     if (activeModule?.id !== moduleFromRoute.id) {
-      openModule(moduleFromRoute, { startIndex: requestedIndex, replaceRoute: true })
-      return
+      openModule(moduleFromRoute, { startIndex: 0, replaceRoute: true })
     }
-
-    const clampedIndex = clampCardIndex(requestedIndex, activeCards.length)
-    if (clampedIndex !== index) {
-      setIndex(clampedIndex)
-    }
-  }, [activeCards.length, activeModule?.id, index, location.search, modules, navigate, openModule, routeModuleId, studyProgress])
-
-  // URL-ben frissítjük az aktuális kártya sorszámát.
-  useEffect(() => {
-    if (!activeModule || view !== 'tanulas') {
-      return
-    }
-
-    const currentCardParam = new URLSearchParams(location.search).get('card')
-    const nextCardParam = String(index + 1)
-    const normalizedRouteModule = normalizeRouteModuleId(routeModuleId)
-
-    if (normalizedRouteModule !== activeModule.id || currentCardParam !== nextCardParam) {
-      navigate({ pathname: `/quiz/${encodeURIComponent(activeModule.id)}`, search: `?card=${nextCardParam}` }, { replace: true })
-    }
-  }, [activeModule, index, location.search, navigate, routeModuleId, view])
-
-  // Tanulási előrehaladás mentése modulonként.
-  useEffect(() => {
-    if (!activeModule || view !== 'tanulas') {
-      return
-    }
-
-    setStudyProgress((prev) => ({
-      ...prev,
-      [activeModule.id]: {
-        index,
-        phase,
-        studyMode,
-        updatedAt: Date.now(),
-      },
-    }))
-  }, [activeModule, index, phase, studyMode, view])
+  }, [activeModule?.id, modules, navigate, openModule, routeModuleId])
 
   const goToSelector = useCallback(() => {
     navigate('/')
@@ -684,8 +673,8 @@ function App() {
       navigate('/')
       return
     }
-    navigate({ pathname: `/quiz/${encodeURIComponent(activeModule.id)}`, search: `?card=${index + 1}` })
-  }, [activeModule, index, navigate])
+    navigate(`/quiz/${encodeURIComponent(activeModule.id)}`)
+  }, [activeModule, navigate])
 
   // Aktív modul keverésének állapota.
   const activeModuleShuffleEnabled = activeModule
@@ -944,7 +933,8 @@ function App() {
     try {
       const text = await readFileAsText(file)
       const parsed = JSON.parse(text)
-      const newModules = normalizeSource(parsed, file.name.replace(/\.json$/i, ''))
+      const uploadName = file.name.replace(/\.json$/i, '')
+      const newModules = normalizeSource(parsed, `Fájl: ${uploadName}`, uploadName)
 
       if (!newModules.length) {
         setUploadMessage('A JSON formátuma érvényes, de nem találtam front/back kártyaadatot.')
