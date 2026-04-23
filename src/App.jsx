@@ -1,4 +1,5 @@
 ﻿import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import './App.css'
 
 const quizFiles = import.meta.glob('./quizek/*.json', { eager: true })
@@ -14,10 +15,152 @@ const sampleModules = Object.entries(quizFiles)
 
 const SESSION_COOKIE = 'quiz_session_store'
 const SESSION_STORAGE_KEY = 'quiz-session-store'
+const STUDY_PROGRESS_STORAGE_KEY = 'quiz-study-progress-v1'
 const STOP_WORDS = new Set([
   'a', 'az', 'egy', 'es', 'és', 'hogy', 'vagy', 'nem', 'ha', 'akkor', 'ami', 'mint',
   'soran', 'során', 'eseten', 'esetén', 'valamint', 'segitsegevel', 'segítségével',
 ])
+const IMAGE_URL_PATTERN = /\.(png|jpe?g|gif|webp|svg|bmp|avif)(\?.*)?(#.*)?$/i
+const IMAGE_MARKER_PATTERN = /(\[img\]([\s\S]*?)\[\/img\]|\[\[img:(.*?)\]\]|!\[[^\]]*\]\((.*?)\))/gi
+
+function parseStudyProgress() {
+  try {
+    const raw = localStorage.getItem(STUDY_PROGRESS_STORAGE_KEY)
+    if (!raw) {
+      return {}
+    }
+    const parsed = JSON.parse(raw)
+    return parsed && typeof parsed === 'object' ? parsed : {}
+  } catch {
+    return {}
+  }
+}
+
+function clampCardIndex(nextIndex, cardsLength) {
+  if (!cardsLength) {
+    return 0
+  }
+  return Math.max(0, Math.min(cardsLength - 1, nextIndex))
+}
+
+function normalizeRouteModuleId(routeValue) {
+  const raw = String(routeValue || '')
+  if (!raw) {
+    return ''
+  }
+  try {
+    return decodeURIComponent(raw)
+  } catch {
+    return raw
+  }
+}
+
+function isHttpUrl(value) {
+  try {
+    const parsed = new URL(String(value || '').trim())
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:'
+  } catch {
+    return false
+  }
+}
+
+function isMarkedImageUrl(value) {
+  const text = String(value || '').trim()
+  if (!text) {
+    return false
+  }
+  if (/^data:image\//i.test(text)) {
+    return true
+  }
+  return isHttpUrl(text)
+}
+
+function isImageLikeContent(value) {
+  const text = String(value || '').trim()
+  if (!text) {
+    return false
+  }
+  if (/^data:image\//i.test(text)) {
+    return true
+  }
+  try {
+    const parsed = new URL(text)
+    const isHttp = parsed.protocol === 'http:' || parsed.protocol === 'https:'
+    return isHttp && IMAGE_URL_PATTERN.test(parsed.href)
+  } catch {
+    return false
+  }
+}
+
+function parseCardContentParts(value) {
+  const text = String(value || '')
+  if (!text.trim()) {
+    return []
+  }
+
+  const parts = []
+  let lastIndex = 0
+  let match
+
+  while ((match = IMAGE_MARKER_PATTERN.exec(text)) !== null) {
+    const before = text.slice(lastIndex, match.index)
+    if (before.trim()) {
+      parts.push({ type: 'text', value: before.trim() })
+    }
+
+    const markerUrl = (match[2] || match[3] || match[4] || '').trim()
+    if (isMarkedImageUrl(markerUrl)) {
+      parts.push({ type: 'image', value: markerUrl })
+    } else if (match[0].trim()) {
+      parts.push({ type: 'text', value: match[0].trim() })
+    }
+
+    lastIndex = match.index + match[0].length
+  }
+
+  const after = text.slice(lastIndex)
+  if (after.trim()) {
+    parts.push({ type: 'text', value: after.trim() })
+  }
+
+  if (parts.length > 0) {
+    return parts
+  }
+
+  if (isImageLikeContent(text)) {
+    return [{ type: 'image', value: text.trim() }]
+  }
+  return [{ type: 'text', value: text.trim() }]
+}
+
+function CardContent({
+  value,
+  alt,
+  textTag = 'h2',
+  textClassName = '',
+  imageClassName = '',
+  containerClassName = '',
+}) {
+  const parts = parseCardContentParts(value)
+  if (parts.length === 1 && parts[0].type === 'image') {
+    return <img src={parts[0].value} alt={alt} className={imageClassName} loading="lazy" />
+  }
+  if (parts.length === 1 && parts[0].type === 'text') {
+    const TextTag = textTag
+    return <TextTag className={textClassName}>{parts[0].value}</TextTag>
+  }
+
+  const TextTag = textTag
+  return (
+    <div className={`card-rich-content has-mixed-media ${containerClassName}`.trim()}>
+      {parts.map((part, index) => (
+        part.type === 'image'
+          ? <img key={`${part.value}-${index}`} src={part.value} alt={alt} className={imageClassName} loading="lazy" />
+          : <TextTag key={`${part.value}-${index}`} className={textClassName}>{part.value}</TextTag>
+      ))}
+    </div>
+  )
+}
 
 // Süti mentése lejárati dátummal.
 function setCookie(name, value, days = 7) {
@@ -180,6 +323,10 @@ function readFileAsText(file) {
 }
 
 function App() {
+  const { moduleId: routeModuleId } = useParams()
+  const navigate = useNavigate()
+  const location = useLocation()
+
   // Fő adatok.
   const [modules, setModules] = useState(() => sampleModules.flatMap((source) => normalizeSource(source.payload, source.sourceName)))
   const [view, setView] = useState('valaszto')
@@ -209,6 +356,7 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(Boolean(document.fullscreenElement))
   const [moduleShuffleConfig, setModuleShuffleConfig] = useState({})
+  const [studyProgress, setStudyProgress] = useState(() => parseStudyProgress())
 
   // Perzisztens adatok.
   const [sessionStore, setSessionStore] = useState(() => parseSessionStore())
@@ -255,6 +403,24 @@ function App() {
     localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionStore))
     setCookie(SESSION_COOKIE, JSON.stringify(sessionStore), 14)
   }, [sessionStore])
+
+  // Tanulási állapot mentése localStorage-be.
+  useEffect(() => {
+    localStorage.setItem(STUDY_PROGRESS_STORAGE_KEY, JSON.stringify(studyProgress))
+  }, [studyProgress])
+
+  // Útvonal alapján nézet kiválasztása.
+  useEffect(() => {
+    if (routeModuleId) {
+      setView('tanulas')
+      return
+    }
+    if (location.pathname === '/settings') {
+      setView('beallitasok')
+      return
+    }
+    setView('valaszto')
+  }, [location.pathname, routeModuleId])
 
   // Fullscreen figyelés.
   useEffect(() => {
@@ -346,6 +512,8 @@ function App() {
 
   // Aktuális állapotok.
   const currentCard = activeCards[index] || null
+  const isCurrentFrontRich = currentCard ? parseCardContentParts(currentCard.front).length > 1 : false
+  const isCurrentBackRich = currentCard ? parseCardContentParts(currentCard.back).length > 1 : false
   const knownCount = Object.values(markMap).filter((mark) => mark === 'known').length
   const unknownCount = Object.values(markMap).filter((mark) => mark === 'unknown').length
   const activeSession = activeModule ? sessionStore[activeModule.id] || { known: [], unknown: [] } : { known: [], unknown: [] }
@@ -409,16 +577,18 @@ function App() {
   }, [activeModule, resetTestState, sessionStore])
 
   // Modul megnyitás.
-  const openModule = (moduleItem) => {
+  const openModule = useCallback((moduleItem, options = {}) => {
     const config = moduleShuffleConfig[moduleItem.id] || { enabled: false, version: 0 }
     const shouldShuffle = config.enabled || settings.shuffleOnStart
     const cards = shouldShuffle ? shuffleCards(moduleItem.cards) : [...moduleItem.cards]
+    const startIndex = clampCardIndex(Number(options.startIndex || 0), cards.length)
+    const targetPath = `/quiz/${encodeURIComponent(moduleItem.id)}`
 
     setActiveModule(moduleItem)
     setDeckCards(cards)
     setView('tanulas')
     setPhase('main')
-    setIndex(0)
+    setIndex(startIndex)
     setIsFlipped(false)
     setIsCompleted(false)
     setPanelTab('unknown')
@@ -427,7 +597,95 @@ function App() {
     setMarkMap(createMarkMapFromSession(moduleItem.id, sessionStore))
     setStudyMode('kartyas')
     resetTestState()
-  }
+
+    const urlCard = String(startIndex + 1)
+    const currentRouteModule = normalizeRouteModuleId(routeModuleId)
+    const currentCardParam = new URLSearchParams(location.search).get('card')
+    if (currentRouteModule !== moduleItem.id || currentCardParam !== urlCard) {
+      navigate({ pathname: targetPath, search: `?card=${urlCard}` }, { replace: Boolean(options.replaceRoute) })
+    }
+  }, [location.search, moduleShuffleConfig, navigate, resetTestState, routeModuleId, sessionStore, settings.shuffleOnStart])
+
+  // Útvonal alapján modul megnyitás és állapot visszaállítás.
+  useEffect(() => {
+    if (!routeModuleId) {
+      return
+    }
+
+    const normalizedId = normalizeRouteModuleId(routeModuleId)
+    const moduleFromRoute = modules.find((moduleItem) => moduleItem.id === normalizedId)
+    if (!moduleFromRoute) {
+      setUploadMessage('A hivatkozott modul nem található.')
+      navigate('/', { replace: true })
+      return
+    }
+
+    const routeCardParam = Number(new URLSearchParams(location.search).get('card'))
+    const persistedIndex = Number(studyProgress[normalizedId]?.index)
+    const requestedIndex = Number.isFinite(routeCardParam) && routeCardParam > 0
+      ? routeCardParam - 1
+      : Number.isFinite(persistedIndex)
+        ? persistedIndex
+        : 0
+
+    if (activeModule?.id !== moduleFromRoute.id) {
+      openModule(moduleFromRoute, { startIndex: requestedIndex, replaceRoute: true })
+      return
+    }
+
+    const clampedIndex = clampCardIndex(requestedIndex, activeCards.length)
+    if (clampedIndex !== index) {
+      setIndex(clampedIndex)
+    }
+  }, [activeCards.length, activeModule?.id, index, location.search, modules, navigate, openModule, routeModuleId, studyProgress])
+
+  // URL-ben frissítjük az aktuális kártya sorszámát.
+  useEffect(() => {
+    if (!activeModule || view !== 'tanulas') {
+      return
+    }
+
+    const currentCardParam = new URLSearchParams(location.search).get('card')
+    const nextCardParam = String(index + 1)
+    const normalizedRouteModule = normalizeRouteModuleId(routeModuleId)
+
+    if (normalizedRouteModule !== activeModule.id || currentCardParam !== nextCardParam) {
+      navigate({ pathname: `/quiz/${encodeURIComponent(activeModule.id)}`, search: `?card=${nextCardParam}` }, { replace: true })
+    }
+  }, [activeModule, index, location.search, navigate, routeModuleId, view])
+
+  // Tanulási előrehaladás mentése modulonként.
+  useEffect(() => {
+    if (!activeModule || view !== 'tanulas') {
+      return
+    }
+
+    setStudyProgress((prev) => ({
+      ...prev,
+      [activeModule.id]: {
+        index,
+        phase,
+        studyMode,
+        updatedAt: Date.now(),
+      },
+    }))
+  }, [activeModule, index, phase, studyMode, view])
+
+  const goToSelector = useCallback(() => {
+    navigate('/')
+  }, [navigate])
+
+  const goToSettings = useCallback(() => {
+    navigate('/settings')
+  }, [navigate])
+
+  const goToStudy = useCallback(() => {
+    if (!activeModule) {
+      navigate('/')
+      return
+    }
+    navigate({ pathname: `/quiz/${encodeURIComponent(activeModule.id)}`, search: `?card=${index + 1}` })
+  }, [activeModule, index, navigate])
 
   // Aktív modul keverésének állapota.
   const activeModuleShuffleEnabled = activeModule
@@ -821,7 +1079,7 @@ function App() {
         <section className="summary-card">
           <h2>Nincs aktív modul</h2>
           <p>Válassz egy modult a Kvízválasztó nézetben.</p>
-          <button type="button" className="primary-btn" onClick={() => setView('valaszto')}>
+          <button type="button" className="primary-btn" onClick={goToSelector}>
             Ugrás a kvízválasztóhoz
           </button>
         </section>
@@ -866,7 +1124,7 @@ function App() {
             <button
               type="button"
               className="icon-square-btn"
-              onClick={() => setView('valaszto')}
+              onClick={goToSelector}
               title="Modulok"
               aria-label="Modulok"
             >
@@ -901,13 +1159,25 @@ function App() {
                   onTouchEnd={onCardTouchEnd}
                 >
                   <div className="flashcard-inner">
-                    <article className="flash-face flash-front">
+                    <article className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
                       <p className="card-label card-label-top">Kérdés</p>
-                      <h2>{currentCard.front}</h2>
+                      <CardContent
+                        value={currentCard.front}
+                        alt="Kérdés kép"
+                        textTag="h2"
+                        imageClassName="card-image"
+                        containerClassName="card-rich-content-center"
+                      />
                     </article>
-                    <article className="flash-face flash-back">
+                    <article className={`flash-face flash-back ${isCurrentBackRich ? 'flash-face-rich' : ''}`.trim()}>
                       <p className="card-label card-label-top">Válasz</p>
-                      <h2>{currentCard.back}</h2>
+                      <CardContent
+                        value={currentCard.back}
+                        alt="Válasz kép"
+                        textTag="h2"
+                        imageClassName="card-image"
+                        containerClassName="card-rich-content-center"
+                      />
                     </article>
                   </div>
                   {settings.showKeyboardHelp && (
@@ -933,7 +1203,7 @@ function App() {
                 <p>Ismétléshez jelölt kártyák: {unknownCount}</p>
                 <div className="summary-actions">
                   <button type="button" className="primary-btn" onClick={resetStudyState}>Újrakezdés</button>
-                  <button type="button" className="ghost-btn" onClick={() => setView('valaszto')}>Vissza a modulokhoz</button>
+                  <button type="button" className="ghost-btn" onClick={goToSelector}>Vissza a modulokhoz</button>
                 </div>
               </section>
             )}
@@ -961,7 +1231,13 @@ function App() {
             {testCards.length > 0 && currentTestCard && testStats.total < testCards.length && (
               <section className="test-card">
                 <p className="card-label">Tesztkérdés</p>
-                <h2>{currentTestCard.front}</h2>
+                <CardContent
+                  value={currentTestCard.front}
+                  alt="Teszt kérdés kép"
+                  textTag="h2"
+                  imageClassName="test-image"
+                  containerClassName="card-rich-content-test"
+                />
 
                 <div className="test-actions">
                   <button
@@ -1042,8 +1318,20 @@ function App() {
               <ul className="session-list">
                 {(panelTab === 'unknown' ? activeSession.unknown : activeSession.known).map((card) => (
                   <li key={card.id}>
-                    <strong>{card.front}</strong>
-                    <span>{card.back}</span>
+                    <CardContent
+                      value={card.front}
+                      alt="Mentett kérdés kép"
+                      textTag="strong"
+                      imageClassName="session-image"
+                      containerClassName="card-rich-content-session"
+                    />
+                    <CardContent
+                      value={card.back}
+                      alt="Mentett válasz kép"
+                      textTag="span"
+                      imageClassName="session-image"
+                      containerClassName="card-rich-content-session"
+                    />
                   </li>
                 ))}
                 {(panelTab === 'unknown' ? activeSession.unknown : activeSession.known).length === 0 && (
@@ -1081,19 +1369,19 @@ function App() {
 
         <nav className="sidebar-nav">
           <button type="button" className={view === 'valaszto' ? 'nav-btn active' : 'nav-btn'} onClick={() => {
-            setView('valaszto')
+            goToSelector()
             setIsMobileMenuOpen(false)
           }}>
             Kvízválasztó
           </button>
           <button type="button" className={view === 'tanulas' ? 'nav-btn active' : 'nav-btn'} onClick={() => {
-            setView('tanulas')
+            goToStudy()
             setIsMobileMenuOpen(false)
           }}>
             Tanulási mód
           </button>
           <button type="button" className={view === 'beallitasok' ? 'nav-btn active' : 'nav-btn'} onClick={() => {
-            setView('beallitasok')
+            goToSettings()
             setIsMobileMenuOpen(false)
           }}>
             Beállítások

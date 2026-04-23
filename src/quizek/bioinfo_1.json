@@ -6,7 +6,7 @@
     "cards": [
       {
         "id": "card-1",
-        "front": "Definialjuk a filogenetikai ´ X-fa fogalmat",
+        "front": "Definialjuk a filogenetikai X-fa fogalmat",
         "back": "Legyen X fajok egy adott halmaza. Egy filogenetikai X-fa egy olyan gyökérmentes fa, melynek nincsenek 2 fokú csúcsai, és melynek levélhalmaza X. Egy filogenetikai X-fa az X-ben lévő fajok evolúciós kapcsolatait írja le. A rekonstrukciós módszerek általában gyökérmentes fákat adnak."
       },
       {
@@ -31,383 +31,58 @@
       },
       {
         "id": "card-6",
-        "front": "https://atlantahumane.org/wp-content/uploads/2025/11/dog-hero.jpg",
-        "back": "DETERMINISZTIKUS"
+        "front": "Mutassuk meg, hogy a következő ábra által definiált karakter konvex. [[img:https://i.ibb.co/nq3BzHCV/6-kerdes.png]]",
+        "back": "Oldjuk meg a feladatot a konvexitás definícióját alkalmazva. Egy χ karakter konvex, ha a χ függvényt ki tudjuk terjeszteni a fa összes csúcsára úgy, hogy az egyazon karakter állapotú csúcsok által feszített részgráfok összefüggők legyenek. A következő ábra mutatja, hogy ez lehetséges. [[img:https://i.ibb.co/dJkjGX3B/6-valasz.png]]"
       },
       {
         "id": "card-7",
-        "front": "……………………………. jel esetében a jel mérésére tett minden kísérlet más és más eredményre vezet.",
-        "back": "SZTOCHASZTIKUS"
+        "front": "Mutassuk meg, hogy a következő ábra által definiált karakter nem konvex. [[img:https://i.ibb.co/m501Wg9k/7-kerdes.png]]",
+        "back": "Oldjuk meg ezt a feladatot a konvexitás egy másik definícióját alkalmazva. Jelölje T(α) azt a minimális részfát, ami az α állapotban lévő levél csúcsokat köti össze egymással, és T(β) azt a minimális részfát, ami a β állapotban lévő levél csúcsokat köti össze egymással. A χ karakter pontosan akkor konvex, ha T(α) és T(β) csúcsfüggetlenek, azaz nincs közös csúcsuk. A következő ábra mutatja, hogy a T(α) és T(β) fáknak vannak közös csúcsai, így a χ karakter nem konvex. [[img:https://i.ibb.co/gMSYG3GF/7-valasz.png]]"
       },
       {
         "id": "card-8",
-        "front": "……………………………. jel sok esetben megadható képlet formájában.",
-        "back": "DETERMINISZTIKUS"
+        "front": "Mutassuk meg, hogy a kovetkező ábrák által definiált karakter konvex. [[img:https://i.ibb.co/BKFxMtRW/8-kerdes.png]]",
+        "back": "Az órán megoldottuk ezt a feladatot mindkét definícióval. A következő ábra mutatja, hogy a karakter állapotaihoz definiált T(α),T(β),T(γ) és T(δ) fák egymástól páronként csúcsfüggetlenek, így a χ karakter konvex. [[img:https://i.ibb.co/3yjh5GWW/8-valasz.png]]"
       },
       {
         "id": "card-9",
-        "front": "A következő összefüggéssel definiált jel a(z) ……………………. jel:",
-        "back": "EGYSÉGUGRÁS"
+        "front": "Mi a konvexitás biológiai jelentése?",
+        "back": "Ha egy karakter konvex egy evolúciós fán, az azt jelenti, hogy a karakter fordított átmenetek (reverse transition) és konvergens átmenetek (convergent transition) nélkül fejlődött a fán. Mivel ezek az átmenetek ritka események az evolúcióban, ezért gyakran olyan filogenetikai fákat keresünk, melyek mentesek tőlük. Fordított átmenet történik, ha egy karakter állapot eltűnik, majd újra megjelenik az evolúció során. Konvergens átmenet pedig akkor történik, amikor egymástól távoli rokon fajoknál ugyanazok a tulajdonságok alakulnak ki valamiféle közös környezeti tényező hatásra, tehát ugyanaz a karakter állapot jelenik meg egy evolúciós fa olyan csúcsainál, akik egymástól messze vannak a fában."
       },
       {
         "id": "card-10",
-        "front": "A Heaviside-függvényt más néven ………….. jelnek nevezzük.",
-        "back": "EGYSÉGUGRÁS"
+        "front": "Definiáljuk a tökéletes törzsfejlődés problémáját (perfect phylogeny problem).",
+        "back": "Ennél a problémánál több X-en értelmezett karaktert vizsgálunk egyszerre. Az a kérdés, hogy van-e olyan filogenetikai X-fa, amelyen a megadott karakterek mindegyike konvex. Ha van ilyen fa, akkor cél egy ilyen fa megkonstruálása is."
       },
       {
         "id": "card-11",
-        "front": "Az egységugrásjel  helyen felvett értéke (számjeggyel írva): ………",
-        "back": "0"
+        "front": "Mi a ”maximum parsimony” módszer mögötti biológiai motiváció?",
+        "back": "A ”maximum parsimony” módszer mögötti ötlet az, hogy a karakteradatokat egy olyan fához illesztjük, ahol a fordított és konvergens átmenetek száma a lehető legkevesebb. Mivel az ilyen átmenetek viszonylag ritkák a biológiában, ezért ennél a módszernél feltételezzük, hogy a legvalószínűbb fa egy olyan fa, amelyik a lehető legkevesebb átmenetet igényli."
       },
       {
         "id": "card-12",
-        "front": "Az egységugrásjel  helyen felvett értéke (számjeggyel írva): ………",
-        "back": "1"
+        "front": "Tekintsük a következő T filogenetikai X-fát és az X halmazon az ábra által definiált χ karaktert. Határozzuk meg χ ”parsimony score”-ját a T fán, melynek szokásos jelölése l(χ,T). [[img:https://i.ibb.co/7xh9c4g3/12-kerdes.png]]",
+        "back": "Keressük a χ karakter egy olyan kiterjesztését a fa összes csúcsára, ahol a lehető legkevesebb az átmenet, ahol a lehető legkisebb a ”changing number”. Könnyű látni, hogy bárhogyan is terjesztjük ki χ-t a fa összes csúcsára, mindig adódik legalább 2 átmenet. A következő ábra χ egy olyan kiterjesztését mutatja be, ahol pontosan 2 az átmenet. Ezek alapján l(χ,T)=2. [[img:https://i.ibb.co/XrvLSfwj/12-valasz.png]]"
       },
       {
         "id": "card-13",
-        "front": "Az egységnyi intenzitású impulzus határesete (amikor annak szélessége nullához tart) a(z) ……………. deltafüggvény.",
-        "back": "DIRAC"
+        "front": "Tekintsük a következő T filogenetikai X-fát és az X halmazon az ábra által definiált χ karaktert. Határozzuk meg χ ”parsimony score”-ját a T fán, melynek szokásos jelölése l(χ,T). [[img:https://i.ibb.co/LzGb4v8g/13-kerdes.png]]",
+        "back": "Keressük a χ karakter egy olyan kiterjesztését a fa összes csúcsára, ahol a lehető legkevesebb az átmenet, ahol a lehető legkisebb a ”changing number”. Könnyű látni, hogy bárhogyan is terjesztjük ki χ-t a fa összes csúcsára, mindig adódik legalább 2 átmenet. A következő ábra χ egy olyan kiterjesztését mutatja be, ahol pontosan 2 az átmenet. Ezek alapján l(χ,T)=2. [[img:https://i.ibb.co/7JLx7K9P/13-valasz.png]]"
       },
       {
         "id": "card-14",
-        "front": "Az  alakú függvényt ………… jelnek nevezzük, ahol  tetszőleges időfüggvényt jelent.",
-        "back": "BELÉPŐ"
+        "front": "Mi a polimeráz láncreakció (PCR) célja?",
+        "back": "A DNS egy meghatározott szakaszáról nagy számú másolatot készíthetünk a PCR segítségével, ezáltal a DNS-ben tárolt genetikai információ (az A, C, G, T bázisok sorrendje, a szekvenciája) viszonylag olcsón és egyszerűen detektálható, meghatározható. A PCR segítségével bármilyen élőlény vagy vírus DNS-éhez specifikus detektálási teszt készíthető (pl. specifikus primerek tervezésével, amelyek csak a keresett élőlény DNS-éhez képesek kapcsolódni, azzal komplementerek). A szekvenálási módszerek alapját jelenti."
       },
       {
         "id": "card-15",
-        "front": "Periodikus jelek esetében igaz, hogy , ahol T az ún. ……………….idő.",
-        "back": "PERIÓDUS"
+        "front": "Milyen lépésekből áll a PCR? Mik az egyes lépések fő folyamatai?",
+        "back": "3 fő lépés: denaturáció (95C-on elváló kettős spirál, H-hidak bomlása a bázisok között), annealing (55-65C-on a rövid primer a komplementer DNS templát régióhoz kapcsolódnak), elongáció (72C-on a polimeráz enzim a primerektől indulva szintetizálja a templát alapján a komplementer szálat – egy kiindulási DNS templát mindkét szálán megtörténik, így a reakció végére a DNS templát egy szakaszának kiindulási mennyisége megduplázódik). A 3 lépés alkot egy ciklust, egy PCR-ben 30-40 ciklus megy végbe."
       },
       {
         "id": "card-16",
-        "front": "A tranziens összetevő  összefüggésében szereplő  változó neve: ……………..",
-        "back": "SAJÁTÉRTÉK"
-      },
-      {
-        "id": "card-17",
-        "front": "A tranziens összetevő  összefüggésében szereplő  változó neve: ……………..",
-        "back": "IDŐÁLLANDÓ"
-      },
-      {
-        "id": "card-18",
-        "front": "A sajátérték negatív reciproka a(z) ……………",
-        "back": "IDŐÁLLANDÓ"
-      },
-      {
-        "id": "card-19",
-        "front": "Az időállandó negatív reciproka a(z) ……………",
-        "back": "SAJÁTÉRTÉK"
-      },
-      {
-        "id": "card-20",
-        "front": "A(z) ………… egy valóságos objektum egy egyszerűsített leírása, modellje.",
-        "back": "RENDSZER"
-      },
-      {
-        "id": "card-21",
-        "front": "A(z) …………. egy transzformáció, ami a gerjesztéshez választ rendel.",
-        "back": "RENDSZER"
-      },
-      {
-        "id": "card-22",
-        "front": "A(z) …………. egy transzformáció, ami a bemenethez kimenetet rendel.",
-        "back": "RENDSZER"
-      },
-      {
-        "id": "card-23",
-        "front": "A rendszer …………… során a gerjesztés és a rendszer valamely leírása ismeretében határozzuk meg a választ.",
-        "back": "ANALÍZIS"
-      },
-      {
-        "id": "card-24",
-        "front": "A rendszeren végzett mérések alapján a rendszer modelljét a rendszer ……………. segítségével lehet meghatározni.",
-        "back": "IDENTIFIKÁCIÓ"
-      },
-      {
-        "id": "card-25",
-        "front": "A rendszer ……………. során ismert a rendszer leírása és a rendszer kimenete, s ezek birtokában határozzuk meg a rendszer bemenetét.",
-        "back": "SZINTÉZIS"
-      },
-      {
-        "id": "card-26",
-        "front": "Lineáris rendszer esetén érvényes a(z) ………………………. elve.",
-        "back": "SZUPERPOZÍCIÓ"
-      },
-      {
-        "id": "card-27",
-        "front": "……………. rendszer esetén igaz, hogy, amennyiben a rendszer az  gerjesztésre  válasszal felel, illetve az  gerjesztésre  válasszal, akkor a  gerjesztésre a válasz .",
-        "back": "LINEÁRIS"
-      },
-      {
-        "id": "card-28",
-        "front": "A(z) ……………. elve szerint, ha egy lineáris rendszer az  gerjesztésre  válasszal felel, illetve az  gerjesztésre  válasszal, akkor a  gerjesztésre a válasz .",
-        "back": "SZUPERPOZÍCIÓ"
-      },
-      {
-        "id": "card-29",
-        "front": "……………….. rendszer esetén a gerjesztés időbeli eltolása a válaszban ugyanekkora eltolást eredményez.",
-        "back": "INVARIÁNS"
-      },
-      {
-        "id": "card-30",
-        "front": "Fizikai, megvalósítható rendszer mindig ………………..",
-        "back": "KAUZÁLIS"
-      },
-      {
-        "id": "card-31",
-        "front": "Ha a rendszer korlátos gerjesztésre korlátos válasszal felel, akkor a rendszer …………….",
-        "back": "STABIL"
-      },
-      {
-        "id": "card-32",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer ………………… stabil, ha állapotvektora az origóba tart.",
-        "back": "ASZIMPTOTIKUS"
-      },
-      {
-        "id": "card-33",
-        "front": "A lineáris, invariáns és kauzális rendszer egységugrásjelre adott válasza az ún. ………………….válasz.",
-        "back": "UGRÁS"
-      },
-      {
-        "id": "card-34",
-        "front": "A lineáris, invariáns és kauzális rendszer Dirac-delta jelre adott válasza az ún. ………………….válasz.",
-        "back": "IMPULZUS"
-      },
-      {
-        "id": "card-35",
-        "front": "A lineáris, invariáns és kauzális rendszer tetszőleges bemenőjelre adott válasza az impulzusválasz ismeretében a(z) ………………….. segítségével számítható.",
-        "back": "KONVOLÚCIÓ, vagy SÚLYFÜGGVÉNY-TÉTEL, vagy SÚLYFÜGGVÉNY TÉTEL"
-      },
-      {
-        "id": "card-36",
-        "front": "Az  kifejezés neve: ……………………..",
-        "back": "KONVOLÚCIÓ, vagy SÚLYFÜGGVÉNY-TÉTEL, vagy SÚLYFÜGGVÉNY TÉTEL"
-      },
-      {
-        "id": "card-37",
-        "front": "A(z) ………….. n számú elsőrendű differenciálegyenletből áll.",
-        "back": "ÁLLAPOTVÁLTOZÓS LEÍRÁS vagy ÁLLAPOTEGYENLET"
-      },
-      {
-        "id": "card-38",
-        "front": "A nemlineáris rendszermodell bizonyos feltételek mellett az ún. ………………….. módszerével lineáris modellé alakítható.",
-        "back": "MUNKAPONTI LINEARIZÁLÁS"
-      },
-      {
-        "id": "card-39",
-        "front": "A(z) …………………… a szinuszos jel csúcsértékét és kezdőfázisát tartalmazza Euler-alakban.",
-        "back": "KOMPLEX CSÚCS"
-      },
-      {
-        "id": "card-40",
-        "front": "Szinuszos jelek kényelmes leírására alkalmas a(z) ………………….",
-        "back": "KOMPLEX CSÚCS"
-      },
-      {
-        "id": "card-41",
-        "front": "Szinuszos gerjesztő jel esetén a lineáris rendszer szinuszos kimenőjelének amplitúdója és fázisa eltérhet a bemenőjel amplitúdójától és fázisától. Ezt a kapcsolatot írja a(z) ……………………",
-        "back": "ÁTVITELI KARAKTERISZTIKA"
-      },
-      {
-        "id": "card-42",
-        "front": "A(z) ……………….. olyan rendszerjellemző függvény, amely szinuszos gerjesztést feltételezve jellemzi a lineáris rendszert.",
-        "back": "ÁTVITELI KARAKTERISZTIKA"
-      },
-      {
-        "id": "card-43",
-        "front": "A(z) ………………… minden körfrekvencián megadja a szinuszos kimenőjel és a szinuszos gerjesztő jel közötti kapcsolatot.",
-        "back": "ÁTVITELI KARAKTERISZTIKA"
-      },
-      {
-        "id": "card-44",
-        "front": "A(z) ………………… a szinuszos válaszjel komplex csúcsértékének és a szinuszos gerjesztő jel komplex csúcsértékének a hányadosa.",
-        "back": "ÁTVITELI KARAKTERISZTIKA"
-      },
-      {
-        "id": "card-45",
-        "front": "Az átviteli karakterisztika abszolút értéke a(z) …………….",
-        "back": "AMPLITÚDÓKARAKTERISZTIKA"
-      },
-      {
-        "id": "card-46",
-        "front": "Az átviteli karakterisztika fázisa a(z) …………….",
-        "back": "FÁZISKARAKTERISZTIKA"
-      },
-      {
-        "id": "card-47",
-        "front": "A(z) ……………………. azt adja meg, hogy szinuszos bemeneti jel esetén a rendszer milyen mértékben változtatja meg a bemenőjel amplitúdóját.",
-        "back": "AMPLITÚDÓKARAKTERISZTIKA"
-      },
-      {
-        "id": "card-48",
-        "front": "A(z) ……………………. azt adja meg, hogy szinuszos bemeneti jel esetén a rendszer milyen mértékben változtatja meg a bemenőjel csúcsértékét.",
-        "back": "AMPLITÚDÓKARAKTERISZTIKA"
-      },
-      {
-        "id": "card-49",
-        "front": "A(z) ……………………. azt adja meg, hogy szinuszos bemeneti jel esetén a rendszer milyen mértékben változtatja meg a bemenőjel kezdőfázisát.",
-        "back": "FÁZISKARAKTERISZTIKA"
-      },
-      {
-        "id": "card-50",
-        "front": "Szinuszos jelek esetén célszerű a komplex csúcsértékek (effektív értékek) alkalmazása. Az  összefüggésben szereplő  az ún. ……………………..",
-        "back": "ÁTVITELI KARAKTERISZTIKA"
-      },
-      {
-        "id": "card-51",
-        "front": "A(z) ……………-diagram az átviteli karakterisztikát a komplex számsíkon ábrázolja.",
-        "back": "NYQUIST"
-      },
-      {
-        "id": "card-52",
-        "front": "A(z) ……………-diagram az átviteli karakterisztikát, mint a  komplex vektor végpontját, körfrekvenciáról körfrekvenciára haladva ábrázolja a komplex számsíkon.",
-        "back": "NYQUIST"
-      },
-      {
-        "id": "card-53",
-        "front": "A(z) ……………-diagram az átviteli karakterisztikát két diagramon ábrázolja: külön az amplitúdókarakterisztikát és külön a fáziskarakterisztikát.",
-        "back": "BODE"
-      },
-      {
-        "id": "card-54",
-        "front": "A Nyquist-görbe a ……………. tengelyre szimmetrikus.",
-        "back": "VÍZSZINTES vagy REÁLIS vagy VALÓS"
-      },
-      {
-        "id": "card-55",
-        "front": "A Laplace-transzformáció  változója a(z) …………………. frekvencia.",
-        "back": "KOMPLEX"
-      },
-      {
-        "id": "card-56",
-        "front": "Az  összefüggésben szereplő  a(z) ……………………..",
-        "back": "ÁTVITELI FÜGGVÉNY"
-      },
-      {
-        "id": "card-57",
-        "front": "A(z) ……………… a kimenőjel Laplace-transzformáltjának és a bemenőjel Laplace-transzformáltjának a hányadosa.",
-        "back": "ÁTVITELI FÜGGVÉNY"
-      },
-      {
-        "id": "card-58",
-        "front": "Az átviteli függvény számlálója polinomjának gyökei a(z) …………….",
-        "back": "ZÉRUS"
-      },
-      {
-        "id": "card-59",
-        "front": "Az átviteli függvény nevezője polinomjának gyökei a(z) …………….",
-        "back": "PÓLUS"
-      },
-      {
-        "id": "card-60",
-        "front": "A(z) ………………. egy folyamatba való beavatkozás valamely cél elérése érdekében.",
-        "back": "IRÁNYÍTÁS"
-      },
-      {
-        "id": "card-61",
-        "front": "A(z) ……………….. nyílt láncú irányítás.",
-        "back": "VEZÉRLÉS"
-      },
-      {
-        "id": "card-62",
-        "front": "A vezérlés …………………. láncú irányítás.",
-        "back": "NYÍLT"
-      },
-      {
-        "id": "card-63",
-        "front": "A(z) ……………….. zárt láncú irányítás.",
-        "back": "SZABÁLYOZÁS"
-      },
-      {
-        "id": "card-64",
-        "front": "A szabályozás …………………. láncú irányítás.",
-        "back": "ZÁRT"
-      },
-      {
-        "id": "card-65",
-        "front": "A szabályozás ……………… visszacsatolást tartalmaz.",
-        "back": "NEGATÍV"
-      },
-      {
-        "id": "card-66",
-        "front": "A szabályozott folyamat kimenőjele a(z) ………….. jellemző.",
-        "back": "SZABÁLYOZOTT"
-      },
-      {
-        "id": "card-67",
-        "front": "Szabályozás esetén a folyamat kimenőjelét, más néven a(z) ………….. jellemzőt csatoljuk vissza.",
-        "back": "SZABÁLYOZOTT"
-      },
-      {
-        "id": "card-68",
-        "front": "A szabályozás célját a(z) …………………. jel fogalmazza meg.",
-        "back": "ALAP, vagy REFERENCIA"
-      },
-      {
-        "id": "card-69",
-        "front": "A szabályozott jellemzőt a(z) ………………… méri.",
-        "back": "SZENZOR, vagy ÉRZÉKELŐ"
-      },
-      {
-        "id": "card-70",
-        "front": "A szabályozott folyamat bemenetén általában egy teljesítményelektronikai berendezés, az ún. …………….. található.",
-        "back": "BEAVATKOZÓ, AKTUÁTOR"
-      },
-      {
-        "id": "card-71",
-        "front": "A beavatkozó szerv másik neve: …………………….. .",
-        "back": "AKTUÁTOR"
-      },
-      {
-        "id": "card-72",
-        "front": "Az alapjel és az ellenőrző jel különbsége a(z) ………………… .",
-        "back": "HIBAJEL"
-      },
-      {
-        "id": "card-73",
-        "front": "A szabályozó bemenőjele a(z) ………………… .",
-        "back": "HIBAJEL"
-      },
-      {
-        "id": "card-74",
-        "front": "A szabályozó kimenőjele a(z) ………………… .",
-        "back": "BEAVATKOZÓ JEL"
-      },
-      {
-        "id": "card-75",
-        "front": "A folyamat bemenőjele a(z) ………………… .",
-        "back": "BEAVATKOZÓ JEL"
-      },
-      {
-        "id": "card-76",
-        "front": "A folyamat kimenőjele a(z) ………………… .",
-        "back": "SZABÁLYOZOTT JELLEMZŐ"
-      },
-      {
-        "id": "card-77",
-        "front": "Az állapotváltozós leírásban szereplő  mátrix mérete , az ilyen mátrixot négyzetes, vagy ………………….. mátrixnak nevezzük.",
-        "back": "KVADRATIKUS"
-      },
-      {
-        "id": "card-78",
-        "front": "Az állapotváltozós leírásban szereplő  mátrixból számíthatók a(z) ………………….., amelyek felelősek a rendszer tranzienseiért.",
-        "back": "SAJÁTÉRTÉK"
-      },
-      {
-        "id": "card-79",
-        "front": "Az állapotváltozós leírásban szereplő  mátrixhoz rendelhetjük a , ún. ………………….. polinomot.",
-        "back": "KARAKTERISZTIKUS"
-      },
-      {
-        "id": "card-80",
-        "front": "A  egyenlet az ún. ………………………… egyenlet.",
-        "back": "KARAKTERISZTIKUS"
-      },
-      {
-        "id": "card-81",
-        "front": "A  egyenlet megoldásaként megkapjuk a rendszer  ………………………….",
-        "back": "SAJÁTÉRTÉK"
+        "front": "Mi az alábbi DNS-szekvencia komplementere?AGC TTG GTA ACC TAG",
+        "back": "A komplementaritás elvét kell ismerni hozzá (az adeninnel szemben timin, a citozinnal szemben guanin helyezkedik el). TCG AAC CAT TGG ATC"
       }
     ]
   }

@@ -382,6 +382,14 @@
   -ms-user-select: none;
 }
 
+.flash-face-rich {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
 .flash-front {
   background: linear-gradient(
       135deg,
@@ -423,6 +431,51 @@
   line-height: 1.45;
 }
 
+.card-rich-content {
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+}
+
+.card-rich-content-center {
+  justify-items: center;
+}
+
+.card-rich-content-test {
+  justify-items: start;
+}
+
+.card-rich-content-session {
+  justify-items: start;
+}
+
+.card-rich-content h2,
+.card-rich-content strong,
+.card-rich-content span {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.card-rich-content.has-mixed-media h2 {
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.35;
+}
+
+.card-rich-content.has-mixed-media .card-image {
+  max-height: min(26vh, 220px);
+}
+
+.card-image {
+  max-width: min(100%, 720px);
+  max-height: min(36vh, 300px);
+  width: auto;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: contain;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.12);
+}
+
 .shortcut-hint {
   position: absolute;
   bottom: 1rem;
@@ -451,6 +504,17 @@
 .test-card h2 {
   margin: 0.4rem 0 0;
   color: var(--on-surface);
+}
+
+.test-image {
+  margin-top: 0.4rem;
+  max-width: min(100%, 640px);
+  max-height: min(34vh, 280px);
+  width: auto;
+  height: auto;
+  border-radius: 0.7rem;
+  object-fit: contain;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
 }
 
 .test-actions {
@@ -591,6 +655,16 @@
 .session-empty {
   color: var(--on-surface-variant);
   font-size: 0.88rem;
+}
+
+.session-image {
+  max-width: min(100%, 360px);
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  border-radius: 0.55rem;
+  object-fit: contain;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
 }
 
 button,
@@ -762,6 +836,10 @@ button:not(:disabled):active,
   .flashcard h2 {
     font-size: clamp(1.1rem, 5.4vw, 1.35rem);
     line-height: 1.35;
+  }
+
+  .card-image {
+    max-height: min(38vh, 260px);
   }
 
   .shortcut-hint {
