@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Explicitly allow common social crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+Sitemap: https://quiz.gondocsrobert.hu/sitemap.xml
