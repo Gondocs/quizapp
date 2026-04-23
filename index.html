@@ -54,13 +54,12 @@
       (function () {
         try {
           var savedTheme = localStorage.getItem('study-theme')
-          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
           var theme = savedTheme === 'light' || savedTheme === 'dark'
             ? savedTheme
-            : (prefersDark ? 'dark' : 'light')
+            : 'dark'
           document.documentElement.setAttribute('data-theme', theme)
         } catch (_error) {
-          document.documentElement.setAttribute('data-theme', 'light')
+          document.documentElement.setAttribute('data-theme', 'dark')
         }
       })()
     </script>

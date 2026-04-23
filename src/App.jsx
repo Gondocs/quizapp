@@ -407,7 +407,7 @@ function App() {
     if (savedTheme === 'light' || savedTheme === 'dark') {
       return savedTheme
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    return 'dark'
   })
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('quiz-settings')
