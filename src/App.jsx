@@ -399,16 +399,16 @@ function App() {
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('quiz-settings')
     if (!saved) {
-      return { shuffleOnStart: false, showKeyboardHelp: true }
+      return { shuffleOnStart: false, showKeyboardHelp: false }
     }
     try {
       const parsed = JSON.parse(saved)
       return {
         shuffleOnStart: Boolean(parsed.shuffleOnStart),
-        showKeyboardHelp: parsed.showKeyboardHelp !== false,
+        showKeyboardHelp: Boolean(parsed.showKeyboardHelp),
       }
     } catch {
-      return { shuffleOnStart: false, showKeyboardHelp: true }
+      return { shuffleOnStart: false, showKeyboardHelp: false }
     }
   })
 
