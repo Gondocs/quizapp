@@ -322,6 +322,7 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
 }
 
 .flashcard.flipped {
@@ -388,6 +389,8 @@
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .flash-front {

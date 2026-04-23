@@ -151,6 +151,19 @@ function extractImageUrlsFromCard(card) {
   return [...extractImageUrlsFromText(card.front), ...extractImageUrlsFromText(card.back)]
 }
 
+function shouldUseRichCardLayout(value) {
+  const text = String(value || '')
+  const parts = parseCardContentParts(text)
+  const hasImage = parts.some((part) => part.type === 'image')
+  const normalizedLength = text.replace(/\s+/g, ' ').trim().length
+  const lineBreakCount = (text.match(/\n/g) || []).length
+
+  if (hasImage || parts.length > 1) {
+    return true
+  }
+  return normalizedLength > 190 || lineBreakCount > 1
+}
+
 function CardContent({
   value,
   alt,
@@ -415,6 +428,7 @@ function App() {
   // Refs.
   const feedbackTimerRef = useRef(null)
   const touchStartXRef = useRef(null)
+  const touchStartYRef = useRef(null)
   const preloadedImagesRef = useRef(new Set())
 
   // Téma szinkron.
@@ -537,8 +551,8 @@ function App() {
 
   // Aktuális állapotok.
   const currentCard = activeCards[index] || null
-  const isCurrentFrontRich = currentCard ? parseCardContentParts(currentCard.front).length > 1 : false
-  const isCurrentBackRich = currentCard ? parseCardContentParts(currentCard.back).length > 1 : false
+  const isCurrentFrontRich = currentCard ? shouldUseRichCardLayout(currentCard.front) : false
+  const isCurrentBackRich = currentCard ? shouldUseRichCardLayout(currentCard.back) : false
   const knownCount = Object.values(markMap).filter((mark) => mark === 'known').length
   const unknownCount = Object.values(markMap).filter((mark) => mark === 'unknown').length
   const activeSession = activeModule ? sessionStore[activeModule.id] || { known: [], unknown: [] } : { known: [], unknown: [] }
@@ -835,6 +849,7 @@ function App() {
   // Swipe start/end.
   const onCardTouchStart = useCallback((event) => {
     touchStartXRef.current = event.changedTouches[0].clientX
+    touchStartYRef.current = event.changedTouches[0].clientY
   }, [])
 
   const onCardTouchEnd = useCallback((event) => {
@@ -842,18 +857,36 @@ function App() {
       return
     }
     const startX = touchStartXRef.current
+    const startY = touchStartYRef.current
     if (startX === null || startX === undefined) {
       return
     }
+    if (startY === null || startY === undefined) {
+      return
+    }
     const endX = event.changedTouches[0].clientX
+    const endY = event.changedTouches[0].clientY
     const delta = endX - startX
+    const deltaY = endY - startY
+
+    // Függőleges görgetési gesztusnál ne minősítsünk kártyát.
+    if (Math.abs(deltaY) > Math.abs(delta) || Math.abs(deltaY) > 40) {
+      touchStartXRef.current = null
+      touchStartYRef.current = null
+      return
+    }
+
     if (delta > 60) {
       markCard('known')
+      touchStartXRef.current = null
+      touchStartYRef.current = null
       return
     }
     if (delta < -60) {
       markCard('unknown')
     }
+    touchStartXRef.current = null
+    touchStartYRef.current = null
   }, [markCard, studyMode])
 
   // Billentyűk kezelése.
