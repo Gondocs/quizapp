@@ -1,5 +1,6 @@
-﻿import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 
 const quizFiles = import.meta.glob('./quizek/*.json', { eager: true })
@@ -1424,6 +1425,7 @@ function App() {
           {view === 'beallitasok' && renderSettingsView()}
         </div>
       </main>
+      <Analytics />
     </div>
   )
 }
