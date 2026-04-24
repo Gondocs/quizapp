@@ -386,7 +386,7 @@
 .flash-face-rich {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -832,8 +832,8 @@ button:not(:disabled):active,
 
   .top-bar > div:last-child {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    justify-content: center;
   }
 
   .top-bar > div:last-child button {
