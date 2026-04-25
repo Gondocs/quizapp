@@ -27,7 +27,7 @@
       {
         "id": "card-5",
         "front": "Definiáljuk a karakter fogalmát.",
-        "back": "A biológiában a karakterek fajok tulajdonságait írják le. A karakter adatokat a biológusok gyakran használják filogenetikai fák rekonstruálására, amihez szükség van a pontos matematikai definíciójukra. Legyen X fajok egy halmaza. Egy X-en értelmezett χ karakter egy olyan függvény, mely az X halmaz egy X′ részhalmazához rendel karakter állapotokat egy C halmazból. Formálisan, χ : X′ → C. Példa: Ha X különböző főemlős fajok egy halmaza, akkor χ lehet az a karakter, mely a 0 értéket rendeli egy főemlős fajhoz, akinek nincsen farka, és az 1 értéket rendeli egy főemlős fajhoz, akinek van farka. Így C = {0,1}."
+        "back": "Megoldás. A biológiában a karakterek taxonok tulajdonságait írják le (ez lehet például morfológiai vagy genetikai tulajdonság). A karakter adatokat a biológusok gyakran használják filogenetikai fák rekonstruálására, amihez szükség van a pontos matematikai definíciójukra. Legyen X taxonok egy halmaza. Egy X-en értelmezett χ karakter egy olyan függvény, mely az X halmaz elemeihez rendel karakter állapotokat egy C halmazból. Formálisan, χ : X → C."
       },
       {
         "id": "card-6",
@@ -47,7 +47,7 @@
       {
         "id": "card-9",
         "front": "Mi a konvexitás biológiai jelentése?",
-        "back": "Ha egy karakter konvex egy evolúciós fán, az azt jelenti, hogy a karakter fordított átmenetek (reverse transition) és konvergens átmenetek (convergent transition) nélkül fejlődött a fán. Mivel ezek az átmenetek ritka események az evolúcióban, ezért gyakran olyan filogenetikai fákat keresünk, melyek mentesek tőlük. Fordított átmenet történik, ha egy karakter állapot eltűnik, majd újra megjelenik az evolúció során. Konvergens átmenet pedig akkor történik, amikor egymástól távoli rokon fajoknál ugyanazok a tulajdonságok alakulnak ki valamiféle közös környezeti tényező hatásra, tehát ugyanaz a karakter állapot jelenik meg egy evolúciós fa olyan csúcsainál, akik egymástól messze vannak a fában."
+        "back": "Ha egy karakter konvex egy evolúciós fán, az azt jelenti, hogy a karakter homoplázia nélkül fejlődött a fán, azaz nem fordulnak elő sem fordított átmenetek (reverse transitions), sem konvergens átmenetek (convergent transitions). A filogenetikában gyakran olyan fákat keresünk, amelyeken a karakterek konvexek, mivel ez egyszerűbb és jól értelmezhető evolúciós történetet jelez. Fordított átmenet akkor történik, amikor egy karakterállapot megváltozik, majd később visszatér egy korábbi állapotba. Konvergens átmenet pedig akkor lép fel, amikor egymástól távoli rokon taxonokban ugyanaz a karakterállapot egymástól függetlenül alakul ki, például hasonló környezeti hatások következtében."
       },
       {
         "id": "card-10",
@@ -57,7 +57,7 @@
       {
         "id": "card-11",
         "front": "Mi a ”maximum parsimony” módszer mögötti biológiai motiváció?",
-        "back": "A ”maximum parsimony” módszer mögötti ötlet az, hogy a karakteradatokat egy olyan fához illesztjük, ahol a fordított és konvergens átmenetek száma a lehető legkevesebb. Mivel az ilyen átmenetek viszonylag ritkák a biológiában, ezért ennél a módszernél feltételezzük, hogy a legvalószínűbb fa egy olyan fa, amelyik a lehető legkevesebb átmenetet igényli."
+        "back": "A „maximum parsimony” módszer mögötti ötlet az, hogy a karakteradatokat egy olyan fához illesztjük, ahol a fordított és konvergens átmenetek száma a lehető legkevesebb. Mivel az ilyen átmenetek viszonylag ritkák a biológiában, ezért ennél a módszernél feltételezzük, hogy a legvalószínűbb fa egy olyan fa, amelyik a lehető legkevesebb átmenetet igényli."
       },
       {
         "id": "card-12",
