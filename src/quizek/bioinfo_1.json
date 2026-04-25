@@ -27,7 +27,7 @@
       {
         "id": "card-5",
         "front": "Definiáljuk a karakter fogalmát.",
-        "back": "Megoldás. A biológiában a karakterek taxonok tulajdonságait írják le (ez lehet például morfológiai vagy genetikai tulajdonság). A karakter adatokat a biológusok gyakran használják filogenetikai fák rekonstruálására, amihez szükség van a pontos matematikai definíciójukra. Legyen X taxonok egy halmaza. Egy X-en értelmezett χ karakter egy olyan függvény, mely az X halmaz elemeihez rendel karakter állapotokat egy C halmazból. Formálisan, χ : X → C."
+        "back": "A biológiában a karakterek taxonok tulajdonságait írják le (ez lehet például morfológiai vagy genetikai tulajdonság). A karakter adatokat a biológusok gyakran használják filogenetikai fák rekonstruálására, amihez szükség van a pontos matematikai definíciójukra. Legyen X taxonok egy halmaza. Egy X-en értelmezett χ karakter egy olyan függvény, mely az X halmaz elemeihez rendel karakter állapotokat egy C halmazból. Formálisan, χ : X → C."
       },
       {
         "id": "card-6",
