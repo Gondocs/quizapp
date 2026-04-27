@@ -430,6 +430,8 @@ function App() {
   const touchStartXRef = useRef(null)
   const touchStartYRef = useRef(null)
   const preloadedImagesRef = useRef(new Set())
+  const frontRef = useRef(null)
+  const backRef = useRef(null)
 
   // Téma szinkron.
   useEffect(() => {
@@ -587,6 +589,20 @@ function App() {
       image.decoding = 'async'
     })
   }, [activeCards, index, view])
+
+  // Reset scroll position of card faces when switching cards or flipping
+  useEffect(() => {
+    try {
+      if (frontRef.current) {
+        frontRef.current.scrollTop = 0
+      }
+      if (backRef.current) {
+        backRef.current.scrollTop = 0
+      }
+    } catch (e) {
+      // silent
+    }
+  }, [index, activeModule?.id, isFlipped])
 
   // Session frissítés minősítés után.
   const updateSessionStore = useCallback((card, value) => {
@@ -1190,7 +1206,7 @@ function App() {
                   onTouchEnd={onCardTouchEnd}
                 >
                   <div className="flashcard-inner">
-                    <article className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
+                    <article ref={frontRef} className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
                       <p className="card-label card-label-top">Kérdés</p>
                       <CardContent
                         value={currentCard.front}
@@ -1200,7 +1216,7 @@ function App() {
                         containerClassName="card-rich-content-center"
                       />
                     </article>
-                    <article className={`flash-face flash-back ${isCurrentBackRich ? 'flash-face-rich' : ''}`.trim()}>
+                    <article ref={backRef} className={`flash-face flash-back ${isCurrentBackRich ? 'flash-face-rich' : ''}`.trim()}>
                       <p className="card-label card-label-top">Válasz</p>
                       <CardContent
                         value={currentCard.back}

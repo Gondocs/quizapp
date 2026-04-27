@@ -375,12 +375,16 @@
   place-content: center;
   place-items: center;
   text-align: center;
-  padding: 2.8rem 2rem 3rem;
+  padding: 2.4rem 1.6rem 3rem;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
 }
 
 .flash-face-rich {
@@ -410,7 +414,16 @@
       color-mix(in srgb, var(--surface-container-low) 84%, transparent)
     ),
     var(--surface);
+    z-index: 0;
 }
+
+  .flashcard.flipped .flash-back {
+    z-index: 2;
+  }
+
+  .flashcard.flipped .flash-front {
+    z-index: 0;
+  }
 
 .card-label {
   margin: 0;
