@@ -72,7 +72,7 @@
       {
         "id": "card-14",
         "front": "Mi a polimeráz láncreakció (PCR) célja?",
-        "back": "A DNS egy meghatározott szakaszáról nagy számú másolatot készíthetünk a PCR segítségével, ezáltal a DNS-ben tárolt genetikai információ (az A, C, G, T bázisok sorrendje, a szekvenciája) viszonylag olcsón és egyszerűen detektálható, meghatározható. A PCR segítségével bármilyen élőlény vagy vírus DNS-éhez specifikus detektálási teszt készíthető (pl. specifikus primerek tervezésével, amelyek csak a keresett élőlény DNS-éhez képesek kapcsolódni, azzal komplementerek). A szekvenálási módszerek alapját jelenti."
+        "back": "A DNS egy meghatározott szakaszáról nagy számú másolatot készíthetünk a PCR segítségével, ezáltal a DNS-ben tárolt genetikai információ viszonylag olcsón és egyszerűen detektálható, meghatározható. A PCR segítségével bármilyen élőlény vagy vírus DNS-éhez specifikus detektálási teszt készíthető. A szekvenálási módszerek alapját jelenti."
       },
       {
         "id": "card-15",
