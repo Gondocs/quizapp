@@ -6,7 +6,7 @@
     "cards": [
       {
         "id": "card-1",
-        "front": "Definialjuk a filogenetikai X-fa fogalmat",
+        "front": "Definiáljuk a filogenetikai X-fa fogalmát",
         "back": "Legyen X fajok egy adott halmaza. Egy filogenetikai X-fa egy olyan gyökérmentes fa, melynek nincsenek 2 fokú csúcsai, és melynek levélhalmaza X. Egy filogenetikai X-fa az X-ben lévő fajok evolúciós kapcsolatait írja le. A rekonstrukciós módszerek általában gyökérmentes fákat adnak."
       },
       {

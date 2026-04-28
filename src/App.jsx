@@ -372,7 +372,6 @@ function App() {
 
   // Fő adatok.
   const [modules, setModules] = useState(() => sampleModules.flatMap((source) => normalizeSource(source.payload, source.sourceName, source.sourceId)))
-  const [view, setView] = useState('valaszto')
   const [activeModule, setActiveModule] = useState(null)
   const [deckCards, setDeckCards] = useState([])
 
@@ -412,16 +411,19 @@ function App() {
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('quiz-settings')
     if (!saved) {
-      return { shuffleOnStart: false, showKeyboardHelp: false }
+      return { shuffleOnStart: false, showKeyboardHelp: false, fontScale: 1 }
     }
     try {
       const parsed = JSON.parse(saved)
       return {
         shuffleOnStart: Boolean(parsed.shuffleOnStart),
         showKeyboardHelp: Boolean(parsed.showKeyboardHelp),
+        fontScale: typeof parsed.fontScale === 'number' && Number.isFinite(parsed.fontScale)
+          ? Math.min(1.4, Math.max(0.8, parsed.fontScale))
+          : 1,
       }
     } catch {
-      return { shuffleOnStart: false, showKeyboardHelp: false }
+      return { shuffleOnStart: false, showKeyboardHelp: false, fontScale: 1 }
     }
   })
 
@@ -432,6 +434,21 @@ function App() {
   const preloadedImagesRef = useRef(new Set())
   const frontRef = useRef(null)
   const backRef = useRef(null)
+  const [frontScrollable, setFrontScrollable] = useState(false)
+  const [backScrollable, setBackScrollable] = useState(false)
+
+  const view = useMemo(() => {
+    if (routeModuleId) {
+      return 'tanulas'
+    }
+    if (location.pathname === '/settings') {
+      return 'beallitasok'
+    }
+    return 'valaszto'
+  }, [location.pathname, routeModuleId])
+
+  const routeMessage = typeof location.state?.routeMessage === 'string' ? location.state.routeMessage : ''
+  const selectorMessage = uploadMessage || routeMessage
 
   // Téma szinkron.
   useEffect(() => {
@@ -444,24 +461,19 @@ function App() {
     localStorage.setItem('quiz-settings', JSON.stringify(settings))
   }, [settings])
 
+  // Betűméret skála alkalmazása (lokális beállítás).
+  useEffect(() => {
+    const scale = typeof settings.fontScale === 'number' && Number.isFinite(settings.fontScale)
+      ? Math.min(1.4, Math.max(0.8, settings.fontScale))
+      : 1
+    document.documentElement.style.setProperty('--card-font-scale', String(scale))
+  }, [settings.fontScale])
+
   // Session mentés localStorage-be és sütibe.
   useEffect(() => {
     localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionStore))
     setCookie(SESSION_COOKIE, JSON.stringify(sessionStore), 14)
   }, [sessionStore])
-
-  // Útvonal alapján nézet kiválasztása.
-  useEffect(() => {
-    if (routeModuleId) {
-      setView('tanulas')
-      return
-    }
-    if (location.pathname === '/settings') {
-      setView('beallitasok')
-      return
-    }
-    setView('valaszto')
-  }, [location.pathname, routeModuleId])
 
   // Fullscreen figyelés.
   useEffect(() => {
@@ -599,10 +611,57 @@ function App() {
       if (backRef.current) {
         backRef.current.scrollTop = 0
       }
-    } catch (e) {
+    } catch {
       // silent
     }
   }, [index, activeModule?.id, isFlipped])
+
+  // Detect whether face-content is scrollable and set state to control vertical alignment
+  useEffect(() => {
+    const checkScrollable = (el) => {
+      if (!el) return false
+      return el.scrollHeight > el.clientHeight + 1
+    }
+
+    const update = () => {
+      try {
+        setFrontScrollable(checkScrollable(frontRef.current))
+        setBackScrollable(checkScrollable(backRef.current))
+      } catch {
+        // ignore
+      }
+    }
+
+    update()
+    window.addEventListener('resize', update)
+
+    // Use ResizeObserver to catch content changes (images loading etc.)
+    let roFront = null
+    let roBack = null
+    try {
+      if (window.ResizeObserver) {
+        roFront = new ResizeObserver(() => update())
+        roBack = new ResizeObserver(() => update())
+        if (frontRef.current) roFront.observe(frontRef.current)
+        if (backRef.current) roBack.observe(backRef.current)
+      }
+    } catch {
+      // ignore
+    }
+
+    // small retry for late-loaded media
+    const t = window.setTimeout(update, 350)
+    return () => {
+      window.clearTimeout(t)
+      window.removeEventListener('resize', update)
+      try {
+        if (roFront) roFront.disconnect()
+        if (roBack) roBack.disconnect()
+      } catch {
+        // ignore
+      }
+    }
+  }, [index, currentCard?.front, currentCard?.back, isFlipped])
 
   // Session frissítés minősítés után.
   const updateSessionStore = useCallback((card, value) => {
@@ -640,7 +699,7 @@ function App() {
   }, [])
 
   // Tanulási reset.
-  const resetStudyState = useCallback(() => {
+  const resetStudyState = useCallback((clearModuleSession = false) => {
     setPhase('main')
     setIndex(0)
     setIsFlipped(false)
@@ -649,6 +708,14 @@ function App() {
     resetTestState()
     if (activeModule) {
       setMarkMap(createMarkMapFromSession(activeModule.id, sessionStore))
+      if (clearModuleSession) {
+        setSessionStore((prev) => {
+          const next = { ...prev }
+          delete next[activeModule.id]
+          return next
+        })
+        setMarkMap({})
+      }
     }
   }, [activeModule, resetTestState, sessionStore])
 
@@ -662,7 +729,6 @@ function App() {
 
     setActiveModule(moduleItem)
     setDeckCards(cards)
-    setView('tanulas')
     setPhase('main')
     setIndex(startIndex)
     setIsFlipped(false)
@@ -689,12 +755,12 @@ function App() {
     const normalizedId = normalizeRouteModuleId(routeModuleId)
     const moduleFromRoute = modules.find((moduleItem) => moduleItem.id === normalizedId)
     if (!moduleFromRoute) {
-      setUploadMessage('A hivatkozott modul nem található.')
-      navigate('/', { replace: true })
+      navigate('/', { replace: true, state: { routeMessage: 'A hivatkozott modul nem található.' } })
       return
     }
 
     if (activeModule?.id !== moduleFromRoute.id) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       openModule(moduleFromRoute, { startIndex: 0, replaceRoute: true })
     }
   }, [activeModule?.id, modules, navigate, openModule, routeModuleId])
@@ -1038,7 +1104,7 @@ function App() {
             placeholder="Keresés a modulok között..."
           />
         </div>
-        {uploadMessage && <p className="upload-message">{uploadMessage}</p>}
+        {selectorMessage && <p className="upload-message">{selectorMessage}</p>}
       </section>
 
       <section className="module-grid">
@@ -1108,6 +1174,21 @@ function App() {
         <button type="button" className="ghost-btn" onClick={() => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))}>
           {theme === 'dark' ? 'Váltás világos módra' : 'Váltás sötét módra'}
         </button>
+
+        <label className="slider-row">
+          <span>Kártyák betűmérete: {Math.round((settings.fontScale || 1) * 100)}%</span>
+          <input
+            type="range"
+            min={0.85}
+            max={1.25}
+            step={0.05}
+            value={settings.fontScale}
+            onChange={(event) => setSettings((prev) => ({
+              ...prev,
+              fontScale: Number(event.target.value),
+            }))}
+          />
+        </label>
 
         <h2>Munkamenet adatok</h2>
         <p className="helper-text">
@@ -1192,6 +1273,7 @@ function App() {
             {currentCard && !isCompleted && (
               <>
                 <section
+                  key={index}
                   className={`flashcard ${isFlipped ? 'flipped' : ''} ${actionFeedback === 'known' ? 'feedback-known' : ''} ${actionFeedback === 'unknown' ? 'feedback-unknown' : ''}`}
                   role="button"
                   tabIndex={0}
@@ -1206,25 +1288,29 @@ function App() {
                   onTouchEnd={onCardTouchEnd}
                 >
                   <div className="flashcard-inner">
-                    <article ref={frontRef} className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
-                      <p className="card-label card-label-top">Kérdés</p>
-                      <CardContent
-                        value={currentCard.front}
-                        alt="Kérdés kép"
-                        textTag="h2"
-                        imageClassName="card-image"
-                        containerClassName="card-rich-content-center"
-                      />
+                    <article className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
+                      <div ref={frontRef} className={`face-content ${frontScrollable ? 'scrollable' : 'not-scrollable'}`}>
+                        <p className="card-label card-label-top">Kérdés</p>
+                        <CardContent
+                          value={currentCard.front}
+                          alt="Kérdés kép"
+                          textTag="h2"
+                          imageClassName="card-image"
+                          containerClassName="card-rich-content-center"
+                        />
+                      </div>
                     </article>
-                    <article ref={backRef} className={`flash-face flash-back ${isCurrentBackRich ? 'flash-face-rich' : ''}`.trim()}>
-                      <p className="card-label card-label-top">Válasz</p>
-                      <CardContent
-                        value={currentCard.back}
-                        alt="Válasz kép"
-                        textTag="h2"
-                        imageClassName="card-image"
-                        containerClassName="card-rich-content-center"
-                      />
+                    <article className={`flash-face flash-back ${isCurrentBackRich ? 'flash-face-rich' : ''}`.trim()}>
+                      <div ref={backRef} className={`face-content ${backScrollable ? 'scrollable' : 'not-scrollable'}`}>
+                        <p className="card-label card-label-top">Válasz</p>
+                        <CardContent
+                          value={currentCard.back}
+                          alt="Válasz kép"
+                          textTag="h2"
+                          imageClassName="card-image"
+                          containerClassName="card-rich-content-center"
+                        />
+                      </div>
                     </article>
                   </div>
                   {settings.showKeyboardHelp && (
@@ -1249,7 +1335,7 @@ function App() {
                 <p>Ismert kártyák: {knownCount}</p>
                 <p>Ismétléshez jelölt kártyák: {unknownCount}</p>
                 <div className="summary-actions">
-                  <button type="button" className="primary-btn" onClick={resetStudyState}>Újrakezdés</button>
+                  <button type="button" className="primary-btn" onClick={() => resetStudyState(true)}>Újrakezdés</button>
                   <button type="button" className="ghost-btn" onClick={goToSelector}>Vissza a modulokhoz</button>
                 </div>
               </section>

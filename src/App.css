@@ -5,6 +5,10 @@
   position: relative;
 }
 
+:root {
+  --card-font-scale: 1;
+}
+
 .layout-shell.sidebar-hidden {
   grid-template-columns: 1fr;
 }
@@ -371,30 +375,73 @@
 .flash-face {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-content: center;
-  place-items: center;
+  display: block; /* article acts as the 3D face; inner .face-content handles layout */
   text-align: center;
-  padding: 2.4rem 1.6rem 3rem;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
   z-index: 1;
 }
 
-.flash-face-rich {
+
+.face-content {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 2.4rem 1.6rem 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center; /* center short content */
+}
+
+/* When detected as scrollable we align to top; otherwise center */
+.face-content.scrollable {
+  justify-content: flex-start;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+}
+
+.face-content.not-scrollable {
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* When the label is inside the scrollable face content, do not keep it absolutely positioned
+   so it scrolls with the content instead of overlaying it. */
+.face-content .card-label-top {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  margin-bottom: 0.6rem;
+}
+
+/* For not-scrollable faces we want the label pinned to the card top
+   while the question/answer is centered. Make the label absolute relative
+   to the .flash-face and add extra top padding so the content doesn't overlap. */
+.face-content.not-scrollable .card-label-top {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0;
+}
+
+.face-content.not-scrollable {
+  padding-top: 3.8rem; /* room for the absolute label */
+}
+
+/* Center the rich content when not scrollable */
+.face-content.not-scrollable .card-rich-content,
+.face-content.not-scrollable .card-rich-content-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .flash-front {
@@ -433,6 +480,10 @@
   color: var(--on-surface-variant);
 }
 
+.flashcard .card-label {
+  font-size: calc(0.75rem * var(--card-font-scale));
+}
+
 .card-label-top {
   position: absolute;
   top: 1rem;
@@ -443,7 +494,11 @@
 .flashcard h2 {
   max-width: 70ch;
   margin: 0;
-  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-size: clamp(
+    calc(1.25rem * var(--card-font-scale)),
+    calc(2.2vw * var(--card-font-scale)),
+    calc(1.7rem * var(--card-font-scale))
+  );
   line-height: 1.45;
 }
 
@@ -474,7 +529,11 @@
 }
 
 .card-rich-content.has-mixed-media h2 {
-  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  font-size: clamp(
+    calc(1.05rem * var(--card-font-scale)),
+    calc(2vw * var(--card-font-scale)),
+    calc(1.45rem * var(--card-font-scale))
+  );
   line-height: 1.35;
 }
 
@@ -499,7 +558,7 @@
   transform: translateX(-50%);
   margin: 0;
   color: var(--on-surface-variant);
-  font-size: 0.85rem;
+  font-size: calc(0.85rem * var(--card-font-scale));
   z-index: 3;
 }
 
@@ -520,6 +579,12 @@
 .test-card h2 {
   margin: 0.4rem 0 0;
   color: var(--on-surface);
+  font-size: clamp(
+    calc(1.15rem * var(--card-font-scale)),
+    calc(2.0vw * var(--card-font-scale)),
+    calc(1.55rem * var(--card-font-scale))
+  );
+  line-height: 1.45;
 }
 
 .test-image {
@@ -588,6 +653,16 @@
   align-items: center;
   gap: 0.6rem;
   color: var(--on-surface-variant);
+}
+
+.slider-row {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--on-surface-variant);
+}
+
+.slider-row input[type='range'] {
+  width: 100%;
 }
 
 .helper-text {
@@ -664,13 +739,13 @@
 }
 
 .session-list strong {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--card-font-scale));
 }
 
 .session-list span,
 .session-empty {
   color: var(--on-surface-variant);
-  font-size: 0.88rem;
+  font-size: calc(0.88rem * var(--card-font-scale));
 }
 
 .session-image {
