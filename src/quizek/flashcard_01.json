@@ -1,0 +1,59 @@
+[
+  {
+    "id": "flashcard-1",
+    "title": "Irányításelmélet  - 1. kérdés",
+    "description": "Számolások",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "[[img:https://i.ibb.co/LddtkQ3s/image.png]]",
+        "back": "A rendszer pólusai 2,31 és -4,32, a rendszer nem stabil."
+      },
+      {
+        "id": "card-2",
+        "front": "[[img:https://i.ibb.co/ycTjgmB1/image.png]]",
+        "back": "A rendszer pólusai -1+3i és -1-3i, stabil."
+      },
+      {
+        "id": "card-3",
+        "front": "[[img:https://i.ibb.co/GfPz266y/image.png]]",
+        "back": "A rendszer pólusai 2 és -5, a rendszer nem stabil."
+      },
+      {
+        "id": "card-4",
+        "front": "[[img:https://i.ibb.co/Y7qHd0b0/image.png]]",
+        "back": "A rendszer pólusai -2+1,41i és -2-1,41i, stabil."
+      },
+      {
+        "id": "card-5",
+        "front": "[[img:https://i.ibb.co/prL4bmtN/image.png]]",
+        "back": "A rendszer pólusai  3+i és 3-i, a rendszer nem stabil."
+      },
+      {
+        "id": "card-6",
+        "front": "[[img:https://i.ibb.co/4R8LC2t6/image.png]]",
+        "back": "A rendszer pólusai 1,68 és -10,68, a rendszer nem stabil."
+      },
+      {
+        "id": "card-7",
+        "front": "[[img:https://i.ibb.co/Dq9Xmvc/image.png]]",
+        "back": "A rendszer pólusai -1,35 és -6.65, a rendszer stabil."
+      },
+      {
+        "id": "card-8",
+        "front": "[[img:https://i.ibb.co/whLPtzW7/image.png]]",
+        "back": "A rendszer pólusai -1.63 és -7.37, a rendszer stabil."
+      },
+      {
+        "id": "card-9",
+        "front": "[[img:https://i.ibb.co/9HKWGgNn/image.png]]",
+        "back": "Egyik sem a fentiek közül."
+      },
+      {
+        "id": "card-10",
+        "front": "[[img:https://i.ibb.co/tMJjJv1h/image.png]]",
+        "back": "A rendszer pólusai 1,5+1,32i és 1,5-1,32i, a rendszer nem stabil."
+      }    
+    ]
+  }
+]
