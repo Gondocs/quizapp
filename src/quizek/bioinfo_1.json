@@ -83,6 +83,16 @@
         "id": "card-16",
         "front": "Mi az alábbi DNS-szekvencia komplementere?AGC TTG GTA ACC TAG",
         "back": "A komplementaritás elvét kell ismerni hozzá (az adeninnel szemben timin, a citozinnal szemben guanin helyezkedik el). TCG AAC CAT TGG ATC"
+      },
+      {
+        "id": "card-17",
+        "front": "Egy gyökér nélküli filogenetikai fa esetén milyen módszerekkel lehet meghatározni a gyökér helyét, azaz az evolúciós irányt?",
+        "back": "Outgroup rooting: Bevonunk egy külső, távolabbi rokon taxont. A gyökeret oda tesszük, ahol ez a külső taxon kapcsolódik a többiekhez. Akkor jó, ha van jó külső csoport, amely nem része a vizsgált csoportnak, de rokon vele.\n\n Midpoint rooting: Megkeressük a két legtávolabbi levelet, és a köztük lévő út közepére tesszük a gyökeret. Akkor jó, ha az élek hossza ismert, például genetikai távolságot jelölnek."
+      },
+      {
+        "id": "card-18",
+        "front": "Definiáljuk a Daniel Faith által 1992-ben bevezetett filogenetikai diverzitás (PD) fogalmát élsúlyokkal ellátott gyökeres filogenetikai X-fákra.",
+        "back": "Biodiverzítás olyan mértéke, amely nemcsak a taxonok számát, hanem azok evolúciós kapcsolatait is figyelembe veszi. A kijelölt taxonokat és a gyökeret összekötő minimális részfa élhosszainak összege. Minden élt egyszer kell számolni."
       }
     ]
   }
