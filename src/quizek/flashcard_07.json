@@ -61,17 +61,17 @@
       },
       {
         "id": "card-12",
-        "front": "Folyamatidentifikáció során az  hibajelet minimalizáljuk.",
+        "front": "Folyamatidentifikáció során az e(t) = y(t) − ŷ(t) hibajelet minimalizáljuk.",
         "back": "Igaz"
       },
       {
         "id": "card-13",
-        "front": "Folyamatszintézis során az  hibajelet minimalizáljuk.",
+        "front": "Folyamatszintézis során az e(t) = y(t) − ŷ(t) hibajelet minimalizáljuk.",
         "back": "Hamis"
       },
       {
         "id": "card-14",
-        "front": "Folyamatanalízis során az  hibajelet minimalizáljuk.",
+        "front": "Folyamatanalízis során az e(t) = y(t) − ŷ(t) hibajelet minimalizáljuk.",
         "back": "Hamis"
       },
       {
@@ -251,47 +251,47 @@
       },
       {
         "id": "card-50",
-        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: τ = −1/λ.",
         "back": "Igaz"
       },
       {
         "id": "card-51",
-        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: λ = −1/τ.",
         "back": "Igaz"
       },
       {
         "id": "card-52",
-        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: τ = −λ.",
         "back": "Hamis"
       },
       {
         "id": "card-53",
-        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: .",
+        "front": "A sajátérték és az időállandó között a következő összefüggés áll fenn: λ = −τ.",
         "back": "Hamis"
       },
       {
         "id": "card-54",
-        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "front": "Az y(t) = ∫_{−∞}^{∞} u(τ)w(t − τ)dτ a konvolúciós integrál általános kifejezése.",
         "back": "Igaz"
       },
       {
         "id": "card-55",
-        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "front": "Az y(t) = ∫_{0}^{∞} u(τ)w(t − τ)dτ a konvolúciós integrál általános kifejezése.",
         "back": "Hamis"
       },
       {
         "id": "card-56",
-        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "front": "Az y(t) = ∫_{0}^{∞} w(τ)u(t − τ)dτ a konvolúciós integrál általános kifejezése.",
         "back": "Hamis"
       },
       {
         "id": "card-57",
-        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "front": "Az y(t) = ∫_{0}^{t} u(τ)w(t − τ)dτ a konvolúciós integrál általános kifejezése.",
         "back": "Hamis"
       },
       {
         "id": "card-58",
-        "front": "Az  a konvolúciós integrál általános kifejezése.",
+        "front": "Az y(t) = ∫_{0}^{t} w(τ)u(t − τ)dτ a konvolúciós integrál általános kifejezése.",
         "back": "Hamis"
       },
       {
@@ -321,42 +321,42 @@
       },
       {
         "id": "card-64",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték valós része negatív.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték valós része negatív.",
         "back": "Igaz"
       },
       {
         "id": "card-65",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték képzetes része negatív.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték képzetes része negatív.",
         "back": "Hamis"
       },
       {
         "id": "card-66",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték valós része pozitív.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték valós része pozitív.",
         "back": "Hamis"
       },
       {
         "id": "card-67",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték valós része 1-nél kisebb.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték valós része 1-nél kisebb.",
         "back": "Hamis"
       },
       {
         "id": "card-68",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték abszolút értéke 1-nél kisebb.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték abszolút értéke 1-nél kisebb.",
         "back": "Hamis"
       },
       {
         "id": "card-69",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték a komplex számsík bal oldali félsíkján helyezkedik el.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték a komplex számsík bal oldali félsíkján helyezkedik el.",
         "back": "Igaz"
       },
       {
         "id": "card-70",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi  sajátérték a komplex számsík jobb oldali félsíkján helyezkedik el.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő valamennyi λ sajátérték a komplex számsík jobb oldali félsíkján helyezkedik el.",
         "back": "Hamis"
       },
       {
         "id": "card-71",
-        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő  sajátértékek között van olyan, amelyik a komplex számsík bal oldali félsíkján helyezkedik el, és van olyan, amelyik a komplex számsík jobb oldali félsíkján.",
+        "front": "Egy folytonos idejű, lineáris, invariáns és kauzális rendszer gerjesztés-válasz stabil, ha impulzusválaszában szereplő λ sajátértékek között van olyan, amelyik a komplex számsík bal oldali félsíkján helyezkedik el, és van olyan, amelyik a komplex számsík jobb oldali félsíkján.",
         "back": "Hamis"
       },
       {
@@ -401,12 +401,12 @@
       },
       {
         "id": "card-80",
-        "front": "Ha egy lineáris rendszer bemenetére  körfrekvenciájú szinuszos jelet kapcsolunk, akkor a válaszjel is szinuszos, melynek körfrekvenciája szintén .",
+        "front": "Ha egy lineáris rendszer bemenetére ω körfrekvenciájú szinuszos jelet kapcsolunk, akkor a válaszjel is szinuszos, melynek körfrekvenciája szintén ω.",
         "back": "Igaz"
       },
       {
         "id": "card-81",
-        "front": "Ha egy nemlineáris rendszer bemenetére  körfrekvenciájú szinuszos jelet kapcsolunk, akkor a válaszjel is szinuszos, melynek körfrekvenciája szintén .",
+        "front": "Ha egy nemlineáris rendszer bemenetére ω körfrekvenciájú szinuszos jelet kapcsolunk, akkor a válaszjel is szinuszos, melynek körfrekvenciája szintén ω.",
         "back": "Hamis"
       }
     ]
