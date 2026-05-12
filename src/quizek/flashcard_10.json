@@ -11,12 +11,12 @@
       },
       {
         "id": "card-2",
-        "front": "Az  jelet ……………….. idejű jelnek nevezzük, ahol .",
+        "front": "Az x(t) jelet ……………….. idejű jelnek nevezzük, ahol t ∈ ℝ.",
         "back": "FOLYTONOS"
       },
       {
         "id": "card-3",
-        "front": "Az  jelet ……………….. idejű jelnek nevezzük, ahol .",
+        "front": "Az x[k] jelet ……………….. idejű jelnek nevezzük, ahol k ∈ ℤ.",
         "back": "DISZKRÉT"
       },
       {
@@ -46,7 +46,7 @@
       },
       {
         "id": "card-9",
-        "front": "A következő összefüggéssel definiált jel a(z) ……………………. jel:",
+        "front": "A következő összefüggéssel definiált jel a(z) ……………………. jel:\n1(t) = { 0, ha t < 0,\n         1, ha t > 0. }",
         "back": "EGYSÉGUGRÁS"
       },
       {
@@ -56,12 +56,12 @@
       },
       {
         "id": "card-11",
-        "front": "Az egységugrásjel  helyen felvett értéke (számjeggyel írva): ………",
+        "front": "Az egységugrásjel t = −0 helyen felvett értéke (számjeggyel írva): ………",
         "back": "0"
       },
       {
         "id": "card-12",
-        "front": "Az egységugrásjel  helyen felvett értéke (számjeggyel írva): ………",
+        "front": "Az egységugrásjel t = +0 helyen felvett értéke (számjeggyel írva): ………",
         "back": "1"
       },
       {
@@ -71,22 +71,22 @@
       },
       {
         "id": "card-14",
-        "front": "Az  alakú függvényt ………… jelnek nevezzük, ahol  tetszőleges időfüggvényt jelent.",
+        "front": "Az f(t) = 1(t)g(t) alakú függvényt ………… jelnek nevezzük, ahol g(t) tetszőleges időfüggvényt jelent.",
         "back": "BELÉPŐ"
       },
       {
         "id": "card-15",
-        "front": "Periodikus jelek esetében igaz, hogy , ahol T az ún. ……………….idő.",
+        "front": "Periodikus jelek esetében igaz, hogy x(t ± T) = x(t), ahol T az ún. ……………….idő.",
         "back": "PERIÓDUS"
       },
       {
         "id": "card-16",
-        "front": "A tranziens összetevő  összefüggésében szereplő  változó neve: ……………..",
+        "front": "A tranziens összetevő M e^(λt) összefüggésében szereplő λ változó neve: ……………..",
         "back": "SAJÁTÉRTÉK"
       },
       {
         "id": "card-17",
-        "front": "A tranziens összetevő  összefüggésében szereplő  változó neve: ……………..",
+        "front": "A tranziens összetevő M e^(t/τ) összefüggésében szereplő τ változó neve: ……………..",
         "back": "IDŐÁLLANDÓ"
       },
       {
@@ -136,12 +136,12 @@
       },
       {
         "id": "card-27",
-        "front": "……………. rendszer esetén igaz, hogy, amennyiben a rendszer az  gerjesztésre  válasszal felel, illetve az  gerjesztésre  válasszal, akkor a  gerjesztésre a válasz .",
+        "front": "……………. rendszer esetén igaz, hogy, amennyiben a rendszer az u₁ gerjesztésre y₁ válasszal felel, illetve az u₂ gerjesztésre y₂ válasszal, akkor a k₁u₁ + k₂u₂ gerjesztésre a válasz k₁y₁ + k₂y₂.",
         "back": "LINEÁRIS"
       },
       {
         "id": "card-28",
-        "front": "A(z) ……………. elve szerint, ha egy lineáris rendszer az  gerjesztésre  válasszal felel, illetve az  gerjesztésre  válasszal, akkor a  gerjesztésre a válasz .",
+        "front": "A(z) ……………. elve szerint, ha egy lineáris rendszer az u₁ gerjesztésre y₁ válasszal felel, illetve az u₂ gerjesztésre y₂ válasszal, akkor a k₁u₁ + k₂u₂ gerjesztésre a válasz k₁y₁ + k₂y₂.",
         "back": "SZUPERPOZÍCIÓ"
       },
       {
@@ -181,7 +181,7 @@
       },
       {
         "id": "card-36",
-        "front": "Az  kifejezés neve: ……………………..",
+        "front": "Az y(t) = ∫_{−∞}^{∞} u(τ)w(t − τ)dτ kifejezés neve: ……………………..",
         "back": "KONVOLÚCIÓ, vagy SÚLYFÜGGVÉNY-TÉTEL, vagy SÚLYFÜGGVÉNY TÉTEL"
       },
       {
@@ -251,7 +251,7 @@
       },
       {
         "id": "card-50",
-        "front": "Szinuszos jelek esetén célszerű a komplex csúcsértékek (effektív értékek) alkalmazása. Az  összefüggésben szereplő  az ún. ……………………..",
+        "front": "Szinuszos jelek esetén célszerű a komplex csúcsértékek (effektív értékek) alkalmazása. Az Y̅ = W̅(ω)U̅ összefüggésben szereplő W̅(ω) az ún. ……………………..",
         "back": "ÁTVITELI KARAKTERISZTIKA"
       },
       {
@@ -261,7 +261,7 @@
       },
       {
         "id": "card-52",
-        "front": "A(z) ……………-diagram az átviteli karakterisztikát, mint a  komplex vektor végpontját, körfrekvenciáról körfrekvenciára haladva ábrázolja a komplex számsíkon.",
+        "front": "A(z) ……………-diagram az átviteli karakterisztikát, mint a W(jω) komplex vektor végpontját, körfrekvenciáról körfrekvenciára haladva ábrázolja a komplex számsíkon.",
         "back": "NYQUIST"
       },
       {
@@ -276,12 +276,12 @@
       },
       {
         "id": "card-55",
-        "front": "A Laplace-transzformáció  változója a(z) …………………. frekvencia.",
+        "front": "A Laplace-transzformáció s = σ + jω változója a(z) …………………. frekvencia.",
         "back": "KOMPLEX"
       },
       {
         "id": "card-56",
-        "front": "Az  összefüggésben szereplő  a(z) ……………………..",
+        "front": "Az Y(s) = W(s)U(s) összefüggésben szereplő W(s) a(z) ……………………..",
         "back": "ÁTVITELI FÜGGVÉNY"
       },
       {
@@ -386,27 +386,27 @@
       },
       {
         "id": "card-77",
-        "front": "Az állapotváltozós leírásban szereplő  mátrix mérete , az ilyen mátrixot négyzetes, vagy ………………….. mátrixnak nevezzük.",
+        "front": "Az állapotváltozós leírásban szereplő A mátrix mérete n × n, az ilyen mátrixot négyzetes, vagy ………………….. mátrixnak nevezzük.",
         "back": "KVADRATIKUS"
       },
       {
         "id": "card-78",
-        "front": "Az állapotváltozós leírásban szereplő  mátrixból számíthatók a(z) ………………….., amelyek felelősek a rendszer tranzienseiért.",
+        "front": "Az állapotváltozós leírásban szereplő A mátrixból számíthatók a(z) ………………….., amelyek felelősek a rendszer tranzienseiért.",
         "back": "SAJÁTÉRTÉK"
       },
       {
         "id": "card-79",
-        "front": "Az állapotváltozós leírásban szereplő  mátrixhoz rendelhetjük a , ún. ………………….. polinomot.",
+        "front": "Az állapotváltozós leírásban szereplő A mátrixhoz rendelhetjük a φ(λ) = |λE − A|, ún. ………………….. polinomot.",
         "back": "KARAKTERISZTIKUS"
       },
       {
         "id": "card-80",
-        "front": "A  egyenlet az ún. ………………………… egyenlet.",
+        "front": "A |λE − A| = 0 egyenlet az ún. ………………………… egyenlet.",
         "back": "KARAKTERISZTIKUS"
       },
       {
         "id": "card-81",
-        "front": "A  egyenlet megoldásaként megkapjuk a rendszer  ………………………….",
+        "front": "A |λE − A| = 0 egyenlet megoldásaként megkapjuk a rendszer ………………………….",
         "back": "SAJÁTÉRTÉK"
       }
     ]
