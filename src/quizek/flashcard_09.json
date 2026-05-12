@@ -91,12 +91,12 @@
       },
       {
         "id": "card-18",
-        "front": "Az művelet az állapotváltozó ……………………..",
+        "front": "Az x̃ = Tx művelet az állapotváltozó ……………………..",
         "back": "TRANSZFORMÁCIÓ"
       },
       {
         "id": "card-19",
-        "front": "Az állapottranszformációban szereplő mátrix ………………. kell legyen.",
+        "front": "Az x̃ = Tx állapottranszformációban szereplő T mátrix ………………. kell legyen.",
         "back": "INVERTÁLHATÓ"
       },
       {
@@ -111,12 +111,12 @@
       },
       {
         "id": "card-22",
-        "front": "A(z) ……………….-alakban a oszlopvektor első (vagy utolsó) eleme 1, a többi eleme nulla.",
+        "front": "A(z) ……………….-alakban a b oszlopvektor első (vagy utolsó) eleme 1, a többi eleme nulla.",
         "back": "IRÁNYÍTHATÓ"
       },
       {
         "id": "card-23",
-        "front": "A(z) ……………….-alakban a sorvektor első (vagy utolsó) eleme 1, a többi eleme nulla.",
+        "front": "A(z) ……………….-alakban a c^T sorvektor első (vagy utolsó) eleme 1, a többi eleme nulla.",
         "back": "MEGFIGYELHETŐ"
       },
       {
@@ -131,12 +131,12 @@
       },
       {
         "id": "card-26",
-        "front": "A , , stb. oszlopvektorokból összeállított mátrix a(z) …………………. mátrix.",
+        "front": "A b, Ab, A^2b stb. oszlopvektorokból összeállított mátrix a(z) …………………. mátrix.",
         "back": "IRÁNYÍTHATÓSÁGI"
       },
       {
         "id": "card-27",
-        "front": "A , , stb. sorvektorokból összeállított mátrix a(z) …………………… mátrix.",
+        "front": "A c^T, c^TA, c^TA^2 stb. sorvektorokból összeállított mátrix a(z) …………………… mátrix.",
         "back": "MEGFIGYELHETŐSÉGI"
       },
       {
@@ -271,7 +271,7 @@
       },
       {
         "id": "card-54",
-        "front": "A mátrixegyenlet neve ……………-egyenlet.",
+        "front": "A PA + A^TP - PBR^-1B^TP + Q = 0 mátrixegyenlet neve ……………-egyenlet.",
         "back": "RICCATI vagy CARE"
       },
       {
