@@ -356,6 +356,7 @@ function normalizeSource(payload, sourceName, sourceId) {
 }
 
 // Feltöltött fájl olvasása.
+// Feltöltött fájl olvasása.
 function readFileAsText(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -363,6 +364,15 @@ function readFileAsText(file) {
     reader.onerror = () => reject(new Error('A fájl nem olvasható.'))
     reader.readAsText(file, 'utf-8')
   })
+}
+
+// Kártya hint (súgó) generálása
+function generateCardHint(text) {
+  if (!text) return '';
+  return text.replace(/[a-zA-ZáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+/g, (match) => {
+    if (match.length <= 1) return match;
+    return match[0] + '·'.repeat(match.length - 1);
+  });
 }
 
 function App() {
@@ -379,6 +389,7 @@ function App() {
   const [phase, setPhase] = useState('main')
   const [index, setIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
+  const [showHint, setShowHint] = useState(false)
   const [markMap, setMarkMap] = useState({})
   const [isCompleted, setIsCompleted] = useState(false)
   const [actionFeedback, setActionFeedback] = useState(null)
@@ -703,6 +714,7 @@ function App() {
     setPhase('main')
     setIndex(0)
     setIsFlipped(false)
+    setShowHint(false)
     setIsCompleted(false)
     setActionFeedback(null)
     resetTestState()
@@ -732,6 +744,7 @@ function App() {
     setPhase('main')
     setIndex(startIndex)
     setIsFlipped(false)
+    setShowHint(false)
     setIsCompleted(false)
     setPanelTab('unknown')
     setIsSessionPanelOpen(false)
@@ -797,6 +810,7 @@ function App() {
         setDeckCards(nextDeck)
         setIndex(0)
         setIsFlipped(false)
+        setShowHint(false)
         setIsCompleted(false)
         resetTestState()
       }
@@ -808,6 +822,7 @@ function App() {
   // Következő / előző.
   const queueAfterFlipReset = useCallback((callback) => {
     setIsFlipped(false)
+    setShowHint(false)
     window.requestAnimationFrame(() => {
       window.requestAnimationFrame(() => {
         callback()
@@ -852,6 +867,7 @@ function App() {
     }
 
     setIndex((prev) => prev - 1)
+    setShowHint(false)
     setIsCompleted(false)
   }, [index, isFlipped, queueAfterFlipReset])
 
@@ -877,6 +893,7 @@ function App() {
   // Kártya fordítás.
   const flipCard = useCallback(() => {
     setIsFlipped((prev) => !prev)
+    setShowHint(false)
   }, [])
 
   // Session törlés.
@@ -889,6 +906,7 @@ function App() {
     setIndex(0)
     setIsCompleted(false)
     setIsFlipped(false)
+    setShowHint(false)
     setIsSessionPanelOpen(false)
     setActionFeedback(null)
     resetTestState()
@@ -1072,6 +1090,28 @@ function App() {
     }
   }
 
+  const downloadCSV = (moduleItem) => {
+    const header = ['Kérdés', 'Válasz', 'Téma'];
+    const rows = moduleItem.cards.map((c) => {
+      return [
+        String(c.front || '').replace(/"/g, '""').replace(/\n/g, ' '),
+        String(c.back || '').replace(/"/g, '""').replace(/\n/g, ' '),
+        String(c.topic || '').replace(/"/g, '""').replace(/\n/g, ' ')
+      ].map((col) => `"${col}"`).join(';');
+    });
+
+    const csvContent = '\uFEFF' + [header.join(';'), ...rows].join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `${moduleItem.title || moduleItem.id}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   const renderSelectorView = () => (
     <>
       <header className="top-bar">
@@ -1132,9 +1172,24 @@ function App() {
 
             <div className="module-footer">
               <span>{moduleItem.cards.length} kártya</span>
-              <button type="button" className="primary-btn" onClick={() => openModule(moduleItem)}>
-                Tanulás indítása
-              </button>
+              <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  title="Kvíz letöltése (CSV)"
+                  className="ghost-btn"
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.4rem', border: '1px solid currentColor' }}
+                  onClick={() => downloadCSV(moduleItem)}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </button>
+                <button type="button" className="primary-btn" onClick={() => openModule(moduleItem)}>
+                  Tanulás indítása
+                </button>
+              </div>
             </div>
           </article>
         ))}
@@ -1290,7 +1345,22 @@ function App() {
                   <div className="flashcard-inner">
                     <article className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
                       <div ref={frontRef} className={`face-content ${frontScrollable ? 'scrollable' : 'not-scrollable'}`}>
-                        <p className="card-label card-label-top">Kérdés</p>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <p className="card-label card-label-top" style={{ margin: 0 }}>Kérdés</p>
+                          {!isFlipped && (
+                            <button
+                              type="button"
+                              className="ghost-btn"
+                              style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setShowHint(true);
+                              }}
+                            >
+                              Súgó kérése
+                            </button>
+                          )}
+                        </div>
                         <CardContent
                           value={currentCard.front}
                           alt="Kérdés kép"
@@ -1298,6 +1368,12 @@ function App() {
                           imageClassName="card-image"
                           containerClassName="card-rich-content-center"
                         />
+                        {showHint && !isFlipped && (
+                          <div className="hint-box" style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-glass)', borderRadius: 'var(--radius)', border: '1px dashed var(--border-color)', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                            <strong>Súgó: </strong>
+                            {generateCardHint(currentCard.back)}
+                          </div>
+                        )}
                       </div>
                     </article>
                     <article className={`flash-face flash-back ${isCurrentBackRich ? 'flash-face-rich' : ''}`.trim()}>
