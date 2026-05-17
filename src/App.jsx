@@ -835,6 +835,8 @@ function App() {
       return
     }
 
+    setShowHint(false)
+
     const goNext = () => {
       if (index < activeCards.length - 1) {
         setIndex((prev) => prev + 1)
@@ -1344,23 +1346,8 @@ function App() {
                 >
                   <div className="flashcard-inner">
                     <article className={`flash-face flash-front ${isCurrentFrontRich ? 'flash-face-rich' : ''}`.trim()}>
-                      <div ref={frontRef} className={`face-content ${frontScrollable ? 'scrollable' : 'not-scrollable'}`}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <p className="card-label card-label-top" style={{ margin: 0 }}>Kérdés</p>
-                          {!isFlipped && (
-                            <button
-                              type="button"
-                              className="ghost-btn"
-                              style={{ padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setShowHint(true);
-                              }}
-                            >
-                              Súgó kérése
-                            </button>
-                          )}
-                        </div>
+                      <div ref={frontRef} className={`face-content ${frontScrollable ? 'scrollable' : 'not-scrollable'}`} style={{ position: 'relative' }}>
+                        <p className="card-label card-label-top">Kérdés</p>
                         <CardContent
                           value={currentCard.front}
                           alt="Kérdés kép"
@@ -1368,6 +1355,19 @@ function App() {
                           imageClassName="card-image"
                           containerClassName="card-rich-content-center"
                         />
+                        {!isFlipped && (
+                          <button
+                            type="button"
+                            title="Súgó kérése"
+                            style={{ position: 'absolute', bottom: '0.5rem', right: '0.5rem', opacity: 0.2, background: 'transparent', border: 'none', color: 'currentColor', fontSize: '1.5rem', cursor: 'pointer', padding: '0.5rem', zIndex: 10, fontWeight: 'bold' }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setShowHint(!showHint);
+                            }}
+                          >
+                            ?
+                          </button>
+                        )}
                         {showHint && !isFlipped && (
                           <div className="hint-box" style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--bg-glass)', borderRadius: 'var(--radius)', border: '1px dashed var(--border-color)', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
                             <strong>Súgó: </strong>
