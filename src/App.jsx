@@ -1582,10 +1582,40 @@ function App() {
                   {!listChecked ? (
                     <button type="button" className="primary-btn" onClick={checkListAnswers}>Ellenőrzés</button>
                   ) : (
-                    <>
-                      <button type="button" className="primary-btn" onClick={resetTestState}>Újrakezdés</button>
-                      <button type="button" className="ghost-btn" onClick={() => setStudyMode('kartyas')}>Vissza kártyás módba</button>
-                    </>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
+                      {(() => {
+                        let correctCount = 0;
+                        let wrongCount = 0;
+                        let missedCount = 0;
+                        
+                        testCards.forEach(card => {
+                          const isTrue = parseTruthValue(card.back);
+                          const isChecked = Boolean(listAnswers[card.id]);
+                          if (isChecked && isTrue) correctCount++;
+                          else if (isChecked && !isTrue) wrongCount++;
+                          else if (!isChecked && isTrue) missedCount++;
+                        });
+                        
+                        const totalTrue = correctCount + missedCount;
+                        
+                        return (
+                          <div style={{ padding: '16px', background: 'rgba(0,0,0,0.1)', borderRadius: '8px', textAlign: 'left' }}>
+                            <h3 style={{ marginBottom: '12px', textAlign: 'center' }}>Eredmény: {correctCount} / {totalTrue} igaz állítást találtál meg</h3>
+                            {(correctCount > 0 || wrongCount > 0 || missedCount > 0) && (
+                              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                {correctCount > 0 && <li style={{ color: '#2ecc71' }}>✓ Helyesen bejelölt: {correctCount}</li>}
+                                {wrongCount > 0 && <li style={{ color: '#e74c3c' }}>✗ Helytelenül bejelölt (hamis volt): {wrongCount}</li>}
+                                {missedCount > 0 && <li style={{ color: '#f1c40f' }}>! Kihagyott (igaz volt, de nem jelölted be): {missedCount}</li>}
+                              </ul>
+                            )}
+                          </div>
+                        )
+                      })()}
+                      <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                        <button type="button" className="primary-btn" onClick={resetTestState}>Újrakezdés</button>
+                        <button type="button" className="ghost-btn" onClick={() => setStudyMode('kartyas')}>Vissza kártyás módba</button>
+                      </div>
+                    </div>
                   )}
                 </div>
               </section>
