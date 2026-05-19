@@ -400,6 +400,10 @@ function App() {
   const [testResultMap, setTestResultMap] = useState({})
   const [testFeedback, setTestFeedback] = useState(null)
 
+  // Lista mód állapot.
+  const [listAnswers, setListAnswers] = useState({})
+  const [listChecked, setListChecked] = useState(false)
+
   // UI állapot.
   const [uploadMessage, setUploadMessage] = useState('')
   const [moduleQuery, setModuleQuery] = useState('')
@@ -702,11 +706,25 @@ function App() {
     })
   }, [activeModule])
 
-  // Teszt reset.
+  // Teszt reset és lista reset.
   const resetTestState = useCallback(() => {
     setTestIndex(0)
     setTestResultMap({})
     setTestFeedback(null)
+    setListAnswers({})
+    setListChecked(false)
+  }, [])
+
+  const toggleListAnswer = useCallback((cardId) => {
+    if (listChecked) return;
+    setListAnswers((prev) => ({
+      ...prev,
+      [cardId]: !prev[cardId]
+    }))
+  }, [listChecked])
+
+  const checkListAnswers = useCallback(() => {
+    setListChecked(true)
   }, [])
 
   // Tanulási reset.
@@ -1281,12 +1299,12 @@ function App() {
           <div>
             <button
               type="button"
-              className={`icon-square-btn ${studyMode === 'teszt' ? 'active' : ''}`}
-              onClick={() => setStudyMode((prev) => (prev === 'kartyas' ? 'teszt' : 'kartyas'))}
-              title={studyMode === 'kartyas' ? 'Teszt mód' : 'Kártyás mód'}
-              aria-label={studyMode === 'kartyas' ? 'Teszt mód' : 'Kártyás mód'}
+              className={`icon-square-btn ${studyMode !== 'kartyas' ? 'active' : ''}`}
+              onClick={() => setStudyMode((prev) => prev === 'kartyas' ? 'teszt' : prev === 'teszt' ? 'lista' : 'kartyas')}
+              title={studyMode === 'kartyas' ? 'Teszt mód' : studyMode === 'teszt' ? 'Lista mód' : 'Kártyás mód'}
+              aria-label={studyMode === 'kartyas' ? 'Teszt mód' : studyMode === 'teszt' ? 'Lista mód' : 'Kártyás mód'}
             >
-              {studyMode === 'kartyas' ? '≟' : '▣'}
+              {studyMode === 'kartyas' ? '≟' : studyMode === 'teszt' ? '▣' : '☰'}
             </button>
             <button
               type="button"
@@ -1493,6 +1511,82 @@ function App() {
                 <div className="summary-actions">
                   <button type="button" className="primary-btn" onClick={resetTestState}>Teszt újrakezdése</button>
                   <button type="button" className="ghost-btn" onClick={() => setStudyMode('kartyas')}>Vissza kártyás módba</button>
+                </div>
+              </section>
+            )}
+          </>
+        )}
+
+        {studyMode === 'lista' && (
+          <>
+            {testCards.length === 0 && (
+              <section className="summary-card">
+                <h2>Lista mód nem elérhető</h2>
+                <p>Ebben a modulban nincs egyértelmű Igaz/Hamis válaszú kártya.</p>
+              </section>
+            )}
+
+            {testCards.length > 0 && (
+              <section className="summary-card" style={{ padding: '20px' }}>
+                <h2 style={{ marginBottom: '20px' }}>Pipáld ki az igaz állításokat!</h2>
+                <div className="list-mode-container" style={{ display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'left' }}>
+                  {testCards.map((card) => {
+                    const isTrue = parseTruthValue(card.back);
+                    const isChecked = Boolean(listAnswers[card.id]);
+                    
+                    let itemClass = "list-mode-item";
+                    let bg = "var(--surface)";
+                    let border = "1px solid var(--border)";
+                    
+                    if (listChecked) {
+                      if (isChecked && isTrue) {
+                        bg = "rgba(46, 204, 113, 0.15)";
+                        border = "1px solid var(--success)";
+                      } else if (isChecked && !isTrue) {
+                        bg = "rgba(231, 76, 60, 0.15)";
+                        border = "1px solid var(--danger)";
+                      } else if (!isChecked && isTrue) {
+                        bg = "rgba(241, 196, 15, 0.15)";
+                        border = "1px solid var(--warning)";
+                      } else {
+                        bg = "rgba(255, 255, 255, 0.02)";
+                        border = "1px solid var(--border)";
+                      }
+                    }
+
+                    return (
+                      <div key={card.id} className={itemClass} style={{ background: bg, border: border, borderRadius: '8px', padding: '12px' }}>
+                        <label style={{ display: 'flex', gap: '12px', alignItems: 'center', cursor: listChecked ? 'default' : 'pointer' }}>
+                          <input 
+                            type="checkbox" 
+                            checked={isChecked}
+                            onChange={() => toggleListAnswer(card.id)}
+                            disabled={listChecked}
+                            style={{ width: '20px', height: '20px', flexShrink: 0 }}
+                          />
+                          <div style={{ flex: 1, fontSize: '1.1rem' }}>
+                            <CardContent
+                              value={card.front}
+                              alt="Állítás képe"
+                              textTag="span"
+                              imageClassName="test-image"
+                            />
+                          </div>
+                        </label>
+                      </div>
+                    )
+                  })}
+                </div>
+                
+                <div className="summary-actions" style={{ marginTop: '24px' }}>
+                  {!listChecked ? (
+                    <button type="button" className="primary-btn" onClick={checkListAnswers}>Ellenőrzés</button>
+                  ) : (
+                    <>
+                      <button type="button" className="primary-btn" onClick={resetTestState}>Újrakezdés</button>
+                      <button type="button" className="ghost-btn" onClick={() => setStudyMode('kartyas')}>Vissza kártyás módba</button>
+                    </>
+                  )}
                 </div>
               </section>
             )}
