@@ -1,0 +1,1319 @@
+[
+  {
+    "id": "flashcard-formalis-osszes",
+    "title": "Formális nyelvek és automaták",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Az unió és a metszet művelet kommutatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-2",
+        "front": "Az unió és a metszet művelet asszociatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-3",
+        "front": "Az unió és a metszet művelet nem asszociatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-4",
+        "front": "A Descartes-szorzat A és B halmazok felett rendezett párokból áll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-5",
+        "front": "Egy bináris reláció A és B halmazok felett rendezett párokból áll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-6",
+        "front": "Minden függvény egyben reláció is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-7",
+        "front": "Van olyan függvény, ami nem reláció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-8",
+        "front": "A reláció a függvény speciális esete.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-9",
+        "front": "Van olyan függvény, amelyik injektív, de nem bijektív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-10",
+        "front": "Van olyan függvény, amelyik injektív, de nem szürjektív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-11",
+        "front": "Van olyan függvény, amelyik bijektív, de nem szürjektív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-12",
+        "front": "Minden függvény szürjektív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-13",
+        "front": "Az ekvivalencia reláció reflexív, szimmetrikus és tranzitív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-14",
+        "front": "Szimmetrikus reláció esetén a reprezentációban használhatók irányítatlan élek is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-15",
+        "front": "Azon speciális bináris relációk, amelyekre A = B, reprezentálhatók irányított gráfokkal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-16",
+        "front": "(a, b) = (b, a) rendezett párok esetén mindig teljesül.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-17",
+        "front": "{a, b} = {b, a} halmazok esetén teljesül.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-18",
+        "front": "A páros és páratlan számok együtt a természetes számok egy partícióját alkotják.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-19",
+        "front": "A páros nemnegatív és a páratlan pozitív számok együtt a természetes számok egy partícióját alkotják.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-20",
+        "front": "A racionális és az irracionális számok együtt a valós számok egy partícióját alkotják.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-21",
+        "front": "A természetes számok és a négyzetszámok között megadható bijekció.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-22",
+        "front": "A természetes számok és a négyzetszámok között nem adható meg bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-23",
+        "front": "A természetes számok és az egész számok között megadható bijekció.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-24",
+        "front": "A természetes számok és az irracionális számok között megadható bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-25",
+        "front": "Az egész számok és az irracionális számok között megadható bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-26",
+        "front": "A racionális számok és a valós számok között megadható bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-27",
+        "front": "Előfordulhat, hogy diszjunkt halmazokra |A| + |B| > |A ∪ B|.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-28",
+        "front": "Előfordulhat, hogy véges A és B halmazokra az unió művelet nem értelmezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-29",
+        "front": "Előfordulhat, hogy véges A és B halmazokra a metszet művelet nem értelmezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-30",
+        "front": "Előfordulhat, hogy véges A és B halmazokra az A \\ B művelet nem értelmezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-31",
+        "front": "∅ minden halmaznak részhalmaza.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-32",
+        "front": "∅ ⊂ ∅ teljesül.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-33",
+        "front": "A hatványhalmaz elemszáma véges halmaz esetén mindig nagyobb az eredeti halmaz elemszámánál.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-34",
+        "front": "Az ábécé (Σ, formális nyelvhez) mindig véges.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-35",
+        "front": "Az ábécé (Σ, formális nyelvhez) szimbólumai mindig megkülönböztethetők.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-36",
+        "front": "Egy ábécé (Σ, formális nyelvhez) lehet üres.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-37",
+        "front": "Előfordulhat, hogy egy ábécében, formális nyelvhez, benne van az üresszó.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-38",
+        "front": "A formális nyelv Σ* része.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-39",
+        "front": "Előfordulhat, hogy egy formális nyelvnek csak egy eleme van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-40",
+        "front": "Előfordulhat, hogy egy formális nyelv üres.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-41",
+        "front": "Minden formális nyelv leírható véges módon.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-42",
+        "front": "Van olyan formális nyelv, amit nem tudunk leírni véges módon.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-43",
+        "front": "A formális nyelvek túlnyomó többsége leírható véges módon.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-44",
+        "front": "Egy formális nyelv elemei mindig felsorolhatók.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-45",
+        "front": "Az összes szó halmaza formális ábécé felett megszámlálhatóan végtelen.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-46",
+        "front": "Az összes szó halmaza formális ábécé felett lehet véges.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-47",
+        "front": "Az összes szó halmaza formális ábécé felett lehet nem-megszámlálhatóan végtelen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-48",
+        "front": "L* mindig végtelen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-49",
+        "front": "V* mindig végtelen halmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-50",
+        "front": "G = {a, b} felett G* elemszáma véges.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-51",
+        "front": "A konkatenáció szavakra általában nem kommutatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-52",
+        "front": "A valódi prefix mindig rövidebb az eredeti szónál.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-53",
+        "front": "Előfordulhat, hogy a valódi prefix ugyanolyan hosszú, mint az eredeti szó.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-54",
+        "front": "A valódi szuffix mindig rövidebb az eredeti szónál.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-55",
+        "front": "Boole-műveletekkel véges formális nyelvből biztosan véges nyelvet kapunk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-56",
+        "front": "Minden véges szó előállítható reguláris kifejezéssel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-57",
+        "front": "Az üresszó előállítható reguláris kifejezéssel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-58",
+        "front": "∅ reguláris kifejezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-59",
+        "front": "Minden reguláris kifejezés egyértelműen reprezentál egy nyelvet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-60",
+        "front": "Előfordulhat, hogy egy reguláris kifejezés több különböző nyelvet is generál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-61",
+        "front": "A reguláris kifejezések nyelvgenerátorok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-62",
+        "front": "A reguláris kifejezések nyelvgenerátorok, de ezen kívül más nyelvgenerátorok is vannak.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-63",
+        "front": "Ha a és b reguláris kifejezés, akkor (ab) is reguláris kifejezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-64",
+        "front": "Ha a és b reguláris kifejezés, akkor (a ∪ b) is reguláris kifejezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-65",
+        "front": "Egy reguláris kifejezés biztosan véges hosszú.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-66",
+        "front": "Egy reguláris kifejezés által generált nyelv tartalmazhat tetszőlegesen hosszú szavakat.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-67",
+        "front": "Egy reguláris kifejezés által generált nyelv sokszor rekurzív módon adható meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-68",
+        "front": "A nyelvfelismerő eszközök algoritmusok is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-69",
+        "front": "A véges automaták nyelvfelismerő eszközök.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-70",
+        "front": "Van olyan nyelvfelismerő eszköz, ami egyben nyelvgenerátor is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-71",
+        "front": "A nyelvgenerátorok Y/N típusú kérdésekre válaszolnak.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-72",
+        "front": "Minden reguláris nyelv véges.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-73",
+        "front": "Minden véges nyelv reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-74",
+        "front": "Minden végtelen nyelv reguláris.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-75",
+        "front": "Minden reguláris nyelv leírható reguláris kifejezéssel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-76",
+        "front": "Az egyszerű szingleton nyelvek, vagyis betűnyelvek, regulárisak.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-77",
+        "front": "Reguláris nyelvek uniója szintén reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-78",
+        "front": "Reguláris nyelvek konkatenációja szintén reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-79",
+        "front": "Reguláris nyelvek Kleene-iteráltja szintén reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-80",
+        "front": "Reguláris nyelvek zártak a metszetre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-81",
+        "front": "Előfordulhat, hogy két reguláris nyelv metszete nem reguláris.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-82",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt az unió műveletre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-83",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt a metszet műveletre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-84",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt a komplementer képzésre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-85",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt Kleene-csillag műveletre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-86",
+        "front": "Előfordulhat, hogy reguláris nyelvek uniójának Kleene-iteráltja nemreguláris lesz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-87",
+        "front": "Előfordulhat, hogy reguláris nyelvek uniójának konkatenáltja nemreguláris lesz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-88",
+        "front": "Ha egy nyelv véges automatával felismerhető, akkor reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-89",
+        "front": "Előfordulhat, hogy egy nyelv véges automatával felismerhető, de nemreguláris.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-90",
+        "front": "Ami nyelvet generálni lehet reguláris kifejezéssel, azt el lehet fogadni DFA-val.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-91",
+        "front": "Minden reguláris kifejezéshez létezik ekvivalens CFG.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-92",
+        "front": "Igaz, hogy L(∅*) = {ε}.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-93",
+        "front": "Igaz, hogy L(b*a*) ∩ L(c*d*) = ∅.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-94",
+        "front": "Igaz, hogy L(b*a*) ∩ L(a*b*) = L(a* ∪ b*).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-95",
+        "front": "Az RE = b*ab*(ab*ab*)* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páratlan.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-96",
+        "front": "Az RE = b*a*(ab*)* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páratlan.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-97",
+        "front": "Az RE = b*a*ab* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páros.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-98",
+        "front": "Az RE = b*a*b* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páros.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-99",
+        "front": "Az RE = (b ∪ c)*a(b ∪ c)*a(b ∪ c)* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b, c} felett, amelyekben 2 db a szerepel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-100",
+        "front": "A DVA véges halmazokkal leírható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-101",
+        "front": "A DVA a legegyszerűbb nyelvfelismerő eszköz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-102",
+        "front": "A DVA egy rendezett ötössel írható le.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-103",
+        "front": "A DVA leírásában szerepelhet végtelen halmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-104",
+        "front": "A DVA-nak lehet több végállapota.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-105",
+        "front": "Létezik olyan DVA is, amelynek csak egyetlen állapota van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-106",
+        "front": "A DVA megadott végállapot nélkül is lehet értelmes, ha a végállapotok halmaza üres.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-107",
+        "front": "A DVA átmeneti függvénye teljesen definiált.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-108",
+        "front": "A DVA-ban minden csúcs kimenő foka |Σ|.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-109",
+        "front": "DVA minden szót végig tud olvasni az adott ábécé felett.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-110",
+        "front": "Megadható olyan input szó, amit a DVA nem tud végigolvasni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-111",
+        "front": "A DVA az input szóból minden lépésben pontosan egy szimbólumot dolgoz fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-112",
+        "front": "A számítási sorozat hossza DVA-nál lehet nagyobb, mint a szó betűinek száma.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-113",
+        "front": "A számítási sorozat hossza lehet 0.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-114",
+        "front": "A számítási sorozat hossza az egy lépésben történő előállítások száma.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-115",
+        "front": "Az átmeneti reláció két szomszédos konfiguráció között értelmezett.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-116",
+        "front": "A DVA egy adott konfigurációja egyértelműen meghatározza a további működést.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-117",
+        "front": "A DVA elfogadja a w szót, ha a kezdő konfigurációból eljutunk egy elfogadóba valahány lépésben történő előállítással.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-118",
+        "front": "A DVA elfogadja a w szót, ha egy elfogadó konfigurációba jutunk az (s, w) kezdő konfigurációból ismételt átmeneti relációval.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-119",
+        "front": "Az, hogy a DVA elfogadja-e a w szót, |w| lépésben egyértelműen kiderül.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-120",
+        "front": "DVA egy szó végigolvasásakor biztosan elfogadó állapotban áll meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-121",
+        "front": "A DVA által felismert nyelv egyértelmű.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-122",
+        "front": "A DVA által elfogadott/felismert nyelv azon szavak halmaza, amelyeket M felismer.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-123",
+        "front": "Előfordulhat, hogy két különböző DVA ugyanazt a nyelvet ismeri fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-124",
+        "front": "Az, hogy hogyan dolgozza fel az automata az inputot, konfigurációk sorozatával mutatható be.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-125",
+        "front": "Az, hogy hogyan dolgozza fel az automata az inputot, kezdő- és végállapotok sorozatával mutatható be.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-126",
+        "front": "G = {a, b} felett a w-ben szerepel az abba szó feladat előállító automatája 5 állapottal megadható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-127",
+        "front": "G = {a, b} felett a w-ben az a-k száma mod 2 = 0 feladat előállító automatája csak legalább 3 állapottal adható meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-128",
+        "front": "G = {a, b} felett a w-ben az a-k száma kisebb, mint 4 feladat előállító automatája 3 állapottal megadható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-129",
+        "front": "G = {a, b} felett a w-ben az a-k száma 3 feladat előállító automatája 4 állapottal megadható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-130",
+        "front": "Az NVA véges halmazokkal leírható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-131",
+        "front": "Az NVA-nak pontosan egy kezdőállapota lehet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-132",
+        "front": "Az NVA-nak lehet több végállapota.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-133",
+        "front": "Az NVA-ban létezhet ε-átmenet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-134",
+        "front": "Az NVA egy adott konfigurációja egyértelműen meghatározza a további működést.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-135",
+        "front": "Az NVA az input szóból minden lépésben pontosan egy szimbólumot dolgoz fel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-136",
+        "front": "Az NVA egy szó végigolvasásakor biztosan elfogadó állapotban áll meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-137",
+        "front": "Az NVA minden szót végig tud olvasni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-138",
+        "front": "Az NVA-nál az átmeneteket egy Δ reláció írja le, amely nem függvény.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-139",
+        "front": "Az NVA-nál az átmeneteket egy delta reláció írja le, amely szinte mindig függvény.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-140",
+        "front": "Az NVA-nál lehetnek olyan állapot/input párok, amelyekre nincs definiálva az átmenet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-141",
+        "front": "Az NVA által felismert nyelv egyértelmű.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-142",
+        "front": "Az NVA által elfogadott/felismert nyelv azon szavak halmaza, amelyeket M felismer.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-143",
+        "front": "Az NVA elfogadja a w szót, ha eljuthatunk egy elfogadó konfigurációba az (s, w) kezdő konfigurációból ismételt átmeneti relációval.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-144",
+        "front": "Előfordulhat, hogy két különböző NVA ugyanazt a nyelvet ismeri fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-145",
+        "front": "NVA-nál előfordulhat, hogy az ismételt átmeneti reláció alkalmazásával ugyanarra az inputra különböző végkonfigurációkhoz jutunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-146",
+        "front": "Az NVA sokszor tömörebb leírást biztosít, mint a DVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-147",
+        "front": "A DVA tekinthető az NVA speciális típusának.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-148",
+        "front": "Minden DVA-hoz létezik ekvivalens NVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-149",
+        "front": "Minden NVA-hoz létezik ekvivalens DVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-150",
+        "front": "Létezik olyan NVA, amihez nem tudunk megadni ekvivalens DVA-t.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-151",
+        "front": "Létezik olyan DVA, amihez nem tudunk megadni ekvivalens NVA-t.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-152",
+        "front": "Olyan NVA nem készíthető, amely nem ismer fel egyetlen szót sem.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-153",
+        "front": "Egy E(q) halmaz elemszáma lehet 0 is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-154",
+        "front": "Az NVA → DVA konstrukciónál sokszor szükséges az üres halmaz állapot felvétele.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-155",
+        "front": "Az NVA → DVA konstrukciónál az üres halmaz állapot felvételére csak nagyon ritkán lehet szükség.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-156",
+        "front": "Az NVA → DVA konstrukciónál K' = P(K), de nem biztos, hogy minden új állapot valóban szükséges.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-157",
+        "front": "Az NVA → DVA konstrukciónál Q ⊆ K-ra δ'(Q, a) = Q' az állapotok halmaza, amelyek elérhetők Q-ból a olvasásával, de a lehetséges további ε-mozgásokat már nem kell figyelembe venni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-158",
+        "front": "A metszet automatát legtöbbször direkt módon is nagyon egyszerűen felépíthetjük, komplementer nélkül.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-159",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = ∅* felismerő automatája 1 vagy 2 állapottal megvalósítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-160",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = a* ∪ b* felismerő automatája 7 állapottal megvalósítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-161",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = (ab) felismerő automatája 3 vagy 4 állapottal megvalósítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-162",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = a* felismerő automatája csak 2 állapottal valósítható meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-163",
+        "front": "Létezik algoritmus annak eldöntésére, hogy L(M) = ∅.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-164",
+        "front": "Az L(M) = ∅ állítás irányított utak ellenőrzésével eldönthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-165",
+        "front": "Létezik algoritmus annak eldöntésére, hogy L(M1) = L(M2).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-166",
+        "front": "Az L(M1) = L(M2) állítás két részhalmazképzéssel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-167",
+        "front": "Létezik algoritmus annak eldöntésére, hogy L(M1) ⊆ L(M2).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-168",
+        "front": "Az L(M1) ⊆ L(M2) állítás komplementerképzéssel és metszettel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-169",
+        "front": "Az L(M1) ⊆ L(M2) állítás komplementerképzéssel és unióval ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-170",
+        "front": "Az L(M1) ⊆ L(M2) állítás unióval és metszettel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-171",
+        "front": "Az L(M1) ⊂ L(M2) állítás komplementerképzéssel és metszettel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-172",
+        "front": "Az L(M) = Σ* állítás teljesen nem, csak egy bizonyos korlátig ellenőrizhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-173",
+        "front": "A pumpáló lemma alapötlete szerint egy reguláris nyelv megfelelően hosszú szava felpumpálható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-174",
+        "front": "A pumpáló lemma alaptétele szerint egy reguláris nyelv tetszőleges szava felpumpálható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-175",
+        "front": "A pumpáló lemma alaptétele szerint egy véges reguláris nyelv minden legalább 10 hosszú szava felpumpálható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-176",
+        "front": "A pumpáló lemma alaptétele szerint egy DVA állapotdiagramja ciklust kell hogy tartalmazzon, ha L-ben megfelelően hosszú szavak is vannak.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-177",
+        "front": "A pumpáló lemma igazolása a skatulya-elv alkalmazásán alapul.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-178",
+        "front": "A pumpáló lemma tetszőleges reguláris nyelvre alkalmazható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-179",
+        "front": "A pumpáló lemma alkalmazásához megfelelő sztringet és felbontást kell megadnunk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-180",
+        "front": "A pumpáló lemma alkalmazása mindig nagyon egyszerű.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-181",
+        "front": "A pumpáló lemmát alapvetően nyelvek reguláris tulajdonságának az igazolásához használjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-182",
+        "front": "A pumpáló lemma segítségével igazolható, hogy az a^n b^n alakú szavak nyelve nemreguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-183",
+        "front": "A pumpáló lemma segítségével igazolható, hogy a helyes zárójelezések nyelve nemreguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-184",
+        "front": "A CFG-ket másként Chomsky 2-típusú nyelvtanoknak is nevezzük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-185",
+        "front": "A CFG-ket másként Chomsky 1-típusú nyelvtanoknak is nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-186",
+        "front": "A CFG-ket másként Chomsky 3-típusú nyelvtanoknak is nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-187",
+        "front": "A CFG megadásánál a terminálisok halmazát tipikusan Σ-val jelöljük, ahol Σ ⊆ V.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-188",
+        "front": "CFG megadásánál a nemterminálisok halmaza V − Σ jelölhető N-nel is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-189",
+        "front": "CFG megadásánál a kezdőszimbólumot tipikusan S-sel jelöljük, ahol S ∈ V − Σ.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-190",
+        "front": "CFG-knél a szabályok baloldalán csak egy db nemterminális van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-191",
+        "front": "CFG-knél a szabályok baloldalán tetszőleges V*-beli szó állhat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-192",
+        "front": "CFG-knél a szabályok jobboldalán tetszőleges V*-beli szó állhat.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-193",
+        "front": "CFG-knél a szabályok jobboldalán csak egy db nemterminális van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-194",
+        "front": "CFG-knél a szabályok a (V − Σ) × V* halmaz részét képezik.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-195",
+        "front": "CFG-knél megengedettek az A → ε alakú szabályok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-196",
+        "front": "Ugyanúgy, mint az RE-k, a CFG-k is nyelvgenerátorok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-197",
+        "front": "A CFG-k a legáltalánosabb nyelvgenerátorok.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-198",
+        "front": "Létezik olyan nyelvfelismerő eszköz, amely ekvivalens erejű a CFG-vel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-199",
+        "front": "A szintaktikailag helyes aritmetikai kifejezések nyelve leírható CF nyelvtannal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-200",
+        "front": "A helyes zárójelezések nyelve DVA-val nem, de veremautomatával felismerhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-201",
+        "front": "Készíthető olyan CFG, amelyik nem generál egyetlen szót sem.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-202",
+        "front": "Készíthető olyan CFG, amelyik csak pontosan egyetlen szót állít elő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-203",
+        "front": "Ha egy CFG 10-nél több szót előállít, akkor már tetszőlegesen sokat is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-204",
+        "front": "Az a^n b^n alakú szavak nyelve nem állítható elő CFG-vel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-205",
+        "front": "Az a^(n+1)b^n alakú szavak nyelve előállítható olyan CFG-vel, amely csak egyetlen nemterminálist tartalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-206",
+        "front": "Az a^n c b^n alakú szavak nyelve csak olyan CFG-vel állítható elő, amely legalább két különböző nemterminálist tartalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-207",
+        "front": "Az a^n b^n c alakú szavak nyelve csak olyan CFG-vel állítható elő, amely legalább két különböző nemterminálist tartalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-208",
+        "front": "Az a^n b^n c^n alakú szavak nyelve csak olyan CFG-vel állítható elő, amely legalább két különböző nemterminálist tartalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-209",
+        "front": "Az a^n b^n a^m b^m alakú szavak nyelve már csak olyan CFG-vel állítható elő, amely legalább három különböző nemterminálist tartalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-210",
+        "front": "L akkor környezetfüggetlen nyelv, ha található hozzá G CF nyelvtan úgy, hogy L = L(G).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-211",
+        "front": "Minden környezetfüggetlen nyelv végtelen nagy.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-212",
+        "front": "Minden környezetfüggetlen nyelv reguláris is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-213",
+        "front": "Környezetfüggetlen nyelvek zártak a metszetre.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-214",
+        "front": "Környezetfüggetlen nyelvtanokkal minden generálható, ami reguláris kifejezéssel generálható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-215",
+        "front": "Ami nyelvet generálni lehet CFG-vel, azt el lehet fogadni DFA-val.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-216",
+        "front": "Környezetfüggetlen nyelvtanokkal minden Turing-elfogadható nyelv generálható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-217",
+        "front": "A reguláris nyelvtanokat másként Chomsky 3-típusú nyelvtanoknak is nevezzük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-218",
+        "front": "A reguláris nyelvtanokat másként Chomsky 2-típusú nyelvtanoknak is nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-219",
+        "front": "L akkor reguláris nyelv, ha található hozzá G reguláris nyelvtan úgy, hogy L = L(G).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-220",
+        "front": "Minden reguláris nyelvtanhoz megadható ekvivalens DVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-221",
+        "front": "A reguláris nyelvekre vonatkozó 2. ekvivalencia tétel állításának része, hogy egy reguláris nyelvtan könnyen NVA-sítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-222",
+        "front": "A reguláris nyelvekre vonatkozó 2. ekvivalencia tétel bizonyítása azon alapul, hogy a reguláris és a véges automatával felismerhető nyelvek osztálya megegyezik.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-223",
+        "front": "RG-knél a szabályok baloldalán tetszőleges V*-beli szó állhat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-224",
+        "front": "RG-knél a szabályok jobboldalán tetszőleges V*-beli szó állhat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-225",
+        "front": "RG-knél a szabályok jobboldalán nincs terminális.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-226",
+        "front": "RG-knél a szabályok jobboldalán csak pontosan egy db nemterminális van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-227",
+        "front": "RG-knél a szabályok jobboldalán csak max. egy db terminális lehet.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-228",
+        "front": "Az RG olyan speciális CFG, ahol a szabályok jobboldalán csak max. egy nemterminális lehet, és az is csak a jobb szélen.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-229",
+        "front": "RG-knél megengedettek az A → ε alakú szabályok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-230",
+        "front": "Egy A → aBC alakú RG-s szabály direkt módon illeszthető egy NVA-ba.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-231",
+        "front": "Az NVA → RG átalakításnál az elfogadó állapotoknak egy-egy q → ε szabály feleltethető meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-232",
+        "front": "Az NVA → RG átalakításnál a (q, a, p) alakú átmeneteknek egy-egy q → ε szabály feleltethető meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-233",
+        "front": "A tiszta a betűs szavakat előállító egyszerű nyelvtan nemcsak CFG, hanem RG is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-234",
+        "front": "A helyes zárójelezések nyelve nem írható le reguláris nyelvtannal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-235",
+        "front": "A helyes zárójelezések nyelve leírható reguláris nyelvtannal.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-236",
+        "front": "Egy valós nyelv nem írható le korrekt módon reguláris nyelvtannal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-237",
+        "front": "Az a^n b^n c alakú szavak nyelve nem állítható elő RG-vel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-238",
+        "front": "A veremautomaták (RMA, PDA) vereme LIFO adatszerkezet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-239",
+        "front": "A veremautomata vezérlőegysége véges sok állapotot tartalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-240",
+        "front": "A veremautomata vezérlőegysége tartalmazhat nem korlátos számú állapotot.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-241",
+        "front": "Minden NVA/DVA tekinthető PDA-nak, amelyik nem használja a vermet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-242",
+        "front": "A PDA-knál a konfiguráció egy rendezett pár, hasonlóan a DVA-hoz/NVA-hoz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-243",
+        "front": "PDA-knál a konfiguráció egy rendezett hármas, K × Σ* × Γ* egy eleme.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-244",
+        "front": "A PDA-k átmeneti relációja ((p, α, β), (q, γ)) párokkal írható le, ahol p és q állapotok, α az input, β és γ pedig a veremtartalom.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-245",
+        "front": "A PDA egy lépésénél elképzelhető, hogy nem fogy az input, hasonlóan az NVA-hoz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-246",
+        "front": "A PDA minden lépésénél kötelezően fogy az input, hasonlóan a DVA-hoz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-247",
+        "front": "PDA-nál minden állapotátmenet legalább egy karaktert be kell olvasson a bemenetről.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-248",
+        "front": "PDA-nál a verem és a bemenet ábécéjének azonos méretűnek kell lennie.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-249",
+        "front": "PDA-nál nem lehet metszete a verem és a bemenet ábécéjének.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-250",
+        "front": "PDA-nál ha kiveszünk valamit a stackről egy állapotátmenetnél, akkor a helyére vissza is kell tenni valamit.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-251",
+        "front": "A PDA-ban a DFA-val ellentétben lehetséges több kezdőállapotot megadni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-252",
+        "front": "A wcw^R alakú szavakat felismerő PDA viszonylag egyszerűen két állapottal felépíthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-253",
+        "front": "A ww^R alakú szavakat felismerő PDA viszonylag egyszerűen két állapottal felépíthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-254",
+        "front": "Az a^n c b^n alakú szavak nyelve DVA-val és veremautomatával is felismerhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-255",
+        "front": "Az azonos számú a és b betűt tartalmazó szavak nyelvét felismerő PDA három állapottal is felépíthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-256",
+        "front": "Az azonos számú a és b betűt tartalmazó szavak nyelvét felismerő PDA két állapottal, a olvasás és b olvasás szerint is felépíthető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-257",
+        "front": "Van olyan Turing-gép, ami tetszőleges bemenetre véges lépésben megáll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-258",
+        "front": "Tetszőleges Turing-gép tetszőleges bemenetre véges lépésben megáll.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-259",
+        "front": "Amely nyelv Turing-eldönthető, az Turing-elfogadható is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-260",
+        "front": "Turing-elfogadható egy nyelv, ha van olyan Turing-gép, amely a nyelvben lévő szavakon megáll, a többin pedig nem feltétlenül áll meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-261",
+        "front": "Készíthető olyan Turing-gép, amely egy adott bemenetre sosem áll meg, és közben sosem ismétel konfigurációt.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-262",
+        "front": "Az univerzális Turing-gép olyan Turing-gép, melynek ábécéjében szerepel az összes létező karakter.",
+        "back": "Hamis"
+      }
+    ]
+  }
+]
