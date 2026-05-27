@@ -1,0 +1,229 @@
+[
+  {
+    "id": "flashcard-formalis-3",
+    "title": "Formális nyelvek és automaták 3. rész",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva – 3. rész",
+    "cards": [
+      {
+        "id": "card-89",
+        "front": "Előfordulhat, hogy egy nyelv véges automatával felismerhető, de nemreguláris.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-90",
+        "front": "Ami nyelvet generálni lehet reguláris kifejezéssel, azt el lehet fogadni DFA-val.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-91",
+        "front": "Minden reguláris kifejezéshez létezik ekvivalens CFG.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-92",
+        "front": "Igaz, hogy L(∅*) = {ε}.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-93",
+        "front": "Igaz, hogy L(b*a*) ∩ L(c*d*) = ∅.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-94",
+        "front": "Igaz, hogy L(b*a*) ∩ L(a*b*) = L(a* ∪ b*).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-95",
+        "front": "Az RE = b*ab*(ab*ab*)* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páratlan.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-96",
+        "front": "Az RE = b*a*(ab*)* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páratlan.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-97",
+        "front": "Az RE = b*a*ab* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páros.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-98",
+        "front": "Az RE = b*a*b* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b} felett, amelyekben az a-k száma páros.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-99",
+        "front": "Az RE = (b ∪ c)*a(b ∪ c)*a(b ∪ c)* reguláris kifejezés pontosan azon szavakat állítja elő G = {a, b, c} felett, amelyekben 2 db a szerepel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-100",
+        "front": "A DVA véges halmazokkal leírható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-101",
+        "front": "A DVA a legegyszerűbb nyelvfelismerő eszköz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-102",
+        "front": "A DVA egy rendezett ötössel írható le.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-103",
+        "front": "A DVA leírásában szerepelhet végtelen halmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-104",
+        "front": "A DVA-nak lehet több végállapota.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-105",
+        "front": "Létezik olyan DVA is, amelynek csak egyetlen állapota van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-106",
+        "front": "A DVA megadott végállapot nélkül is lehet értelmes, ha a végállapotok halmaza üres.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-107",
+        "front": "A DVA átmeneti függvénye teljesen definiált.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-108",
+        "front": "A DVA-ban minden csúcs kimenő foka |Σ|.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-109",
+        "front": "DVA minden szót végig tud olvasni az adott ábécé felett.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-110",
+        "front": "Megadható olyan input szó, amit a DVA nem tud végigolvasni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-111",
+        "front": "A DVA az input szóból minden lépésben pontosan egy szimbólumot dolgoz fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-112",
+        "front": "A számítási sorozat hossza DVA-nál lehet nagyobb, mint a szó betűinek száma.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-113",
+        "front": "A számítási sorozat hossza lehet 0.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-114",
+        "front": "A számítási sorozat hossza az egy lépésben történő előállítások száma.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-115",
+        "front": "Az átmeneti reláció két szomszédos konfiguráció között értelmezett.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-116",
+        "front": "A DVA egy adott konfigurációja egyértelműen meghatározza a további működést.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-117",
+        "front": "A DVA elfogadja a w szót, ha a kezdő konfigurációból eljutunk egy elfogadóba valahány lépésben történő előállítással.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-118",
+        "front": "A DVA elfogadja a w szót, ha egy elfogadó konfigurációba jutunk az (s, w) kezdő konfigurációból ismételt átmeneti relációval.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-119",
+        "front": "Az, hogy a DVA elfogadja-e a w szót, |w| lépésben egyértelműen kiderül.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-120",
+        "front": "DVA egy szó végigolvasásakor biztosan elfogadó állapotban áll meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-121",
+        "front": "A DVA által felismert nyelv egyértelmű.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-122",
+        "front": "A DVA által elfogadott/felismert nyelv azon szavak halmaza, amelyeket M felismer.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-123",
+        "front": "Előfordulhat, hogy két különböző DVA ugyanazt a nyelvet ismeri fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-124",
+        "front": "Az, hogy hogyan dolgozza fel az automata az inputot, konfigurációk sorozatával mutatható be.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-125",
+        "front": "Az, hogy hogyan dolgozza fel az automata az inputot, kezdő- és végállapotok sorozatával mutatható be.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-126",
+        "front": "G = {a, b} felett a w-ben szerepel az abba szó feladat előállító automatája 5 állapottal megadható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-127",
+        "front": "G = {a, b} felett a w-ben az a-k száma mod 2 = 0 feladat előállító automatája csak legalább 3 állapottal adható meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-128",
+        "front": "G = {a, b} felett a w-ben az a-k száma kisebb, mint 4 feladat előállító automatája 3 állapottal megadható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-129",
+        "front": "G = {a, b} felett a w-ben az a-k száma 3 feladat előállító automatája 4 állapottal megadható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-130",
+        "front": "Az NVA véges halmazokkal leírható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-131",
+        "front": "Az NVA-nak pontosan egy kezdőállapota lehet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-132",
+        "front": "Az NVA-nak lehet több végállapota.",
+        "back": "Igaz"
+      }
+    ]
+  }
+]

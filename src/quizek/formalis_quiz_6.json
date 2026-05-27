@@ -1,0 +1,224 @@
+[
+  {
+    "id": "flashcard-formalis-6",
+    "title": "Formális nyelvek és automaták 6. rész",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva – 6. rész",
+    "cards": [
+      {
+        "id": "card-220",
+        "front": "Minden reguláris nyelvtanhoz megadható ekvivalens DVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-221",
+        "front": "A reguláris nyelvekre vonatkozó 2. ekvivalencia tétel állításának része, hogy egy reguláris nyelvtan könnyen NVA-sítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-222",
+        "front": "A reguláris nyelvekre vonatkozó 2. ekvivalencia tétel bizonyítása azon alapul, hogy a reguláris és a véges automatával felismerhető nyelvek osztálya megegyezik.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-223",
+        "front": "RG-knél a szabályok baloldalán tetszőleges V*-beli szó állhat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-224",
+        "front": "RG-knél a szabályok jobboldalán tetszőleges V*-beli szó állhat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-225",
+        "front": "RG-knél a szabályok jobboldalán nincs terminális.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-226",
+        "front": "RG-knél a szabályok jobboldalán csak pontosan egy db nemterminális van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-227",
+        "front": "RG-knél a szabályok jobboldalán csak max. egy db terminális lehet.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-228",
+        "front": "Az RG olyan speciális CFG, ahol a szabályok jobboldalán csak max. egy nemterminális lehet, és az is csak a jobb szélen.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-229",
+        "front": "RG-knél megengedettek az A → ε alakú szabályok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-230",
+        "front": "Egy A → aBC alakú RG-s szabály direkt módon illeszthető egy NVA-ba.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-231",
+        "front": "Az NVA → RG átalakításnál az elfogadó állapotoknak egy-egy q → ε szabály feleltethető meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-232",
+        "front": "Az NVA → RG átalakításnál a (q, a, p) alakú átmeneteknek egy-egy q → ε szabály feleltethető meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-233",
+        "front": "A tiszta a betűs szavakat előállító egyszerű nyelvtan nemcsak CFG, hanem RG is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-234",
+        "front": "A helyes zárójelezések nyelve nem írható le reguláris nyelvtannal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-235",
+        "front": "A helyes zárójelezések nyelve leírható reguláris nyelvtannal.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-236",
+        "front": "Egy valós nyelv nem írható le korrekt módon reguláris nyelvtannal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-237",
+        "front": "Az a^n b^n c alakú szavak nyelve nem állítható elő RG-vel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-238",
+        "front": "A veremautomaták (RMA, PDA) vereme LIFO adatszerkezet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-239",
+        "front": "A veremautomata vezérlőegysége véges sok állapotot tartalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-240",
+        "front": "A veremautomata vezérlőegysége tartalmazhat nem korlátos számú állapotot.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-241",
+        "front": "Minden NVA/DVA tekinthető PDA-nak, amelyik nem használja a vermet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-242",
+        "front": "A PDA-knál a konfiguráció egy rendezett pár, hasonlóan a DVA-hoz/NVA-hoz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-243",
+        "front": "PDA-knál a konfiguráció egy rendezett hármas, K × Σ* × Γ* egy eleme.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-244",
+        "front": "A PDA-k átmeneti relációja ((p, α, β), (q, γ)) párokkal írható le, ahol p és q állapotok, α az input, β és γ pedig a veremtartalom.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-245",
+        "front": "A PDA egy lépésénél elképzelhető, hogy nem fogy az input, hasonlóan az NVA-hoz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-246",
+        "front": "A PDA minden lépésénél kötelezően fogy az input, hasonlóan a DVA-hoz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-247",
+        "front": "PDA-nál minden állapotátmenet legalább egy karaktert be kell olvasson a bemenetről.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-248",
+        "front": "PDA-nál a verem és a bemenet ábécéjének azonos méretűnek kell lennie.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-249",
+        "front": "PDA-nál nem lehet metszete a verem és a bemenet ábécéjének.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-250",
+        "front": "PDA-nál ha kiveszünk valamit a stackről egy állapotátmenetnél, akkor a helyére vissza is kell tenni valamit.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-251",
+        "front": "A PDA-ban a DFA-val ellentétben lehetséges több kezdőállapotot megadni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-252",
+        "front": "A wcw^R alakú szavakat felismerő PDA viszonylag egyszerűen két állapottal felépíthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-253",
+        "front": "A ww^R alakú szavakat felismerő PDA viszonylag egyszerűen két állapottal felépíthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-254",
+        "front": "Az a^n c b^n alakú szavak nyelve DVA-val és veremautomatával is felismerhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-255",
+        "front": "Az azonos számú a és b betűt tartalmazó szavak nyelvét felismerő PDA három állapottal is felépíthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-256",
+        "front": "Az azonos számú a és b betűt tartalmazó szavak nyelvét felismerő PDA két állapottal, a olvasás és b olvasás szerint is felépíthető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-257",
+        "front": "Van olyan Turing-gép, ami tetszőleges bemenetre véges lépésben megáll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-258",
+        "front": "Tetszőleges Turing-gép tetszőleges bemenetre véges lépésben megáll.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-259",
+        "front": "Amely nyelv Turing-eldönthető, az Turing-elfogadható is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-260",
+        "front": "Turing-elfogadható egy nyelv, ha van olyan Turing-gép, amely a nyelvben lévő szavakon megáll, a többin pedig nem feltétlenül áll meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-261",
+        "front": "Készíthető olyan Turing-gép, amely egy adott bemenetre sosem áll meg, és közben sosem ismétel konfigurációt.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-262",
+        "front": "Az univerzális Turing-gép olyan Turing-gép, melynek ábécéjében szerepel az összes létező karakter.",
+        "back": "Hamis"
+      }
+    ]
+  }
+]

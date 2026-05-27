@@ -1,0 +1,229 @@
+[
+  {
+    "id": "flashcard-formalis-2",
+    "title": "Formális nyelvek és automaták 2. rész",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva – 2. rész",
+    "cards": [
+      {
+        "id": "card-45",
+        "front": "Az összes szó halmaza formális ábécé felett megszámlálhatóan végtelen.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-46",
+        "front": "Az összes szó halmaza formális ábécé felett lehet véges.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-47",
+        "front": "Az összes szó halmaza formális ábécé felett lehet nem-megszámlálhatóan végtelen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-48",
+        "front": "L* mindig végtelen.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-49",
+        "front": "V* mindig végtelen halmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-50",
+        "front": "G = {a, b} felett G* elemszáma véges.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-51",
+        "front": "A konkatenáció szavakra általában nem kommutatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-52",
+        "front": "A valódi prefix mindig rövidebb az eredeti szónál.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-53",
+        "front": "Előfordulhat, hogy a valódi prefix ugyanolyan hosszú, mint az eredeti szó.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-54",
+        "front": "A valódi szuffix mindig rövidebb az eredeti szónál.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-55",
+        "front": "Boole-műveletekkel véges formális nyelvből biztosan véges nyelvet kapunk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-56",
+        "front": "Minden véges szó előállítható reguláris kifejezéssel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-57",
+        "front": "Az üresszó előállítható reguláris kifejezéssel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-58",
+        "front": "∅ reguláris kifejezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-59",
+        "front": "Minden reguláris kifejezés egyértelműen reprezentál egy nyelvet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-60",
+        "front": "Előfordulhat, hogy egy reguláris kifejezés több különböző nyelvet is generál.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-61",
+        "front": "A reguláris kifejezések nyelvgenerátorok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-62",
+        "front": "A reguláris kifejezések nyelvgenerátorok, de ezen kívül más nyelvgenerátorok is vannak.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-63",
+        "front": "Ha a és b reguláris kifejezés, akkor (ab) is reguláris kifejezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-64",
+        "front": "Ha a és b reguláris kifejezés, akkor (a ∪ b) is reguláris kifejezés.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-65",
+        "front": "Egy reguláris kifejezés biztosan véges hosszú.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-66",
+        "front": "Egy reguláris kifejezés által generált nyelv tartalmazhat tetszőlegesen hosszú szavakat.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-67",
+        "front": "Egy reguláris kifejezés által generált nyelv sokszor rekurzív módon adható meg.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-68",
+        "front": "A nyelvfelismerő eszközök algoritmusok is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-69",
+        "front": "A véges automaták nyelvfelismerő eszközök.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-70",
+        "front": "Van olyan nyelvfelismerő eszköz, ami egyben nyelvgenerátor is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-71",
+        "front": "A nyelvgenerátorok Y/N típusú kérdésekre válaszolnak.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-72",
+        "front": "Minden reguláris nyelv véges.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-73",
+        "front": "Minden véges nyelv reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-74",
+        "front": "Minden végtelen nyelv reguláris.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-75",
+        "front": "Minden reguláris nyelv leírható reguláris kifejezéssel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-76",
+        "front": "Az egyszerű szingleton nyelvek, vagyis betűnyelvek, regulárisak.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-77",
+        "front": "Reguláris nyelvek uniója szintén reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-78",
+        "front": "Reguláris nyelvek konkatenációja szintén reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-79",
+        "front": "Reguláris nyelvek Kleene-iteráltja szintén reguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-80",
+        "front": "Reguláris nyelvek zártak a metszetre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-81",
+        "front": "Előfordulhat, hogy két reguláris nyelv metszete nem reguláris.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-82",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt az unió műveletre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-83",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt a metszet műveletre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-84",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt a komplementer képzésre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-85",
+        "front": "A véges automatákkal felismerhető nyelvek osztálya zárt Kleene-csillag műveletre.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-86",
+        "front": "Előfordulhat, hogy reguláris nyelvek uniójának Kleene-iteráltja nemreguláris lesz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-87",
+        "front": "Előfordulhat, hogy reguláris nyelvek uniójának konkatenáltja nemreguláris lesz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-88",
+        "front": "Ha egy nyelv véges automatával felismerhető, akkor reguláris.",
+        "back": "Igaz"
+      }
+    ]
+  }
+]

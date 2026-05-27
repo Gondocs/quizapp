@@ -1,0 +1,229 @@
+[
+  {
+    "id": "flashcard-formalis-1",
+    "title": "Formális nyelvek és automaták 1. rész",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva – 1. rész",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Az unió és a metszet művelet kommutatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-2",
+        "front": "Az unió és a metszet művelet asszociatív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-3",
+        "front": "Az unió és a metszet művelet nem asszociatív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-4",
+        "front": "A Descartes-szorzat A és B halmazok felett rendezett párokból áll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-5",
+        "front": "Egy bináris reláció A és B halmazok felett rendezett párokból áll.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-6",
+        "front": "Minden függvény egyben reláció is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-7",
+        "front": "Van olyan függvény, ami nem reláció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-8",
+        "front": "A reláció a függvény speciális esete.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-9",
+        "front": "Van olyan függvény, amelyik injektív, de nem bijektív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-10",
+        "front": "Van olyan függvény, amelyik injektív, de nem szürjektív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-11",
+        "front": "Van olyan függvény, amelyik bijektív, de nem szürjektív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-12",
+        "front": "Minden függvény szürjektív.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-13",
+        "front": "Az ekvivalencia reláció reflexív, szimmetrikus és tranzitív.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-14",
+        "front": "Szimmetrikus reláció esetén a reprezentációban használhatók irányítatlan élek is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-15",
+        "front": "Azon speciális bináris relációk, amelyekre A = B, reprezentálhatók irányított gráfokkal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-16",
+        "front": "(a, b) = (b, a) rendezett párok esetén mindig teljesül.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-17",
+        "front": "{a, b} = {b, a} halmazok esetén teljesül.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-18",
+        "front": "A páros és páratlan számok együtt a természetes számok egy partícióját alkotják.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-19",
+        "front": "A páros nemnegatív és a páratlan pozitív számok együtt a természetes számok egy partícióját alkotják.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-20",
+        "front": "A racionális és az irracionális számok együtt a valós számok egy partícióját alkotják.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-21",
+        "front": "A természetes számok és a négyzetszámok között megadható bijekció.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-22",
+        "front": "A természetes számok és a négyzetszámok között nem adható meg bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-23",
+        "front": "A természetes számok és az egész számok között megadható bijekció.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-24",
+        "front": "A természetes számok és az irracionális számok között megadható bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-25",
+        "front": "Az egész számok és az irracionális számok között megadható bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-26",
+        "front": "A racionális számok és a valós számok között megadható bijekció.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-27",
+        "front": "Előfordulhat, hogy diszjunkt halmazokra |A| + |B| > |A ∪ B|.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-28",
+        "front": "Előfordulhat, hogy véges A és B halmazokra az unió művelet nem értelmezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-29",
+        "front": "Előfordulhat, hogy véges A és B halmazokra a metszet művelet nem értelmezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-30",
+        "front": "Előfordulhat, hogy véges A és B halmazokra az A \\ B művelet nem értelmezhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-31",
+        "front": "∅ minden halmaznak részhalmaza.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-32",
+        "front": "∅ ⊂ ∅ teljesül.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-33",
+        "front": "A hatványhalmaz elemszáma véges halmaz esetén mindig nagyobb az eredeti halmaz elemszámánál.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-34",
+        "front": "Az ábécé (Σ, formális nyelvhez) mindig véges.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-35",
+        "front": "Az ábécé (Σ, formális nyelvhez) szimbólumai mindig megkülönböztethetők.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-36",
+        "front": "Egy ábécé (Σ, formális nyelvhez) lehet üres.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-37",
+        "front": "Előfordulhat, hogy egy ábécében, formális nyelvhez, benne van az üresszó.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-38",
+        "front": "A formális nyelv Σ* része.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-39",
+        "front": "Előfordulhat, hogy egy formális nyelvnek csak egy eleme van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-40",
+        "front": "Előfordulhat, hogy egy formális nyelv üres.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-41",
+        "front": "Minden formális nyelv leírható véges módon.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-42",
+        "front": "Van olyan formális nyelv, amit nem tudunk leírni véges módon.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-43",
+        "front": "A formális nyelvek túlnyomó többsége leírható véges módon.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-44",
+        "front": "Egy formális nyelv elemei mindig felsorolhatók.",
+        "back": "Igaz"
+      }
+    ]
+  }
+]

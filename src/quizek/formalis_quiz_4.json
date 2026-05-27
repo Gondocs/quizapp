@@ -1,0 +1,229 @@
+[
+  {
+    "id": "flashcard-formalis-4",
+    "title": "Formális nyelvek és automaták 4. rész",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva – 4. rész",
+    "cards": [
+      {
+        "id": "card-133",
+        "front": "Az NVA-ban létezhet ε-átmenet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-134",
+        "front": "Az NVA egy adott konfigurációja egyértelműen meghatározza a további működést.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-135",
+        "front": "Az NVA az input szóból minden lépésben pontosan egy szimbólumot dolgoz fel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-136",
+        "front": "Az NVA egy szó végigolvasásakor biztosan elfogadó állapotban áll meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-137",
+        "front": "Az NVA minden szót végig tud olvasni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-138",
+        "front": "Az NVA-nál az átmeneteket egy Δ reláció írja le, amely nem függvény.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-139",
+        "front": "Az NVA-nál az átmeneteket egy delta reláció írja le, amely szinte mindig függvény.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-140",
+        "front": "Az NVA-nál lehetnek olyan állapot/input párok, amelyekre nincs definiálva az átmenet.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-141",
+        "front": "Az NVA által felismert nyelv egyértelmű.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-142",
+        "front": "Az NVA által elfogadott/felismert nyelv azon szavak halmaza, amelyeket M felismer.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-143",
+        "front": "Az NVA elfogadja a w szót, ha eljuthatunk egy elfogadó konfigurációba az (s, w) kezdő konfigurációból ismételt átmeneti relációval.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-144",
+        "front": "Előfordulhat, hogy két különböző NVA ugyanazt a nyelvet ismeri fel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-145",
+        "front": "NVA-nál előfordulhat, hogy az ismételt átmeneti reláció alkalmazásával ugyanarra az inputra különböző végkonfigurációkhoz jutunk.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-146",
+        "front": "Az NVA sokszor tömörebb leírást biztosít, mint a DVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-147",
+        "front": "A DVA tekinthető az NVA speciális típusának.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-148",
+        "front": "Minden DVA-hoz létezik ekvivalens NVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-149",
+        "front": "Minden NVA-hoz létezik ekvivalens DVA.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-150",
+        "front": "Létezik olyan NVA, amihez nem tudunk megadni ekvivalens DVA-t.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-151",
+        "front": "Létezik olyan DVA, amihez nem tudunk megadni ekvivalens NVA-t.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-152",
+        "front": "Olyan NVA nem készíthető, amely nem ismer fel egyetlen szót sem.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-153",
+        "front": "Egy E(q) halmaz elemszáma lehet 0 is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-154",
+        "front": "Az NVA → DVA konstrukciónál sokszor szükséges az üres halmaz állapot felvétele.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-155",
+        "front": "Az NVA → DVA konstrukciónál az üres halmaz állapot felvételére csak nagyon ritkán lehet szükség.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-156",
+        "front": "Az NVA → DVA konstrukciónál K' = P(K), de nem biztos, hogy minden új állapot valóban szükséges.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-157",
+        "front": "Az NVA → DVA konstrukciónál Q ⊆ K-ra δ'(Q, a) = Q' az állapotok halmaza, amelyek elérhetők Q-ból a olvasásával, de a lehetséges további ε-mozgásokat már nem kell figyelembe venni.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-158",
+        "front": "A metszet automatát legtöbbször direkt módon is nagyon egyszerűen felépíthetjük, komplementer nélkül.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-159",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = ∅* felismerő automatája 1 vagy 2 állapottal megvalósítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-160",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = a* ∪ b* felismerő automatája 7 állapottal megvalósítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-161",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = (ab) felismerő automatája 3 vagy 4 állapottal megvalósítható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-162",
+        "front": "A tanult szabványos RE → NVA konstrukciónál az RE = a* felismerő automatája csak 2 állapottal valósítható meg.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-163",
+        "front": "Létezik algoritmus annak eldöntésére, hogy L(M) = ∅.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-164",
+        "front": "Az L(M) = ∅ állítás irányított utak ellenőrzésével eldönthető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-165",
+        "front": "Létezik algoritmus annak eldöntésére, hogy L(M1) = L(M2).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-166",
+        "front": "Az L(M1) = L(M2) állítás két részhalmazképzéssel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-167",
+        "front": "Létezik algoritmus annak eldöntésére, hogy L(M1) ⊆ L(M2).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-168",
+        "front": "Az L(M1) ⊆ L(M2) állítás komplementerképzéssel és metszettel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-169",
+        "front": "Az L(M1) ⊆ L(M2) állítás komplementerképzéssel és unióval ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-170",
+        "front": "Az L(M1) ⊆ L(M2) állítás unióval és metszettel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-171",
+        "front": "Az L(M1) ⊂ L(M2) állítás komplementerképzéssel és metszettel ellenőrizhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-172",
+        "front": "Az L(M) = Σ* állítás teljesen nem, csak egy bizonyos korlátig ellenőrizhető.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-173",
+        "front": "A pumpáló lemma alapötlete szerint egy reguláris nyelv megfelelően hosszú szava felpumpálható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-174",
+        "front": "A pumpáló lemma alaptétele szerint egy reguláris nyelv tetszőleges szava felpumpálható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-175",
+        "front": "A pumpáló lemma alaptétele szerint egy véges reguláris nyelv minden legalább 10 hosszú szava felpumpálható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-176",
+        "front": "A pumpáló lemma alaptétele szerint egy DVA állapotdiagramja ciklust kell hogy tartalmazzon, ha L-ben megfelelően hosszú szavak is vannak.",
+        "back": "Igaz"
+      }
+    ]
+  }
+]

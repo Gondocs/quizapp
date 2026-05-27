@@ -1,0 +1,224 @@
+[
+  {
+    "id": "flashcard-formalis-5",
+    "title": "Formális nyelvek és automaták 5. rész",
+    "description": "Igaz-hamis vizsgakérdések – összesített, duplikációk nélkül, tananyag alapján javítva – 5. rész",
+    "cards": [
+      {
+        "id": "card-177",
+        "front": "A pumpáló lemma igazolása a skatulya-elv alkalmazásán alapul.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-178",
+        "front": "A pumpáló lemma tetszőleges reguláris nyelvre alkalmazható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-179",
+        "front": "A pumpáló lemma alkalmazásához megfelelő sztringet és felbontást kell megadnunk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-180",
+        "front": "A pumpáló lemma alkalmazása mindig nagyon egyszerű.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-181",
+        "front": "A pumpáló lemmát alapvetően nyelvek reguláris tulajdonságának az igazolásához használjuk.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-182",
+        "front": "A pumpáló lemma segítségével igazolható, hogy az a^n b^n alakú szavak nyelve nemreguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-183",
+        "front": "A pumpáló lemma segítségével igazolható, hogy a helyes zárójelezések nyelve nemreguláris.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-184",
+        "front": "A CFG-ket másként Chomsky 2-típusú nyelvtanoknak is nevezzük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-185",
+        "front": "A CFG-ket másként Chomsky 1-típusú nyelvtanoknak is nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-186",
+        "front": "A CFG-ket másként Chomsky 3-típusú nyelvtanoknak is nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-187",
+        "front": "A CFG megadásánál a terminálisok halmazát tipikusan Σ-val jelöljük, ahol Σ ⊆ V.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-188",
+        "front": "CFG megadásánál a nemterminálisok halmaza V − Σ jelölhető N-nel is.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-189",
+        "front": "CFG megadásánál a kezdőszimbólumot tipikusan S-sel jelöljük, ahol S ∈ V − Σ.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-190",
+        "front": "CFG-knél a szabályok baloldalán csak egy db nemterminális van.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-191",
+        "front": "CFG-knél a szabályok baloldalán tetszőleges V*-beli szó állhat.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-192",
+        "front": "CFG-knél a szabályok jobboldalán tetszőleges V*-beli szó állhat.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-193",
+        "front": "CFG-knél a szabályok jobboldalán csak egy db nemterminális van.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-194",
+        "front": "CFG-knél a szabályok a (V − Σ) × V* halmaz részét képezik.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-195",
+        "front": "CFG-knél megengedettek az A → ε alakú szabályok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-196",
+        "front": "Ugyanúgy, mint az RE-k, a CFG-k is nyelvgenerátorok.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-197",
+        "front": "A CFG-k a legáltalánosabb nyelvgenerátorok.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-198",
+        "front": "Létezik olyan nyelvfelismerő eszköz, amely ekvivalens erejű a CFG-vel.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-199",
+        "front": "A szintaktikailag helyes aritmetikai kifejezések nyelve leírható CF nyelvtannal.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-200",
+        "front": "A helyes zárójelezések nyelve DVA-val nem, de veremautomatával felismerhető.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-201",
+        "front": "Készíthető olyan CFG, amelyik nem generál egyetlen szót sem.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-202",
+        "front": "Készíthető olyan CFG, amelyik csak pontosan egyetlen szót állít elő.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-203",
+        "front": "Ha egy CFG 10-nél több szót előállít, akkor már tetszőlegesen sokat is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-204",
+        "front": "Az a^n b^n alakú szavak nyelve nem állítható elő CFG-vel.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-205",
+        "front": "Az a^(n+1)b^n alakú szavak nyelve előállítható olyan CFG-vel, amely csak egyetlen nemterminálist tartalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-206",
+        "front": "Az a^n c b^n alakú szavak nyelve csak olyan CFG-vel állítható elő, amely legalább két különböző nemterminálist tartalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-207",
+        "front": "Az a^n b^n c alakú szavak nyelve csak olyan CFG-vel állítható elő, amely legalább két különböző nemterminálist tartalmaz.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-208",
+        "front": "Az a^n b^n c^n alakú szavak nyelve csak olyan CFG-vel állítható elő, amely legalább két különböző nemterminálist tartalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-209",
+        "front": "Az a^n b^n a^m b^m alakú szavak nyelve már csak olyan CFG-vel állítható elő, amely legalább három különböző nemterminálist tartalmaz.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-210",
+        "front": "L akkor környezetfüggetlen nyelv, ha található hozzá G CF nyelvtan úgy, hogy L = L(G).",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-211",
+        "front": "Minden környezetfüggetlen nyelv végtelen nagy.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-212",
+        "front": "Minden környezetfüggetlen nyelv reguláris is.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-213",
+        "front": "Környezetfüggetlen nyelvek zártak a metszetre.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-214",
+        "front": "Környezetfüggetlen nyelvtanokkal minden generálható, ami reguláris kifejezéssel generálható.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-215",
+        "front": "Ami nyelvet generálni lehet CFG-vel, azt el lehet fogadni DFA-val.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-216",
+        "front": "Környezetfüggetlen nyelvtanokkal minden Turing-elfogadható nyelv generálható.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-217",
+        "front": "A reguláris nyelvtanokat másként Chomsky 3-típusú nyelvtanoknak is nevezzük.",
+        "back": "Igaz"
+      },
+      {
+        "id": "card-218",
+        "front": "A reguláris nyelvtanokat másként Chomsky 2-típusú nyelvtanoknak is nevezzük.",
+        "back": "Hamis"
+      },
+      {
+        "id": "card-219",
+        "front": "L akkor reguláris nyelv, ha található hozzá G reguláris nyelvtan úgy, hogy L = L(G).",
+        "back": "Igaz"
+      }
+    ]
+  }
+]
