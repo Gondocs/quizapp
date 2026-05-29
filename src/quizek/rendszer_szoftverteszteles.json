@@ -1,0 +1,204 @@
+[
+  {
+    "id": "flashcard-1",
+    "title": "Rendszer- és szoftvertesztelés - kérdés/válasz kvíz",
+    "description": "Tényleges kérdések",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Mit jelent, hogy a tesztelés kontextusfüggő?",
+        "back": "A tesztelés módja mindig a rendszer céljától, környezetétől, kockázatától, kritikusságától, idő- és erőforráskeretétől függ. Nincs egyetlen univerzális tesztelési módszer, ami minden szoftvernél ugyanúgy optimális. Más mélységű teszt, lefedettség, dokumentáció és automatizálás kell egy egyszerű weboldalhoz, mint egy biztonságkritikus rendszerhez.\nPélda: egy webshopnál fontos a kosár, fizetés és rendelés tesztelése; egy orvosi rendszerben sokkal szigorúbb dokumentáció, validáció és kockázatalapú teszt kell."
+      },
+      {
+        "id": "card-2",
+        "front": "Miért nem érdemes mindenáron 99%-os tesztlefedettséget kitűzni? Mi a túl kevés és túl sok tesztelés hátránya?",
+        "back": "A magas lefedettség nem bizonyítja, hogy a program hibamentes, csak azt mutatja, hogy a kód mekkora része futott le teszt közben. Az utolsó százalékok elérése gyakran nagyon drága és időigényes. Túl kevés teszt esetén sok hiba maradhat bent, túl sok teszt esetén lassul a fejlesztés, nő a karbantartási költség, és a tesztek törékennyé válhatnak. Az optimális tesztmennyiséget kockázat és költség-haszon alapján kell meghatározni.\nPélda: egy getter/setter 100%-os tesztelése kevés értéket adhat; egy fizetési folyamatnál viszont többféle sikeres és hibás esetet is tesztelni kell."
+      },
+      {
+        "id": "card-3",
+        "front": "Miért választják le elosztott rendszereknél az egyes modulokat, és miért használnak helyettesítőket?",
+        "back": "Azért választják le a modulokat, hogy egy komponenst önállóan, a függőségeitől elkülönítve lehessen tesztelni. Így gyorsabb, kiszámíthatóbb a tesztelés, és könnyebb megtalálni, hol van a hiba. Helyettesítő lehet stub, mock vagy fake: a stub előre megadott válaszokat ad, a mock a hívások helyességét is ellenőrzi, a fake pedig egyszerűsített, de működő implementáció.\nPélda: külső fizetési API helyett stub adhat „sikeres fizetés” választ; mockkal ellenőrizhető, hogy a rendszer valóban meghívta-e az e-mail küldő szolgáltatást."
+      },
+      {
+        "id": "card-4",
+        "front": "Mi az ekvivalencia-particionálás? Mikor és mire használják?",
+        "back": "Az ekvivalencia-particionálás feketedobozos teszttervezési módszer. A bemeneteket vagy eseteket olyan csoportokra bontjuk, amelyek várhatóan azonos módon viselkednek, és minden csoportból elég egy-két reprezentatív tesztesetet választani. Akkor hasznos, ha nagyon sok lehetséges bemenet van, de ezek logikusan osztályokba rendezhetők.\nPélda: ha egy jelszó 3-10 karakter között érvényes, akkor a csoportok: 3-nál rövidebb, 3-10 közötti, 10-nél hosszabb. Tesztelhető például 2, 5 és 12 karakterrel."
+      },
+      {
+        "id": "card-5",
+        "front": "Miért érdemes már a tervezési fázisban elkapni a hibákat? Mi történik, ha később javítjuk?",
+        "back": "Minél korábban találunk meg egy hibát, annál olcsóbb javítani. Tervezéskor vagy specifikációban egy hiba még dokumentumban, modellen vagy követelményben módosítható. Később már kódot, teszteket, dokumentációt, telepítést és akár ügyféloldali működést is érinthet. Release után a javítás drága, lassú, és a felhasználói bizalmat is ronthatja.\nPélda: ha a követelmény rosszul írja le az ÁFA-számítást, azt tervezéskor könnyű javítani; éles rendszerben már számlákat, adatokat és riportokat is érinthet."
+      },
+      {
+        "id": "card-6",
+        "front": "Mi a verifikáció és a validáció?",
+        "back": "A verifikáció kérdése: „jól építjük-e a szoftvert?”, vagyis megfelel-e a specifikációnak. A validáció kérdése: „jó szoftvert építünk-e?”, vagyis megfelel-e a felhasználó valódi igényeinek. Lehet egy rendszer verifikált, ha pontosan követi a specifikációt, de mégsem valid, ha a specifikáció rosszul írta le az igényt.\nPélda: verifikáció, hogy a program a dokumentált képlet szerint számol; validáció, hogy ez a számítás tényleg azt adja-e, amire az ügyfélnek szüksége van."
+      },
+      {
+        "id": "card-7",
+        "front": "Mi a különbség az egységteszt és az elfogadási teszt között?",
+        "back": "Az egységteszt kis kódrészletet, függvényt, metódust vagy komponenst vizsgál fejlesztői szinten, általában izoláltan és automatizáltan. Az elfogadási teszt a teljes rendszert vagy üzleti folyamatot ellenőrzi a felhasználó vagy megrendelő szempontjából. Az egységteszt inkább verifikációs, az elfogadási teszt inkább validációs jellegű.\nPélda: egységteszt ellenőrzi, hogy egy kedvezményszámító függvény jó értéket ad-e; elfogadási teszt ellenőrzi, hogy a felhasználó végig tud-e vinni egy rendelést."
+      },
+      {
+        "id": "card-8",
+        "front": "Egy teszteset lefutásának milyen két eredménye lehet?",
+        "back": "A teszteset alapvetően sikeres vagy sikertelen lehet: pass vagy fail. Pass, ha a tényleges eredmény megegyezik az előre meghatározott elvárt eredménnyel. Fail, ha eltérés van. Gyakorlatban lehet blokkolt vagy nem értékelhető állapot is, de az alapválasz a pass/fail.\nPélda: ha 2+2-re 4-et várunk és 4 jön, pass; ha 5 jön, fail."
+      },
+      {
+        "id": "card-9",
+        "front": "Mit jelent a féregirtó paradoxon?",
+        "back": "Ha mindig ugyanazokat a teszteket futtatjuk, egy idő után már nem találnak új hibákat. A régi tesztek a régi hibák ellen jók, de a szoftver változásával új hibák jelenhetnek meg. Ezért a teszteseteket időnként frissíteni, bővíteni és kockázat alapján újratervezni kell.\nPélda: ha egy webáruházban mindig csak sikeres rendelést tesztelünk, lehet, hogy a kuponhibák vagy sikertelen fizetések rejtve maradnak."
+      },
+      {
+        "id": "card-10",
+        "front": "Mutasd be a dinamikus analízist / dinamikus tesztelést! Mire ad választ?",
+        "back": "Dinamikus tesztelésnél a programot futtatjuk, és a futás közbeni viselkedését vizsgáljuk. Arra ad választ, hogy a rendszer adott bemenetekre és adott környezetben hogyan működik, illetve hol hibázik futásidőben. Lehet feketedobozos, ha a specifikációból indulunk ki, vagy fehérdobozos, ha a kód szerkezetét is figyelembe vesszük.\nPélda: egységteszt futtatása egy függvényre; rendszer tesztelése valós böngészőben többféle felhasználói művelettel."
+      },
+      {
+        "id": "card-11",
+        "front": "Jellemezze a test-driven development (TDD) sajátosságait!",
+        "back": "A TDD lényege, hogy először tesztet írunk, utána a minimális kódot, amely átviszi a tesztet, végül refaktorálunk. Klasszikus ciklusa: piros - zöld - refaktor. A teszt itt nem utólagos ellenőrzés, hanem a fejlesztést vezérli. Előnye a gyors visszajelzés, a folyamatos regressziós tesztkészlet és a tisztább tervezés. Hátránya, hogy fegyelmet igényel, és rossz tesztekkel hamis biztonságérzetet adhat.\nPélda: először megírjuk, hogy a „sum(2,3)” eredménye 5 legyen; ezután írjuk meg a minimális összeadó függvényt; majd tisztítjuk a kódot."
+      },
+      {
+        "id": "card-12",
+        "front": "Ismertesse a szoftvertesztelés 7 alapelvét!",
+        "back": "A 7 alapelv: 1. A tesztelés a hibák jelenlétét mutatja, nem a hiányukat. 2. Teljes tesztelés nem lehetséges. 3. A tesztelést korán kell kezdeni. 4. A hibák gyakran csoportosulnak. 5. Féregirtó paradoxon: az azonos tesztek idővel nem találnak új hibát. 6. A tesztelés kontextusfüggő. 7. A hibamentesség tévhite: attól, hogy nem találtunk hibát, még nem biztos, hogy a szoftver hasznos.\nPélda: egy 100%-ban lefuttatott tesztkészlet sem garantálja, hogy a rendszer jó üzleti problémát old meg; a legtöbb hiba gyakran néhány bonyolult modulban van."
+      },
+      {
+        "id": "card-13",
+        "front": "Melyek a fejlesztési életciklus modellek a felsoroltak közül?",
+        "back": "A korábbi kérdéssor szerint a helyes válaszok: V modell, vízesés modell és spirális modell. A pontos megfogalmazás fontos, mert a tananyagban más módszerek is szerepelhetnek, például Big-Bang, iteratív-inkrementális, RUP, Agile, Scrum, Kanban vagy XP. Klasszikus SDLC modelleknél a V modell, vízesés és spirális a biztos válasz.\nPélda: vízesésnél egymást követik a fázisok; V modellnél a fejlesztési fázisokhoz tesztelési szintek kapcsolódnak."
+      },
+      {
+        "id": "card-14",
+        "front": "Mikor kerül a legkevesebbe a hiba megtalálása?",
+        "back": "Általánosan minél korábban találjuk meg a hibát, annál olcsóbb javítani. Teljes életciklusban a specifikációs vagy tervezési fázis a legjobb. Ha a válaszlehetőségek csak kódolás, refaktor és release, akkor ezek közül a kódolás a legolcsóbb, release után pedig a legdrágább.\nPélda: egy hibás követelmény javítása tervezéskor pár perc lehet; éles kiadás után új kód, újratesztelés, telepítés és ügyfélkommunikáció kellhet."
+      },
+      {
+        "id": "card-15",
+        "front": "Mi a különbség az error, fault/defect/bug és failure között?",
+        "back": "Az error emberi tévedés, például rossz döntés vagy elírás. A fault/defect/bug ennek következménye a rendszerben, vagyis hibás kódrészlet, adat vagy logika. A failure akkor látszik, amikor a rendszer működése eltér az elvárttól.\nPélda: a fejlesztő rossz feltételt ír (error), hibás kód kerül be (bug), a felhasználó rossz eredményt lát (failure)."
+      },
+      {
+        "id": "card-16",
+        "front": "Mi a különbség a statikus és dinamikus tesztelés között?",
+        "back": "Statikus tesztelésnél nem futtatjuk a kódot, hanem átnézzük vagy eszközzel elemezzük. Dinamikus tesztelésnél futtatjuk a szoftvert, és a működését vizsgáljuk. A statikus tesztelés korán jelezhet hibákat, a dinamikus viszont megmutatja a tényleges futás közbeni viselkedést.\nPélda: statikus a code review, lint vagy statikus kódelemző; dinamikus az egységteszt, integrációs teszt vagy rendszer teszt."
+      },
+      {
+        "id": "card-17",
+        "front": "Mi a különbség a feketedobozos és fehérdobozos tesztelés között?",
+        "back": "Feketedobozos tesztelésnél a specifikációból indulunk ki, és nem a belső kód alapján választunk teszteket. Fehérdobozos tesztelésnél ismerjük a kód szerkezetét, ezért figyelhetjük például az utasítás-, ág- vagy útvonal-lefedettséget. A feketedoboz a külső viselkedést, a fehérdoboz a belső működést is vizsgálja.\nPélda: feketedobozos módszer az ekvivalencia-particionálás; fehérdobozos cél lehet, hogy minden if-ág legalább egyszer lefusson."
+      },
+      {
+        "id": "card-18",
+        "front": "Mi a határérték-analízis?",
+        "back": "A határérték-analízis olyan teszttervezési módszer, amely az ekvivalenciaosztályok határain lévő értékeket és azok közvetlen szomszédait vizsgálja. Azért fontos, mert a hibák gyakran a határoknál jelennek meg, például kisebb/nagyobb vagy kisebb-egyenlő/nagyobb-egyenlő feltételeknél.\nPélda: ha az életkor 18-tól érvényes, érdemes tesztelni 17, 18 és 19 értékeket. Ha jelszó 3-10 karakteres lehet, akkor 2, 3, 10, 11 jó határteszt."
+      },
+      {
+        "id": "card-19",
+        "front": "Mi az ok-okozati analízis?",
+        "back": "Az ok-okozati analízis a bemeneti feltételek és a kimeneti hatások kapcsolatát vizsgálja. Célja, hogy a fontos kombinációk és hibaforgatókönyvek tesztesetekkel le legyenek fedve. Gyakran döntési táblával vagy hasonló logikai táblázattal dolgozik.\nPélda: ha a belépéshez jó e-mail és jó jelszó is kell, akkor tesztelni kell: mindkettő jó, rossz e-mail, rossz jelszó, mindkettő rossz."
+      },
+      {
+        "id": "card-20",
+        "front": "Mi a regressziós tesztelés célja?",
+        "back": "A regressziós tesztelés azt ellenőrzi, hogy egy módosítás vagy hibajavítás nem rontott-e el korábban jól működő funkciókat. Kódváltozás után újrafuttatjuk a releváns teszteket. Automatizálva különösen hasznos, mert gyors visszajelzést ad.\nPélda: ha javítjuk a kuponkezelést, újra kell tesztelni a kosarat, fizetést és rendelésleadást is, nehogy a javítás mást elrontson."
+      },
+      {
+        "id": "card-21",
+        "front": "Milyen tesztelési szintek vannak?",
+        "back": "A fő tesztelési szintek: egység- vagy modulteszt, integrációs teszt, rendszerteszt és elfogadási teszt. Az egységteszt kis kódrészt vizsgál, az integrációs teszt modulok együttműködését, a rendszerteszt a teljes rendszert, az elfogadási teszt pedig a felhasználói/megrendelői elvárásokat.\nPélda: egy függvény külön tesztelése egységteszt; a teljes rendelési folyamat tesztelése elfogadási teszt."
+      },
+      {
+        "id": "card-22",
+        "front": "Milyen integrációs tesztelési stratégiák vannak?",
+        "back": "A fő stratégiák: big-bang, bottom-up, top-down és sandwich/hibrid. Big-bang esetén mindent egyszerre kapcsolunk össze, ami gyorsnak tűnhet, de nehéz lokalizálni a hibát. Bottom-up alulról felfelé építkezik, top-down felülről lefelé halad és stubokat használhat, a sandwich a kettőt kombinálja.\nPélda: top-down tesztnél a fő vezérlőmodult teszteljük először, az alsóbb modulokat stub helyettesítheti; bottom-upnál először az adatkezelő modulokat integráljuk."
+      },
+      {
+        "id": "card-23",
+        "front": "Mi a V modell lényege?",
+        "back": "A V modell a vízesés modell kiterjesztése, ahol a fejlesztési fázisokhoz megfelelő tesztelési szintek kapcsolódnak. Hangsúlyozza, hogy a tesztelést már korán, a tervezési oldalon elő kell készíteni. A követelményekhez elfogadási teszt, a rendszertervhez rendszerteszt, az architektúrához integrációs teszt, a moduldesignhoz egységteszt tartozhat.\nPélda: amikor követelményt írunk, már gondolkodunk azon, hogyan fogjuk elfogadási teszttel ellenőrizni."
+      },
+      {
+        "id": "card-24",
+        "front": "Mi a vízesés modell előnye és hátránya?",
+        "back": "A vízesés modell szekvenciális: követelmények, tervezés, fejlesztés, tesztelés, telepítés, karbantartás. Előnye, hogy egyszerű, jól dokumentálható, mérföldkövekre épül. Hátránya, hogy a változásokat nehezen kezeli, és a komoly hibák sokszor csak későn derülnek ki.\nPélda: stabil, jól ismert követelményű projektnél működhet; gyorsan változó ügyféligényeknél kockázatos."
+      },
+      {
+        "id": "card-25",
+        "front": "Mi a spirális modell lényege?",
+        "back": "A spirális modell iteratív és kockázatvezérelt fejlesztési modell. Minden körben célokat határozunk meg, kockázatokat elemzünk, alternatívákat értékelünk, majd fejlesztünk és tesztelünk. Nagyobb, kockázatosabb projekteknél hasznos, mert korán próbálja feltárni a problémákat.\nPélda: egy új technológiát használó rendszerben először prototípussal ellenőrizhetjük a legnagyobb kockázatot."
+      },
+      {
+        "id": "card-26",
+        "front": "Mi az agilis fejlesztés lényege?",
+        "back": "Az agilis fejlesztés iteratív, rugalmas szemlélet, amely a működő szoftvert, az ügyféllel való együttműködést és a változásokra való gyors reagálást helyezi előtérbe. Rövid ciklusokban dolgozik, gyakori visszajelzéssel, így jobban kezeli a változó igényeket.\nPélda: a csapat két hetente működő funkciót mutat be az ügyfélnek; a visszajelzés alapján módosítják a következő sprint feladatait."
+      },
+      {
+        "id": "card-27",
+        "front": "Mi a Scrum röviden?",
+        "back": "A Scrum agilis keretrendszer, amely rövid sprintekben, priorizált backloggal és folyamatos visszajelzéssel dolgozik. Segít nagyobb munkát kisebb, kezelhető részekre bontani. Előnye az átlátható haladás és alkalmazkodás, hátránya, hogy tapasztalatlan vagy túl nagy csapatnál könnyen elveszhet az összkép.\nPélda: a Product Backlogból Sprint Backlog készül, majd a csapat a sprint végén bemutatja az elkészült funkciókat."
+      },
+      {
+        "id": "card-28",
+        "front": "Miért hasznos a statikus analízis?",
+        "back": "A statikus analízis futtatás nélkül képes korán jelezni ismert hibákat, stílusproblémákat, típushibákat és biztonsági sérülékenységeket. Olyan, mint egy kódszintű helyesírás-ellenőrző: gyorsan átnéz nagy mennyiségű kódot, és csökkenti az emberi figyelmetlenségből eredő hibákat. Hátránya, hogy lehet fals pozitív és fals negatív eredmény.\nPélda: jelezhet nem használt változót, null pointer kockázatot vagy SQL injection gyanús kódrészt."
+      },
+      {
+        "id": "card-29",
+        "front": "Hogyan működik általánosan egy statikus analízis eszköz?",
+        "back": "A statikus analízis eszköz beolvassa a kódot, modellt épít belőle, szabályok vagy biztonsági tudás alapján elemzi, majd jelentést készít. Tipikus lépések: lexikai elemzés tokenekre, szintaktikai elemzés parse tree-ra, absztrakt szintaxisfa készítése, vezérlési és adatfolyam vizsgálata.\nPélda: az eszköz észreveheti, hogy egy változó bizonyos útvonalon inicializálás nélkül kerül használatra."
+      },
+      {
+        "id": "card-30",
+        "front": "Mit jelent a fals pozitív és fals negatív a tesztelésben/analízisben?",
+        "back": "Fals pozitív, amikor az eszköz hibát jelez, de valójában nincs hiba. Fals negatív, amikor az eszköz nem jelez hibát, pedig valójában van. Biztonságkritikus rendszereknél gyakran inkább több fals pozitív elfogadható, hogy kevesebb valódi hiba maradjon rejtve.\nPélda: fals pozitív, ha a linter veszélyesnek jelöl egy biztonságos kódrészt; fals negatív, ha nem jelzi a valódi sérülékenységet."
+      },
+      {
+        "id": "card-31",
+        "front": "Miért nehéz az objektumorientált rendszerek tesztelése?",
+        "back": "Az objektumorientált rendszerek tesztelését nehezíti az adatrejtés, öröklődés, polimorfizmus, runtime binding és állapotfüggőség. Nehezebb hozzáférni a belső állapothoz, megmondani, futásidőben melyik metódus hívódik meg, és eldönteni, mit kell újratesztelni öröklés vagy felülírás után.\nPélda: egy interfész közvetlenül nem tesztelhető, csak konkrét implementáción keresztül; egy felülírt metódus megváltoztathatja az örökölt viselkedést."
+      },
+      {
+        "id": "card-32",
+        "front": "Milyen nehézségek vannak GUI tesztelésnél?",
+        "back": "A GUI eseményalapú, állapotfüggő és gyakran nehezen determinisztikus. Nehéz a felhasználói műveletek, fókusz, egér, dialógusablakok és kivételek pontos szimulálása. A felület gyakori változása miatt az automatizált GUI tesztek karbantartása is költséges lehet.\nPélda: ha egy gomb szövege vagy helye megváltozik, a teszt elromolhat; egy felugró ablak megakaszthatja az automatizált folyamatot."
+      },
+      {
+        "id": "card-33",
+        "front": "Mi a különbség a funkcionális és nem funkcionális tesztelés között?",
+        "back": "Funkcionális tesztelésnél azt vizsgáljuk, hogy a rendszer azt csinálja-e, amit kell. Nem funkcionális tesztelésnél azt vizsgáljuk, milyen minőségben teszi: például mennyire gyors, biztonságos, használható vagy robusztus. A funkcionális teszt a működésre, a nem funkcionális a minőségi tulajdonságokra koncentrál.\nPélda: funkcionális teszt, hogy be lehet-e jelentkezni helyes jelszóval; nem funkcionális teszt, hogy 1000 felhasználó mellett is gyors marad-e a belépés."
+      },
+      {
+        "id": "card-34",
+        "front": "Mi a teszttervezés fő lépése?",
+        "back": "A teszttervezés fő lépései: tesztstratégia kialakítása, tesztanalízis és terv készítése, tesztek megvalósítása/futtatása, majd kiértékelés és kilépési feltételek ellenőrzése. Meg kell határozni, mit, hogyan, milyen környezetben, milyen adatokkal és milyen elvárt eredménnyel tesztelünk.\nPélda: egy webshopnál a terv tartalmazza a kosár, fizetés, regisztráció és hibaüzenetek tesztjeit, valamint azt, mikor tekinthető késznek a tesztelés."
+      },
+      {
+        "id": "card-35",
+        "front": "Mi a tesztelés célja Ron Patton megfogalmazása alapján?",
+        "back": "A tesztelő célja hibákat találni, lehetőleg minél korábban, és biztosítani, hogy ezek javításra kerüljenek. A tesztelés célja nem a tökéletesség bizonyítása, hanem a kockázat csökkentése és a hibák feltárása.\nPélda: a jó tesztelő nem azt akarja igazolni, hogy „minden jó”, hanem megpróbálja megtalálni azokat az eseteket, ahol a rendszer elromolhat."
+      },
+      {
+        "id": "card-36",
+        "front": "Mi a fault injection és a fuzzing?",
+        "back": "A fault injection szándékos hibabevitel a rendszerbe, hogy vizsgáljuk a robusztusságot és hibatűrést. A fuzzing félig véletlen vagy félig helyes bemenetekkel próbál hibát, összeomlást vagy váratlan viselkedést előidézni. Mindkettő arra jó, hogy a rendszer rossz vagy szokatlan helyzetekben is vizsgálható legyen.\nPélda: fault injection lehet hálózati hiba szimulálása; fuzzing lehet véletlenszerűen generált fájl vagy API-bemenet küldése."
+      },
+      {
+        "id": "card-37",
+        "front": "Miért lehet veszélyes, ha „nem találtunk hibát”?",
+        "back": "Azért veszélyes, mert a tesztelés nem bizonyítja a hibák hiányát, csak a vizsgált esetekről ad információt. Lehet, hogy kevés vagy rossz tesztet futtattunk, vagy a rendszer nem a valódi felhasználói igényt oldja meg. Ez a hibamentesség tévhite.\nPélda: lehet, hogy a program minden teszten átmegy, de a felhasználónak szükséges funkció hiányzik belőle."
+      },
+      {
+        "id": "card-38",
+        "front": "Miért lehetetlen a teljes tesztelés?",
+        "back": "A teljes tesztelés azért lehetetlen, mert a bemenetek, állapotok, útvonalak és környezeti kombinációk száma túl nagy. Minden kombináció kipróbálása irreális lenne időben és költségben. Ezért kockázat alapján priorizálunk, és teszttervezési módszereket használunk.\nPélda: már néhány űrlapmező sok ezer kombinációt adhat; ezért használunk ekvivalencia-particionálást és határérték-analízist."
+      },
+      {
+        "id": "card-39",
+        "front": "Mit jelent a hibák csoportosulása?",
+        "back": "A hibák gyakran nem egyenletesen oszlanak el, hanem néhány modulban, funkcióban vagy határterületen koncentrálódnak. Ezért a bonyolult, gyakran változó, kritikus vagy korábban hibás részekre több tesztelési figyelmet kell fordítani. Kapcsolódik a Pareto-elvhez: a hibák nagy része gyakran a modulok kisebb részében található.\nPélda: egy webshopban a fizetés és kuponkezelés több hibát tartalmazhat, mint egy statikus információs oldal."
+      }
+    ]
+  }
+]
