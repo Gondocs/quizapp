@@ -1,0 +1,94 @@
+[
+  {
+    "id": "flashcard-mereselmelet-4",
+    "title": "Méréselmélet 4. óra",
+    "description": "Időjelek kiértékelése időtartományban: időjel, stacionaritás, trend, zaj, mozgó átlag, Golay–Savitzky szűrő, korrelációs függvények, repülési idő (meres_08)",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Mit nevezünk időjelnek?",
+        "back": "Bármely időtől függő mennyiséget."
+      },
+      {
+        "id": "card-2",
+        "front": "Mi a mintavételezett időjel (idősor)?",
+        "back": "Ha egy időjelből Δt időközönként mintát veszünk, mintavételezett időjelről, vagy idősorról beszélünk."
+      },
+      {
+        "id": "card-3",
+        "front": "Mi a mintavételezési idő?",
+        "back": "Δt – az az időköz, amellyel az időjelből mintákat veszünk."
+      },
+      {
+        "id": "card-4",
+        "front": "Mi a mintavételezési frekvencia és hogyan számítjuk?",
+        "back": "Fs = 1/Δt"
+      },
+      {
+        "id": "card-5",
+        "front": "Mikor beszélünk stacionárius idősorról?",
+        "back": "Ha az adatsor hosszához képest „rövidebb időszakaszokra” számított átlagok nem függenek az időtől."
+      },
+      {
+        "id": "card-6",
+        "front": "Mikor figyelhető meg trend az idősorban?",
+        "back": "Ha egy nem stacionárius idősor „rövidebb” időszakaszokra számított átlagai az időben hosszú távon „jellemző” viselkedést mutatnak, az idősorban hosszú távú trend figyelhető meg."
+      },
+      {
+        "id": "card-7",
+        "front": "Mi a detrendelés?",
+        "back": "A felismert trend eltávolítása az adatsorból – a trend mindig eltávolítható."
+      },
+      {
+        "id": "card-8",
+        "front": "Mi a véletlen összetevő az idősorban?",
+        "back": "Minden mért adat tartalmaz véletlen összetevőt (mérési bizonytalanság – zaj)."
+      },
+      {
+        "id": "card-9",
+        "front": "Hogyan lehet a mérési zajt kisimítani a jelből?",
+        "back": "Sok esetben kisimítható a mozgó átlagok módszerével vagy a Golay–Savitzky szűrővel."
+      },
+      {
+        "id": "card-10",
+        "front": "Milyen a mozgó átlagok módszere használat szempontjából?",
+        "back": "Hatékony módszer, ha jól használjuk, de fontos információkat veszíthetünk, ha nem jól használjuk."
+      },
+      {
+        "id": "card-11",
+        "front": "Mi az autokorreláció (ACF) definíciója folytonos és diszkrét jelre?",
+        "back": "Folytonos: ACF_s(τ) = ∫ s(t)·s(t − τ) dt\nDiszkrét: ACF_s(m) = (1/N)·Σ_{n=1..N} s(n)·s(n − m)"
+      },
+      {
+        "id": "card-12",
+        "front": "Mit ad meg az autokorrelációs függvény értéke a τ = 0 helyen?",
+        "back": "A τ = 0 értéknél van az ACF maximuma, és ez megadja a jel teljesítményét."
+      },
+      {
+        "id": "card-13",
+        "front": "Mi a keresztkorreláció (CCF) definíciója folytonos és diszkrét jelre?",
+        "back": "Folytonos: CCF_12(τ) = ∫ s1(t)·s2(t − τ) dt\nDiszkrét: CCF_12(m) = (1/N)·Σ_{n=1..N} s1(n)·s2(n − m)"
+      },
+      {
+        "id": "card-14",
+        "front": "Mit mér a keresztkorrelációs függvény (CCF)?",
+        "back": "Annak mértéke, hogy adott időeltolás mellett mennyire „hasonlítanak” egymásra az s1 és s2 idősorok."
+      },
+      {
+        "id": "card-15",
+        "front": "Hol van a CCF maximuma?",
+        "back": "Azon időeltolás mellett, amelyre a két idősor közötti hasonlóság a legnagyobb."
+      },
+      {
+        "id": "card-16",
+        "front": "Hogyan határozzuk meg a repülési időt (TOF) a repülési idő mérési módszerben?",
+        "back": "TOF = a CCF_12 maximumának helye (az az időeltolás, ahol a keresztkorreláció maximális)."
+      },
+      {
+        "id": "card-17",
+        "front": "Hogyan számítjuk a terjedési sebességet a repülési idő módszerrel?",
+        "back": "c = 2L / TOF (L a távolság; a jel oda-vissza megteszi az utat, ezért 2L)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "flashcard-mereselmelet-3",
+    "title": "Méréselmélet 3. óra",
+    "description": "A legkisebb négyzetek módszere, lineáris regresszió, korrelációs együttható (meres_04_2)",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Mi a legkisebb négyzetek módszerének alapelve?",
+        "back": "Keressük azt az optimális y = f_opt(x) függvényt, amelyre az eltérésnégyzetek összege a lehető legkisebb: χ²(f) = Σ (y_i − f_opt(x_i))² = min."
+      },
+      {
+        "id": "card-2",
+        "front": "Mit jelent a keresett függvény parametrizálása?",
+        "back": "Az optimális függvény a független változón kívül általában még néhány paramétert is tartalmaz: y = f(x, p1, ..., pM). Az optimális függvény meghatározása ilyenkor az optimális paraméterek meghatározását jelenti."
+      },
+      {
+        "id": "card-3",
+        "front": "Hogyan határozzuk meg az optimális paramétereket?",
+        "back": "A „normálegyenletek” alapján: ∂χ²/∂p_i = 0, i = 1...M."
+      },
+      {
+        "id": "card-4",
+        "front": "Mi az arányosság esetén illesztett függvény alakja, és hány paramétert tartalmaz?",
+        "back": "y = m·x; egyetlen paraméter (m) fordul elő."
+      },
+      {
+        "id": "card-5",
+        "front": "Mi az eltérésnégyzetek összege az arányosság (y = m·x) esetén?",
+        "back": "χ²(m) = Σ(y_i − m·x_i)² = Σy_i² − 2m·Σx_i·y_i + m²·Σx_i²"
+      },
+      {
+        "id": "card-6",
+        "front": "Mi a normálegyenlet az y = m·x illesztésnél?",
+        "back": "dχ²/dm = 2m·Σx_i² − 2·Σx_i·y_i = 0"
+      },
+      {
+        "id": "card-7",
+        "front": "Mi az optimális m* paraméter az y = m·x illesztésnél?",
+        "back": "m* = Σ(x_i·y_i) / Σ(x_i²)"
+      },
+      {
+        "id": "card-8",
+        "front": "Miért van az optimális paraméternek is szórása?",
+        "back": "Mert mért értékek alapján számítjuk, így maga is valószínűségi változó; a várható értéke a normálegyenletből származtatott optimális érték, és szórása is van."
+      },
+      {
+        "id": "card-9",
+        "front": "Hogyan számítjuk az m* szórását az arányosság (y = m·x) esetén?",
+        "back": "S0 = Σ(y_i − m*·x_i)², s = √(S0/(N − 1)), s_m* = s / √(Σx_i²)"
+      },
+      {
+        "id": "card-10",
+        "front": "Mi az általános egyenes illesztésének (lineáris regresszió) alakja, és mi a két paraméter?",
+        "back": "y = m·x + b, ahol m a meredekség, b az offset."
+      },
+      {
+        "id": "card-11",
+        "front": "Mi az eltérésnégyzetek összege az általános egyenesnél?",
+        "back": "χ²(m, b) = Σ(y_i − m·x_i − b)²"
+      },
+      {
+        "id": "card-12",
+        "front": "Melyek a normálegyenletek az y = m·x + b illesztésnél?",
+        "back": "∂χ²/∂m = 0 → m·Σx_i² + b·Σx_i = Σx_i·y_i\n∂χ²/∂b = 0 → m·Σx_i + b·N = Σy_i"
+      },
+      {
+        "id": "card-13",
+        "front": "Mi az optimális meredekség (m*) az általános egyenesnél?",
+        "back": "m* = (N·Σx_i·y_i − Σx_i·Σy_i) / (N·Σx_i² − (Σx_i)²)"
+      },
+      {
+        "id": "card-14",
+        "front": "Mi az optimális offset (b*) az általános egyenesnél?",
+        "back": "b* = (Σx_i²·Σy_i − Σx_i·Σx_i·y_i) / (N·Σx_i² − (Σx_i)²)"
+      },
+      {
+        "id": "card-15",
+        "front": "Hogyan számítjuk az m* és b* szórását az általános egyenesnél?",
+        "back": "S0 = Σ(y_i − m*·x_i − b*)², s = √(S0/(N − 2)),\ns_m* = s·√( N / (N·Σx_i² − (Σx_i)²) ),\ns_b* = s·√( Σx_i² / (N·Σx_i² − (Σx_i)²) )"
+      },
+      {
+        "id": "card-16",
+        "front": "Miért N − 1 az arányosságnál, és N − 2 az általános egyenesnél a nevezőben az s számításakor?",
+        "back": "Az s = √(S0/(N − p)) képletben p az illesztett paraméterek száma: arányosságnál 1 paraméter (m), általános egyenesnél 2 (m és b)."
+      },
+      {
+        "id": "card-17",
+        "front": "Mit mér a korrelációs együttható (r)?",
+        "back": "Azt, hogy a mért [x_i, y_i] adatpárok sora mennyire jól illeszkedik egy egyenesre."
+      },
+      {
+        "id": "card-18",
+        "front": "Mi a korrelációs együttható képlete?",
+        "back": "r = (N·Σx_i·y_i − Σx_i·Σy_i) / √( [N·Σx_i² − (Σx_i)²] · [N·Σy_i² − (Σy_i)²] ), ami egyenértékű az r = Σ(x_i − x̄)(y_i − ȳ) / √(Σ(x_i − x̄)²·Σ(y_i − ȳ)²) alakkal; x̄ = Σx_i/N, ȳ = Σy_i/N."
+      },
+      {
+        "id": "card-19",
+        "front": "Mit jelent, ha |r| = 1?",
+        "back": "Az adatpárok tökéletesen illeszkednek egy egyenesre."
+      },
+      {
+        "id": "card-20",
+        "front": "Mikor tekintjük az egyenes-illesztést „jónak” a korrelációs együttható alapján?",
+        "back": "Általában, ha |r| > 0,8."
+      }
+    ]
+  }
+]

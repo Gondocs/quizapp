@@ -1,0 +1,159 @@
+[
+  {
+    "id": "flashcard-mereselmelet-2",
+    "title": "Méréselmélet 2. óra",
+    "description": "Nagy számok törvényei, statisztikai mintavétel, várható érték becslése, közvetett mérések bizonytalansága, hibaterjedés (meres_03, meres_04_1)",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Mi a mérés statisztikai szempontból?",
+        "back": "Statisztikai mintavétel: a mérés során az eloszlásfüggvénnyel leírt valószínűségi változó végtelen lehetséges értékei közül véges mintát veszünk."
+      },
+      {
+        "id": "card-2",
+        "front": "Milyen kérdésekre keresi a választ a matematikai statisztika a mintavétellel kapcsolatban?",
+        "back": "Arra, hogy a véges mintavétel alapján milyen valószínűséggel következtethetünk az eredeti valószínűségi változó eloszlásfüggvényére."
+      },
+      {
+        "id": "card-3",
+        "front": "Mondja ki a Csebisev-egyenlőtlenséget!",
+        "back": "Ha az X tetszőleges valószínűségi változónak van várható értéke (m) és szórása (D), k > 1 tetszőleges valós szám, akkor annak a valószínűsége, hogy X a várható értéktől abszolút értékben a szórás k-szorosánál nagyobb mértékben tér el, legfeljebb 1/k²:  P(|X − m| ≥ k·D) ≤ 1/k²."
+      },
+      {
+        "id": "card-4",
+        "front": "Csapágygolyók átmérőjének várható értéke 5 mm, szórása 0,1 mm. Legfeljebb mekkora a valószínűsége, hogy egy golyó átmérője nagyobb 5,3 mm-nél (Csebisev szerint)?",
+        "back": "Az eltérés (0,3 mm) a szórás 3-szorosa, ezért P ≤ 1/3² ≈ 0,11."
+      },
+      {
+        "id": "card-5",
+        "front": "Ugyanez a feladat (átmérő > 5,3 mm), ha az átmérő Gauss-eloszlású valószínűségi változó. Mekkora a valószínűség?",
+        "back": "P = 1 − F_G(3) ≈ 0,0013 (F_G a standard Gauss-eloszlás értéke 3-nál; MATLAB-ban normcdf(3))."
+      },
+      {
+        "id": "card-6",
+        "front": "Mi a MATLAB parancs a standard Gauss-eloszlás eloszlásfüggvényének kiszámítására (pl. F_G(3))?",
+        "back": "normcdf(3)"
+      },
+      {
+        "id": "card-7",
+        "front": "Mondja ki a nagy számok törvényét!",
+        "back": "Ha X1, X2, ..., XN független valószínűségi változók azonos m várható értékkel és azonos D szórással, ε tetszőleges pozitív valós szám, akkor a számtani középre (X̄_N = (X1+...+XN)/N) igaz, hogy lim(N→∞) P(|X̄_N − m| < ε) = 1."
+      },
+      {
+        "id": "card-8",
+        "front": "Mi a nagy számok törvényének következménye a mérésekre nézve?",
+        "back": "Ha egy mennyiség értékét n-szer megmérjük, a mért értékek számtani közepe egyre közelebb lesz a mennyiség „valódi értékéhez”, ha a mérések N számát növeljük."
+      },
+      {
+        "id": "card-9",
+        "front": "Mire használható a Csebisev-egyenlőtlenség a számtani közép kapcsán?",
+        "back": "Mindig meghatározható vele, hogy adott N számú mérés számtani közepe legfeljebb mekkora valószínűséggel tér el a „valódi” értéktől a mért értékek szórásának legalább k-szorosával."
+      },
+      {
+        "id": "card-10",
+        "front": "Mit mondhatunk a számtani középről statisztikus értelemben?",
+        "back": "A mérések számának növelésével a várható értékhez tart, azaz a számtani közép a várható érték egy statisztikus becslése."
+      },
+      {
+        "id": "card-11",
+        "front": "Mikor nevezünk egy statisztikus becslést torzítatlannak?",
+        "back": "Ha n növekedésével a becsült értékhez tart."
+      },
+      {
+        "id": "card-12",
+        "front": "Mit nevezünk korrigált tapasztalati szórásnégyzetnek, és mire jó?",
+        "back": "s0*² = Σ(x_i − m)² / (N − 1) (i = 1..N). Bebizonyítható, hogy a valószínűségi eloszlás szórásnégyzetének torzítatlan becslését adja."
+      },
+      {
+        "id": "card-13",
+        "front": "Milyen eloszlásúnak tételezzük fel a mérések során fellépő véletlen hibákat?",
+        "back": "Normál (Gauss) eloszlásúnak."
+      },
+      {
+        "id": "card-14",
+        "front": "Miért valószínűségi változó maga a számtani közép is?",
+        "back": "Mert mérési eredményekből számítódik, így a mérési eredmények véletlenszerűsége miatt maga is valószínűségi változó (van várható értéke és szórása)."
+      },
+      {
+        "id": "card-15",
+        "front": "Mit mond ki a centrális határeloszlás tétele?",
+        "back": "N független, azonos valószínűségi eloszlású változó (μ0, σ0) összege N → ∞ határesetben normális eloszlású valószínűségi változó, melynek várható értéke μ = N·μ0, szórásnégyzete pedig σ² = N·σ0²."
+      },
+      {
+        "id": "card-16",
+        "front": "Mennyi a mért értékek összegének várható értéke és szórásnégyzete (N mérés, μ0 és σ0 egyedi paraméterekkel)?",
+        "back": "Várható érték: Σx_i = N·μ0 (= N·X̄_N); szórásnégyzet: N·σ0²."
+      },
+      {
+        "id": "card-17",
+        "front": "Mi a mérendő mennyiség várható értékének torzítatlan becslése a mért értékek (x_i) alapján?",
+        "back": "A mért értékek számtani közepe: X̄_N = Σx_i / N."
+      },
+      {
+        "id": "card-18",
+        "front": "Hogyan számítjuk a számtani közép tapasztalati szórását?",
+        "back": "s_X̄ = √( Σ(x_i − X̄_N)² / (N(N − 1)) ) = s0* / √N"
+      },
+      {
+        "id": "card-19",
+        "front": "Egy rúd hosszát 9 alkalommal megmérték (102, 103, 105, 101, 102, 104, 105, 102, 104 cm). Mi a mérés eredménye?",
+        "back": "L = (103,1111 ± 0,4843) cm"
+      },
+      {
+        "id": "card-20",
+        "front": "Mit értünk közvetett mérésen, és mi a fő kérdés vele kapcsolatban?",
+        "back": "Olyan mennyiség meghatározását, amely a közvetlenül mért mennyiség(ek) függvénye (Y = f(X) vagy Y = f(X1...XN)). A kérdés: mit mondhatunk Y várható értékéről és szórásáról, ha X várható értékét és szórását mérések alapján megbecsültük."
+      },
+      {
+        "id": "card-21",
+        "front": "Hogyan számítható a csapágygolyó térfogata a mért átmérőből?",
+        "back": "V = (4/3)πr³ = (π/6)·d³"
+      },
+      {
+        "id": "card-22",
+        "front": "Hogyan számítható a csapágygolyó sűrűsége az átmérő és a tömeg alapján?",
+        "back": "ρ = m / V = 6m / (π·d³)"
+      },
+      {
+        "id": "card-23",
+        "front": "Mikor közelíthető f(x) jól a linearizált Taylor-sorával egy közvetett mérésnél (egy változó esetén)?",
+        "back": "Ha f(x) szigorúan monoton függvény a közvetlenül mért érték környezetében, és a közvetlenül mért érték szórása „kicsi”."
+      },
+      {
+        "id": "card-24",
+        "front": "Mi a közvetett mérés várható értéke és szórása egy változó esetén (linearizálással)?",
+        "back": "μ(f(X)) ≈ f(μ(X)),   σ(f(X)) ≈ |f′(μ(X))| · σ(X)"
+      },
+      {
+        "id": "card-25",
+        "front": "Mondja ki a Gauss-féle hibaterjedési törvényt!",
+        "back": "Független X1...XN esetén: σ²(f(x1...xN)) = Σ_i (∂f/∂x_i)² · σ²(x_i), a deriváltakat x_i = μ(x_i) helyen véve. (A szórás ennek négyzetgyöke.)"
+      },
+      {
+        "id": "card-26",
+        "front": "Mi a Gauss-féle hibaterjedési törvény alkalmazhatóságának feltétele?",
+        "back": "Az összes benne szereplő parciális derivált értéke nullától különböző."
+      },
+      {
+        "id": "card-27",
+        "front": "Mi a hibakorlát (abszolút hiba), és milyen mérések esetén használjuk?",
+        "back": "Skálás mérések esetén a véletlen hiba sűrűségfüggvénye folytonos egyenletes eloszlás; ennek [a, b] intervallumából Δ(x) = (b − a)/2 a hibakorlát (abszolút hiba)."
+      },
+      {
+        "id": "card-28",
+        "front": "Hogyan függ össze a hibakorlát és a szórás egyenletes eloszlásnál?",
+        "back": "Δ(x) = (b − a)/2, σ(x) = (b − a)/√12. A hibakorlát mindig felülbecslése a szórásnak!"
+      },
+      {
+        "id": "card-29",
+        "front": "Mi a hibakorlátos mérések hibaterjedési törvénye?",
+        "back": "Δ(f(x1...xN)) = Σ_i |∂f/∂x_i| · Δ(x_i), a deriváltakat x_i = μ(x_i) helyen véve."
+      },
+      {
+        "id": "card-30",
+        "front": "Mi a hibaterjedési törvény (hibakorlátos esetben) alkalmazhatóságának feltétele?",
+        "back": "Az összes benne szereplő parciális derivált értéke nullától különböző."
+      }
+    ]
+  }
+]

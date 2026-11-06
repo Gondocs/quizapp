@@ -1,0 +1,69 @@
+[
+  {
+    "id": "flashcard-mereselmelet-5",
+    "title": "Méréselmélet 5. óra",
+    "description": "Időjelek kiértékelése frekvenciatartományban: Fourier-sor, DFT, Shannon-féle mintavételezési tétel, aliasing, FFT, auto- és keresztspektrum (meres_10)",
+    "cards": [
+      {
+        "id": "card-1",
+        "front": "Hogyan írható fel a periodikus, négyzetesen integrálható időjel a Fourier-sorral?",
+        "back": "Minden T periodikus, négyzetesen integrálható időjel felírható harmonikus függvények végtelen soraként: f(t) = Σ_{k=−∞..∞} c_k·e^{i·k·ω·t}, ahol c_k = (1/T)·∫_{−T/2..T/2} f(t)·e^{−i·k·ω·t} dt."
+      },
+      {
+        "id": "card-2",
+        "front": "Mit jelentenek a Fourier-sor c_k együtthatói?",
+        "back": "A k-adik harmonikus komponens (komplex) amplitúdói; ezek alkotják a jel spektrumát."
+      },
+      {
+        "id": "card-3",
+        "front": "Hogyan közelíthető a négyszögjel a Fourier-sor alapján?",
+        "back": "Harmonikus függvények véges összegével."
+      },
+      {
+        "id": "card-4",
+        "front": "Mi a mintavételezett jelek Fourier-sora (DFT) és mi a képlete?",
+        "back": "Ha az időjelet Fs frekvenciával, azaz Δt = 1/Fs időközönként mintavételezzük és N darab mintát tartalmaz, a Fourier-sor együtthatói: c_k = Σ_{l=0..N−1} f(l·Δt)·e^{−i·2π·k·l/N}, k = −N/2, ..., N/2."
+      },
+      {
+        "id": "card-5",
+        "front": "Mondja ki a Shannon-féle mintavételezési tételt!",
+        "back": "Ha egy időjelet Fs frekvenciával, azaz Δt = 1/Fs időközönként mintavételezünk, akkor a mintavételezett idősorban maximum F_N = Fs/2 (Nyquist-frekvencia) frekvenciájú komponens identifikálható."
+      },
+      {
+        "id": "card-6",
+        "front": "Mi a Nyquist-frekvencia?",
+        "back": "F_N = Fs/2 – a mintavételezett idősorban azonosítható legnagyobb frekvencia."
+      },
+      {
+        "id": "card-7",
+        "front": "Mi történik az F_N-nél nagyobb frekvenciájú összetevőkkel mintavételezéskor?",
+        "back": "Álfrekvenciaként (aliasing) jelennek meg a Nyquist-frekvencia alatt."
+      },
+      {
+        "id": "card-8",
+        "front": "Mire van szükség az aliasing elkerüléséhez?",
+        "back": "Analóg antialiasing szűrőre még a mintavételezés előtt (az ADC-k már tartalmazzák)."
+      },
+      {
+        "id": "card-9",
+        "front": "Mi az FFT (gyors Fourier-transzformáció) és ki fejlesztette ki?",
+        "back": "A Fourier-összetevők együtthatóinak számítására szolgáló, a definíciónál sokkal gyorsabb algoritmus, amelyet Cooley és Tukey talált 1965-ben."
+      },
+      {
+        "id": "card-10",
+        "front": "Mi az autospektrum (APSD)?",
+        "back": "Ha az f(t) időjel Fourier-sora F(ω), akkor APSD(ω) = |F(ω)|² frekvenciafüggvényt az időjel autospektrumának nevezzük."
+      },
+      {
+        "id": "card-11",
+        "front": "Mi két időjel keresztspektruma (CPSD)?",
+        "back": "CPSD(ω) = F1*(ω)·F2(ω), ahol F1* az F1 komplex konjugáltja."
+      },
+      {
+        "id": "card-12",
+        "front": "Mi a spektrumok mértékegysége?",
+        "back": "[spektrum] = [amplitúdó]² / [frekvencia]"
+      }
+    ]
+  }
+]
